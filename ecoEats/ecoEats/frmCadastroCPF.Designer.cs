@@ -71,10 +71,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(18, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 31);
+            this.label1.Size = new System.Drawing.Size(159, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastre com o CPF";
             // 
@@ -82,10 +81,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 166);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(14, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome:";
             // 
@@ -93,10 +91,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 100);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(14, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 25);
+            this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Número do CPF:";
             // 
@@ -104,10 +101,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 231);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(13, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 25);
+            this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nascimento:";
             // 
@@ -115,10 +111,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(501, 166);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(334, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 25);
+            this.label5.Size = new System.Drawing.Size(38, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Sexo:";
             // 
@@ -126,10 +121,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 297);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(12, 193);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(130, 25);
+            this.label6.Size = new System.Drawing.Size(86, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Naturalidade:";
             // 
@@ -137,10 +131,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(501, 231);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(334, 150);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 25);
+            this.label7.Size = new System.Drawing.Size(25, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "UF:";
             // 
@@ -148,10 +141,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(501, 434);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(334, 282);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 25);
+            this.label8.Size = new System.Drawing.Size(32, 16);
             this.label8.TabIndex = 7;
             this.label8.Text = "CEP:";
             // 
@@ -159,10 +151,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 358);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(14, 233);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 25);
+            this.label9.Size = new System.Drawing.Size(65, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Endereço:";
             // 
@@ -170,10 +161,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(501, 358);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(334, 233);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 25);
+            this.label10.Size = new System.Drawing.Size(26, 16);
             this.label10.TabIndex = 9;
             this.label10.Text = "Nº:";
             // 
@@ -181,10 +171,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(22, 434);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(15, 282);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 25);
+            this.label11.Size = new System.Drawing.Size(45, 16);
             this.label11.TabIndex = 10;
             this.label11.Text = "Bairro:";
             // 
@@ -192,10 +181,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(18, 498);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(12, 324);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 25);
+            this.label12.Size = new System.Drawing.Size(60, 16);
             this.label12.TabIndex = 11;
             this.label12.Text = "Telefone:";
             // 
@@ -203,56 +191,50 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(501, 498);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(334, 324);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 25);
+            this.label13.Size = new System.Drawing.Size(41, 16);
             this.label13.TabIndex = 12;
             this.label13.Text = "Email:";
             // 
             // txtNumero
             // 
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(549, 355);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNumero.Location = new System.Drawing.Point(366, 231);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(61, 28);
+            this.txtNumero.Size = new System.Drawing.Size(42, 21);
             this.txtNumero.TabIndex = 14;
             // 
             // txtUf
             // 
             this.txtUf.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUf.Location = new System.Drawing.Point(548, 228);
-            this.txtUf.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUf.Location = new System.Drawing.Point(365, 148);
             this.txtUf.Name = "txtUf";
-            this.txtUf.Size = new System.Drawing.Size(61, 28);
+            this.txtUf.Size = new System.Drawing.Size(42, 21);
             this.txtUf.TabIndex = 16;
             // 
             // txtNaturalidade
             // 
             this.txtNaturalidade.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNaturalidade.Location = new System.Drawing.Point(156, 294);
-            this.txtNaturalidade.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNaturalidade.Location = new System.Drawing.Point(104, 191);
             this.txtNaturalidade.Name = "txtNaturalidade";
-            this.txtNaturalidade.Size = new System.Drawing.Size(208, 28);
+            this.txtNaturalidade.Size = new System.Drawing.Size(140, 21);
             this.txtNaturalidade.TabIndex = 18;
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(99, 163);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNome.Location = new System.Drawing.Point(66, 106);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(366, 28);
+            this.txtNome.Size = new System.Drawing.Size(245, 21);
             this.txtNome.TabIndex = 20;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(572, 495);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmail.Location = new System.Drawing.Point(381, 322);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(372, 28);
+            this.txtEmail.Size = new System.Drawing.Size(249, 21);
             this.txtEmail.TabIndex = 21;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
@@ -260,19 +242,17 @@
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(99, 429);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBairro.Location = new System.Drawing.Point(66, 279);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(366, 28);
+            this.txtBairro.Size = new System.Drawing.Size(245, 21);
             this.txtBairro.TabIndex = 23;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(126, 355);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEndereco.Location = new System.Drawing.Point(84, 231);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(336, 28);
+            this.txtEndereco.Size = new System.Drawing.Size(225, 21);
             this.txtEndereco.TabIndex = 24;
             // 
             // btnCadastrar
@@ -282,10 +262,9 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(978, 666);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCadastrar.Location = new System.Drawing.Point(652, 433);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(144, 46);
+            this.btnCadastrar.Size = new System.Drawing.Size(96, 30);
             this.btnCadastrar.TabIndex = 26;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -295,10 +274,9 @@
             // 
             this.rdBtnConfirmar.AutoSize = true;
             this.rdBtnConfirmar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBtnConfirmar.Location = new System.Drawing.Point(18, 643);
-            this.rdBtnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rdBtnConfirmar.Location = new System.Drawing.Point(12, 418);
             this.rdBtnConfirmar.Name = "rdBtnConfirmar";
-            this.rdBtnConfirmar.Size = new System.Drawing.Size(591, 29);
+            this.rdBtnConfirmar.Size = new System.Drawing.Size(405, 20);
             this.rdBtnConfirmar.TabIndex = 27;
             this.rdBtnConfirmar.TabStop = true;
             this.rdBtnConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
@@ -315,42 +293,38 @@
             "Feminino",
             "Masculino",
             "Outro"});
-            this.cmbBxSexo.Location = new System.Drawing.Point(567, 163);
-            this.cmbBxSexo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbBxSexo.Location = new System.Drawing.Point(378, 106);
             this.cmbBxSexo.Name = "cmbBxSexo";
-            this.cmbBxSexo.Size = new System.Drawing.Size(144, 30);
+            this.cmbBxSexo.Size = new System.Drawing.Size(97, 22);
             this.cmbBxSexo.TabIndex = 29;
             this.cmbBxSexo.SelectedIndexChanged += new System.EventHandler(this.cmbBxSexo_SelectedIndexChanged);
             // 
             // mskTelefone
             // 
             this.mskTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskTelefone.Location = new System.Drawing.Point(117, 495);
-            this.mskTelefone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskTelefone.Location = new System.Drawing.Point(78, 322);
             this.mskTelefone.Mask = "(00)00000-0000";
             this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.Size = new System.Drawing.Size(127, 26);
+            this.mskTelefone.Size = new System.Drawing.Size(86, 20);
             this.mskTelefone.TabIndex = 30;
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mskCpf
             // 
             this.mskCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCpf.Location = new System.Drawing.Point(184, 97);
-            this.mskCpf.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskCpf.Location = new System.Drawing.Point(123, 63);
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(130, 26);
+            this.mskCpf.Size = new System.Drawing.Size(88, 20);
             this.mskCpf.TabIndex = 31;
             this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mskCep
             // 
-            this.mskCep.Location = new System.Drawing.Point(558, 431);
-            this.mskCep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskCep.Location = new System.Drawing.Point(372, 280);
             this.mskCep.Mask = "00.000-000";
             this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(100, 26);
+            this.mskCep.Size = new System.Drawing.Size(68, 20);
             this.mskCep.TabIndex = 32;
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -358,10 +332,9 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(501, 566);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(334, 368);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(158, 25);
+            this.label14.Size = new System.Drawing.Size(106, 16);
             this.label14.TabIndex = 33;
             this.label14.Text = "Confirmar senha:";
             // 
@@ -369,10 +342,9 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(18, 566);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(12, 368);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 25);
+            this.label15.Size = new System.Drawing.Size(45, 16);
             this.label15.TabIndex = 34;
             this.label15.Text = "Senha:";
             // 
@@ -380,30 +352,28 @@
             // 
             this.txtCSenha.BackColor = System.Drawing.SystemColors.Window;
             this.txtCSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCSenha.Location = new System.Drawing.Point(669, 563);
-            this.txtCSenha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCSenha.Location = new System.Drawing.Point(446, 366);
             this.txtCSenha.Name = "txtCSenha";
             this.txtCSenha.PasswordChar = '*';
-            this.txtCSenha.Size = new System.Drawing.Size(229, 26);
+            this.txtCSenha.Size = new System.Drawing.Size(154, 20);
             this.txtCSenha.TabIndex = 29;
+            this.txtCSenha.TextChanged += new System.EventHandler(this.txtCSenha_TextChanged);
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(94, 563);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSenha.Location = new System.Drawing.Point(63, 366);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(229, 26);
+            this.txtSenha.Size = new System.Drawing.Size(154, 20);
             this.txtSenha.TabIndex = 29;
             // 
             // mskNascimento
             // 
-            this.mskNascimento.Location = new System.Drawing.Point(147, 228);
-            this.mskNascimento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mskNascimento.Location = new System.Drawing.Point(98, 148);
             this.mskNascimento.Mask = "00/00/0000";
             this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(97, 26);
+            this.mskNascimento.Size = new System.Drawing.Size(66, 20);
             this.mskNascimento.TabIndex = 37;
             this.mskNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskNascimento.ValidatingType = typeof(System.DateTime);
@@ -411,10 +381,9 @@
             // pbSenha
             // 
             this.pbSenha.Image = global::ecoEats.Properties.Resources.hide;
-            this.pbSenha.Location = new System.Drawing.Point(334, 563);
-            this.pbSenha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbSenha.Location = new System.Drawing.Point(223, 366);
             this.pbSenha.Name = "pbSenha";
-            this.pbSenha.Size = new System.Drawing.Size(30, 31);
+            this.pbSenha.Size = new System.Drawing.Size(20, 20);
             this.pbSenha.TabIndex = 38;
             this.pbSenha.TabStop = false;
             this.pbSenha.Click += new System.EventHandler(this.pbSenha_Click);
@@ -422,20 +391,19 @@
             // pbConfirmarSenha
             // 
             this.pbConfirmarSenha.Image = global::ecoEats.Properties.Resources.hide;
-            this.pbConfirmarSenha.Location = new System.Drawing.Point(915, 563);
-            this.pbConfirmarSenha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbConfirmarSenha.Location = new System.Drawing.Point(610, 366);
             this.pbConfirmarSenha.Name = "pbConfirmarSenha";
-            this.pbConfirmarSenha.Size = new System.Drawing.Size(30, 31);
+            this.pbConfirmarSenha.Size = new System.Drawing.Size(20, 20);
             this.pbConfirmarSenha.TabIndex = 39;
             this.pbConfirmarSenha.TabStop = false;
             this.pbConfirmarSenha.Click += new System.EventHandler(this.pbConfirmarSenha_Click);
             // 
             // frmCadastroCPF
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1140, 731);
+            this.ClientSize = new System.Drawing.Size(760, 475);
             this.Controls.Add(this.pbConfirmarSenha);
             this.Controls.Add(this.pbSenha);
             this.Controls.Add(this.mskNascimento);
@@ -470,7 +438,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCadastroCPF";
             this.Text = " Cadastro CPF";
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).EndInit();

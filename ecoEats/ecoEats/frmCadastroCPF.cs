@@ -220,15 +220,20 @@ namespace ecoEats
             if (txtCSenha.PasswordChar == '*')
             {
                 txtCSenha.PasswordChar = '\0';
-                pbConfirmarSenha.Image = Image.FromFile(@"..\..\Imagens\view.png");
+                pbConfirmarSenha.Image = Resources.view;
                 txtCSenha.UseSystemPasswordChar = false;
             }
             else
             {
                 txtCSenha.PasswordChar = '*';
-                pbConfirmarSenha.Image = Image.FromFile(@"..\..\Imagens\hide.png");
+                pbConfirmarSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void txtCSenha_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
