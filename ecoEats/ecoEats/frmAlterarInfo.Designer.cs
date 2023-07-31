@@ -46,47 +46,47 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblEmail.Location = new System.Drawing.Point(75, 119);
+            this.lblEmail.Location = new System.Drawing.Point(50, 120);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(128, 20);
+            this.lblEmail.Size = new System.Drawing.Size(151, 21);
             this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "E-mail ou CPF:";
+            this.lblEmail.Text = "E-mail ou CPF :";
             // 
             // lblNSenha
             // 
             this.lblNSenha.AutoSize = true;
             this.lblNSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblNSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNSenha.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblNSenha.Location = new System.Drawing.Point(87, 175);
+            this.lblNSenha.Location = new System.Drawing.Point(78, 173);
             this.lblNSenha.Name = "lblNSenha";
-            this.lblNSenha.Size = new System.Drawing.Size(111, 20);
+            this.lblNSenha.Size = new System.Drawing.Size(123, 21);
             this.lblNSenha.TabIndex = 1;
-            this.lblNSenha.Text = "Nova Senha:";
+            this.lblNSenha.Text = "Nova Senha :";
             // 
             // lblRsenha
             // 
             this.lblRsenha.AutoSize = true;
             this.lblRsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblRsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRsenha.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRsenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblRsenha.Location = new System.Drawing.Point(63, 227);
+            this.lblRsenha.Location = new System.Drawing.Point(57, 228);
             this.lblRsenha.Name = "lblRsenha";
-            this.lblRsenha.Size = new System.Drawing.Size(139, 20);
+            this.lblRsenha.Size = new System.Drawing.Size(153, 21);
             this.lblRsenha.TabIndex = 2;
-            this.lblRsenha.Text = "Repita a Senha:";
+            this.lblRsenha.Text = "Repita a Senha :";
             // 
             // lblConfirm
             // 
             this.lblConfirm.AutoSize = true;
             this.lblConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirm.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblConfirm.Location = new System.Drawing.Point(63, 281);
+            this.lblConfirm.Location = new System.Drawing.Point(50, 279);
             this.lblConfirm.Name = "lblConfirm";
-            this.lblConfirm.Size = new System.Drawing.Size(151, 20);
+            this.lblConfirm.Size = new System.Drawing.Size(164, 21);
             this.lblConfirm.TabIndex = 3;
             this.lblConfirm.Text = "Confirmação por :";
             // 
@@ -94,11 +94,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.label5.Location = new System.Drawing.Point(254, 54);
+            this.label5.Location = new System.Drawing.Point(248, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 28);
+            this.label5.Size = new System.Drawing.Size(201, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Recuperar Senha:";
             // 
