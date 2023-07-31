@@ -52,6 +52,12 @@
     <Compile Include="frmAlterarInfo.Designer.cs">
       <DependentUpon>frmAlterarInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadastroCnpj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroCnpj.Designer.cs">
+      <DependentUpon>frmCadastroCnpj.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadastroCPF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlterarInfo.resx">
       <DependentUpon>frmAlterarInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroCnpj.resx">
+      <DependentUpon>frmCadastroCnpj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroCPF.resx">
       <DependentUpon>frmCadastroCPF.cs</DependentUpon>
