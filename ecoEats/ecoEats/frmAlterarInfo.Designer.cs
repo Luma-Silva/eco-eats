@@ -1,6 +1,6 @@
 ﻿namespace ecoEats
 {
-    partial class frmAlterarInfo
+    partial class frmAlterarSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -106,6 +106,7 @@
             // rbtnEmail
             // 
             this.rbtnEmail.AutoSize = true;
+            this.rbtnEmail.Checked = true;
             this.rbtnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
             this.rbtnEmail.Location = new System.Drawing.Point(231, 284);
             this.rbtnEmail.Name = "rbtnEmail";
@@ -124,7 +125,6 @@
             this.rbtnCelular.Name = "rbtnCelular";
             this.rbtnCelular.Size = new System.Drawing.Size(56, 17);
             this.rbtnCelular.TabIndex = 6;
-            this.rbtnCelular.TabStop = true;
             this.rbtnCelular.Text = "celular";
             this.rbtnCelular.UseVisualStyleBackColor = false;
             // 
@@ -187,7 +187,7 @@
             this.btnMostrar.UseVisualStyleBackColor = false;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // frmAlterarInfo
+            // frmAlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,8 +205,9 @@
             this.Controls.Add(this.lblRsenha);
             this.Controls.Add(this.lblNSenha);
             this.Controls.Add(this.lblEmail);
-            this.Name = "frmAlterarInfo";
-            this.Text = "Alterar Informações";
+            this.Name = "frmAlterarSenha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alterar Senha";
             this.Load += new System.EventHandler(this.frmAlterarInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

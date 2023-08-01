@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ecoEats
 {
-    public partial class frmAlterarInfo : Form
+    public partial class frmAlterarSenha : Form
     {
-        public frmAlterarInfo()
+        public frmAlterarSenha()
         {
             InitializeComponent();
         }
