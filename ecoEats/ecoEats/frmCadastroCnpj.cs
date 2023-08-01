@@ -167,7 +167,7 @@ namespace ecoEats
                 }
                 if (confirmarsenha == "")
                 {
-                    txtCSenha.BackColor = Color.PaleVioletRed;
+                    txtCSenha.BackColor = Color.Red;
                 }
                 else
                 {
@@ -184,7 +184,7 @@ namespace ecoEats
                 if (txtCSenha.Text != txtSenha.Text)
                 {
                     MessageBox.Show("Senhas diferentes!");
-                    BackColor = Color.PaleVioletRed;
+                    BackColor = Color.Red;
                 }
                 else
                 {
