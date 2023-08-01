@@ -67,7 +67,7 @@
             // 
             this.lblDados.AutoSize = true;
             this.lblDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDados.Location = new System.Drawing.Point(27, 20);
+            this.lblDados.Location = new System.Drawing.Point(25, 18);
             this.lblDados.Name = "lblDados";
             this.lblDados.Size = new System.Drawing.Size(168, 20);
             this.lblDados.TabIndex = 0;
@@ -169,7 +169,6 @@
             this.txtRazao.Name = "txtRazao";
             this.txtRazao.Size = new System.Drawing.Size(320, 20);
             this.txtRazao.TabIndex = 12;
-            this.txtRazao.TextChanged += new System.EventHandler(this.txtRazao_TextChanged);
             // 
             // txtName
             // 
@@ -177,7 +176,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(582, 20);
             this.txtName.TabIndex = 13;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtEndereco
             // 
@@ -185,7 +183,6 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(309, 20);
             this.txtEndereco.TabIndex = 14;
-            this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // txtNumero
             // 
@@ -193,7 +190,6 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(58, 20);
             this.txtNumero.TabIndex = 15;
-            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
             // txtBairro
             // 
@@ -201,7 +197,6 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(108, 20);
             this.txtBairro.TabIndex = 16;
-            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // txtEmail
             // 
@@ -209,7 +204,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(332, 20);
             this.txtEmail.TabIndex = 17;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // txtSenha
             // 
@@ -237,7 +232,6 @@
             this.mkdTCnpj.Size = new System.Drawing.Size(113, 20);
             this.mkdTCnpj.TabIndex = 20;
             this.mkdTCnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mkdTCnpj.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mkdTCnpj_MaskInputRejected);
             // 
             // mkdTTelefone
             // 
@@ -247,7 +241,6 @@
             this.mkdTTelefone.Size = new System.Drawing.Size(90, 20);
             this.mkdTTelefone.TabIndex = 21;
             this.mkdTTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mkdTTelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mkdTTelefone_MaskInputRejected);
             // 
             // lblCSenha
             // 
@@ -266,7 +259,6 @@
             this.mdkTCep.Size = new System.Drawing.Size(80, 20);
             this.mdkTCep.TabIndex = 23;
             this.mdkTCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mdkTCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mdkTCep_MaskInputRejected);
             // 
             // txtEstado
             // 
@@ -274,7 +266,6 @@
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(55, 20);
             this.txtEstado.TabIndex = 24;
-            this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
             // 
             // lblUf
             // 
@@ -299,11 +290,11 @@
             // btnCadastrar
             // 
             this.btnCadastrar.AutoSize = true;
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(56)))));
             this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnCadastrar.FlatAppearance.BorderSize = 3;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Location = new System.Drawing.Point(664, 388);
+            this.btnCadastrar.Location = new System.Drawing.Point(664, 398);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(124, 40);
             this.btnCadastrar.TabIndex = 27;
@@ -338,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(188)))), ((int)(((byte)(137)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pbCSenha);
             this.Controls.Add(this.pbCSenha2);
