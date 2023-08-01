@@ -51,9 +51,9 @@ namespace ecoEats
                 pbCSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
             }
-            if (txtCSenha.Text == txtSenha.Text)
+            if (txtCSenha.Text != txtSenha.Text)
             {
-                MessageBox.Show("Senha cadastrada!");
+                MessageBox.Show("Senha cadastrada");
             }
 
         }
@@ -167,7 +167,7 @@ namespace ecoEats
                 }
                 if (confirmarsenha == "")
                 {
-                    txtCSenha.BackColor = Color.Red;
+                    txtCSenha.BackColor = Color.PaleVioletRed;
                 }
                 else
                 {
@@ -184,7 +184,7 @@ namespace ecoEats
                 if (txtCSenha.Text != txtSenha.Text)
                 {
                     MessageBox.Show("Senhas diferentes!");
-                    BackColor = Color.Red;
+                    BackColor = Color.PaleVioletRed;
                 }
                 else
                 {
@@ -205,6 +205,21 @@ namespace ecoEats
                     txtEmail.BackColor = Color.PaleVioletRed;
                 }
             }
+        }
+
+        private void lbLTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbConfirmar_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
