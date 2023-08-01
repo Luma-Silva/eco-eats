@@ -16,20 +16,26 @@ namespace ecoEats
         {
             InitializeComponent();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private Form frmAtivo;
+      
+       
+        private void FechaForm()
         {
-
+            if (frmAtivo != null)
+            {
+                frmAtivo.Close();
+            }
         }
-
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem6_Click(object sender, EventArgs e)
-        {
-
+        private void MostraForm(Form frm) {
+            FechaForm();
+            frmAtivo= frm;
+            frm.TopLevel = false;
+            panelPrincipal.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Size = panelPrincipal.Size;
+            this.Text= frm.Text;
+            frm.Show();
+        
         }
     }
 }
