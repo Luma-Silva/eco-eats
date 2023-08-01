@@ -38,11 +38,11 @@
             // 
             this.lblCódBarras.AutoSize = true;
             this.lblCódBarras.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCódBarras.Location = new System.Drawing.Point(127, 146);
+            this.lblCódBarras.Location = new System.Drawing.Point(115, 146);
             this.lblCódBarras.Name = "lblCódBarras";
             this.lblCódBarras.Size = new System.Drawing.Size(139, 21);
             this.lblCódBarras.TabIndex = 2;
-            this.lblCódBarras.Text = "Código de barras";
+            this.lblCódBarras.Text = "Código de barras";  
             // 
             // btnContinuar
             // 
@@ -70,7 +70,7 @@
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+
             // 
             // textBoxDigCod
             // 
@@ -80,7 +80,7 @@
             this.textBoxDigCod.Size = new System.Drawing.Size(447, 38);
             this.textBoxDigCod.TabIndex = 6;
             // 
-            // FrmCódigodeBarras
+            // frmCodigoBarras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +90,7 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.lblCódBarras);
-            this.Name = "FrmCódigodeBarras";
+            this.Name = "frmCodigoBarras";
             this.Text = "FrmCódigodeBarras";
             this.ResumeLayout(false);
             this.PerformLayout();

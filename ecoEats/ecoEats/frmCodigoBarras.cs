@@ -31,16 +31,8 @@ namespace ecoEats
             }
 
             MessageBox.Show("Código:" + cod);
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDigiteCod_Click(object sender, EventArgs e)
-        {
-
+        
+             
         }
     }
 }

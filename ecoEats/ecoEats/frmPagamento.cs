@@ -38,11 +38,11 @@ namespace ecoEats
             string DataDeValidade = dtpDataDeValidade.Value.ToString("MM-yy");
 
             MessageBox.Show("CPF:" + CPF + "\n" +
-                "NomeNoCartão:" + NomeNoCartão + "\n" +
-                "NúmeroDoCartão:" + NúmeroDoCartão + "\n" +
+                "Nome No Cartão:" + NomeNoCartão + "\n" +
+                "Número Do Cartão:" + NúmeroDoCartão + "\n" +
                 "Código:" + Código + "\n" +
-                "DataDeValidade:" + DataDeValidade + "\n" +
-                "Tipodepagamento:" + Tipodopagamento);
+                "Data De Validade:" + DataDeValidade + "\n" +
+                "Tipo de pagamento:" + Tipodopagamento);
 
         }
     }
