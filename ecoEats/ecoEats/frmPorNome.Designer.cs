@@ -1,6 +1,6 @@
 ﻿namespace ecoEats
 {
-    partial class frmProduto
+    partial class frmPorNome
     {
         /// <summary>
         /// Required designer variable.
@@ -300,7 +300,7 @@
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // frmProduto
+            // frmPorNome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -328,8 +328,9 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmProduto";
+            this.Name = "frmPorNome";
             this.Text = "Cadastro do Produto";
             this.Load += new System.EventHandler(this.frmProduto_Load);
             this.panel1.ResumeLayout(false);

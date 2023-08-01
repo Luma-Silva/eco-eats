@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ecoEats
 {
-    public partial class frmProduto : Form
+    public partial class frmPorNome : Form
     {
-        public frmProduto()
+        public frmPorNome()
         {
             InitializeComponent();
         }
