@@ -62,6 +62,7 @@
             this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
             this.pbSenha = new System.Windows.Forms.PictureBox();
             this.pbConfirmarSenha = new System.Windows.Forms.PictureBox();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfirmarSenha)).BeginInit();
             this.SuspendLayout();
@@ -262,7 +263,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(652, 433);
+            this.btnCadastrar.Location = new System.Drawing.Point(679, 459);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(96, 30);
             this.btnCadastrar.TabIndex = 26;
@@ -272,6 +273,9 @@
             // 
             // rdBtnConfirmar
             // 
+            this.rdBtnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rdBtnConfirmar.AutoSize = true;
             this.rdBtnConfirmar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdBtnConfirmar.Location = new System.Drawing.Point(12, 418);
@@ -398,12 +402,27 @@
             this.pbConfirmarSenha.TabStop = false;
             this.pbConfirmarSenha.Click += new System.EventHandler(this.pbConfirmarSenha_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(12, 459);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(96, 30);
+            this.btnVoltar.TabIndex = 40;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            // 
             // frmCadastroCPF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(760, 475);
+            this.ClientSize = new System.Drawing.Size(787, 501);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.pbConfirmarSenha);
             this.Controls.Add(this.pbSenha);
             this.Controls.Add(this.mskNascimento);
@@ -482,5 +501,6 @@
         private System.Windows.Forms.PictureBox pbSenha;
         private System.Windows.Forms.PictureBox pbConfirmarSenha;
         private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
