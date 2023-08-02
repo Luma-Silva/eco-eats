@@ -59,6 +59,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.pbCSenha2 = new System.Windows.Forms.PictureBox();
             this.pbCSenha = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha)).BeginInit();
             this.SuspendLayout();
@@ -66,100 +67,112 @@
             // lblDados
             // 
             this.lblDados.AutoSize = true;
-            this.lblDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDados.Location = new System.Drawing.Point(25, 18);
+            this.lblDados.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDados.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDados.Location = new System.Drawing.Point(8, 9);
             this.lblDados.Name = "lblDados";
-            this.lblDados.Size = new System.Drawing.Size(168, 20);
+            this.lblDados.Size = new System.Drawing.Size(235, 32);
             this.lblDados.TabIndex = 0;
             this.lblDados.Text = "Preencha os dados:";
             // 
             // lblCnpj
             // 
             this.lblCnpj.AutoSize = true;
-            this.lblCnpj.Location = new System.Drawing.Point(27, 75);
+            this.lblCnpj.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnpj.Location = new System.Drawing.Point(11, 72);
             this.lblCnpj.Name = "lblCnpj";
-            this.lblCnpj.Size = new System.Drawing.Size(37, 13);
+            this.lblCnpj.Size = new System.Drawing.Size(43, 17);
             this.lblCnpj.TabIndex = 1;
             this.lblCnpj.Text = "CNPJ:";
             // 
             // lblRazao
             // 
             this.lblRazao.AutoSize = true;
-            this.lblRazao.Location = new System.Drawing.Point(254, 75);
+            this.lblRazao.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRazao.Location = new System.Drawing.Point(239, 72);
             this.lblRazao.Name = "lblRazao";
-            this.lblRazao.Size = new System.Drawing.Size(73, 13);
+            this.lblRazao.Size = new System.Drawing.Size(88, 17);
             this.lblRazao.TabIndex = 2;
             this.lblRazao.Text = "Razão Social:";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(26, 128);
+            this.lblNome.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(11, 128);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.Size = new System.Drawing.Size(49, 17);
             this.lblNome.TabIndex = 3;
             this.lblNome.Text = "Nome:";
             // 
             // lbLTelefone
             // 
             this.lbLTelefone.AutoSize = true;
-            this.lbLTelefone.Location = new System.Drawing.Point(28, 292);
+            this.lbLTelefone.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLTelefone.Location = new System.Drawing.Point(11, 286);
             this.lbLTelefone.Name = "lbLTelefone";
-            this.lbLTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lbLTelefone.Size = new System.Drawing.Size(65, 17);
             this.lbLTelefone.TabIndex = 4;
             this.lbLTelefone.Text = "Telefone:";
+            this.lbLTelefone.Click += new System.EventHandler(this.lbLTelefone_Click);
             // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(26, 180);
+            this.lblEndereco.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndereco.Location = new System.Drawing.Point(11, 180);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(56, 13);
+            this.lblEndereco.Size = new System.Drawing.Size(68, 17);
             this.lblEndereco.TabIndex = 5;
             this.lblEndereco.Text = "Endereço:";
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(404, 180);
+            this.lblNumero.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.Location = new System.Drawing.Point(400, 177);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(19, 13);
+            this.lblNumero.Size = new System.Drawing.Size(23, 17);
             this.lblNumero.TabIndex = 6;
             this.lblNumero.Text = "N°";
             // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(502, 180);
+            this.lblBairro.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.Location = new System.Drawing.Point(493, 177);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(37, 13);
+            this.lblBairro.Size = new System.Drawing.Size(49, 17);
             this.lblBairro.TabIndex = 7;
             this.lblBairro.Text = "Bairro:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(274, 292);
+            this.lblEmail.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(245, 286);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(37, 13);
+            this.lblEmail.Size = new System.Drawing.Size(51, 17);
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "e-mail:";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(28, 348);
+            this.lblSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(15, 339);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(41, 13);
+            this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 9;
             this.lblSenha.Text = "Senha:";
             // 
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(28, 241);
+            this.lblCep.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCep.Location = new System.Drawing.Point(11, 228);
             this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(31, 13);
+            this.lblCep.Size = new System.Drawing.Size(35, 17);
             this.lblCep.TabIndex = 10;
             this.lblCep.Text = "CEP:";
             // 
@@ -200,15 +213,15 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(321, 289);
+            this.txtEmail.Location = new System.Drawing.Point(302, 286);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(332, 20);
+            this.txtEmail.Size = new System.Drawing.Size(351, 20);
             this.txtEmail.TabIndex = 17;
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(75, 345);
+            this.txtSenha.Location = new System.Drawing.Point(75, 339);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(169, 20);
@@ -217,7 +230,7 @@
             // 
             // txtCSenha
             // 
-            this.txtCSenha.Location = new System.Drawing.Point(391, 345);
+            this.txtCSenha.Location = new System.Drawing.Point(449, 339);
             this.txtCSenha.Name = "txtCSenha";
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(169, 20);
@@ -235,7 +248,7 @@
             // 
             // mkdTTelefone
             // 
-            this.mkdTTelefone.Location = new System.Drawing.Point(84, 289);
+            this.mkdTTelefone.Location = new System.Drawing.Point(82, 286);
             this.mkdTTelefone.Mask = "(00)00000-0000";
             this.mkdTTelefone.Name = "mkdTTelefone";
             this.mkdTTelefone.Size = new System.Drawing.Size(90, 20);
@@ -245,15 +258,16 @@
             // lblCSenha
             // 
             this.lblCSenha.AutoSize = true;
-            this.lblCSenha.Location = new System.Drawing.Point(299, 348);
+            this.lblCSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCSenha.Location = new System.Drawing.Point(329, 339);
             this.lblCSenha.Name = "lblCSenha";
-            this.lblCSenha.Size = new System.Drawing.Size(86, 13);
+            this.lblCSenha.Size = new System.Drawing.Size(114, 17);
             this.lblCSenha.TabIndex = 22;
             this.lblCSenha.Text = "Confirmar senha:";
             // 
             // mdkTCep
             // 
-            this.mdkTCep.Location = new System.Drawing.Point(65, 238);
+            this.mdkTCep.Location = new System.Drawing.Point(52, 228);
             this.mdkTCep.Mask = "00.000-000";
             this.mdkTCep.Name = "mdkTCep";
             this.mdkTCep.Size = new System.Drawing.Size(80, 20);
@@ -262,41 +276,46 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(239, 238);
+            this.txtEstado.Location = new System.Drawing.Point(224, 228);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(55, 20);
+            this.txtEstado.Size = new System.Drawing.Size(29, 20);
             this.txtEstado.TabIndex = 24;
             // 
             // lblUf
             // 
             this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(209, 241);
+            this.lblUf.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUf.Location = new System.Drawing.Point(193, 228);
             this.lblUf.Name = "lblUf";
-            this.lblUf.Size = new System.Drawing.Size(24, 13);
+            this.lblUf.Size = new System.Drawing.Size(28, 17);
             this.lblUf.TabIndex = 25;
             this.lblUf.Text = "UF:";
+            this.lblUf.Click += new System.EventHandler(this.lblUf_Click);
             // 
             // rdbConfirmar
             // 
             this.rdbConfirmar.AutoSize = true;
-            this.rdbConfirmar.Location = new System.Drawing.Point(31, 411);
+            this.rdbConfirmar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbConfirmar.Location = new System.Drawing.Point(14, 375);
             this.rdbConfirmar.Name = "rdbConfirmar";
-            this.rdbConfirmar.Size = new System.Drawing.Size(328, 17);
+            this.rdbConfirmar.Size = new System.Drawing.Size(421, 21);
             this.rdbConfirmar.TabIndex = 26;
             this.rdbConfirmar.TabStop = true;
             this.rdbConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
             this.rdbConfirmar.UseVisualStyleBackColor = true;
+            this.rdbConfirmar.CheckedChanged += new System.EventHandler(this.rdbConfirmar_CheckedChanged);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.AutoSize = true;
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(169)))), ((int)(((byte)(56)))));
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Location = new System.Drawing.Point(664, 398);
+            this.btnCadastrar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnCadastrar.Location = new System.Drawing.Point(664, 431);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(124, 40);
+            this.btnCadastrar.Size = new System.Drawing.Size(124, 29);
             this.btnCadastrar.TabIndex = 27;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -305,8 +324,8 @@
             // pbCSenha2
             // 
             this.pbCSenha2.Image = global::ecoEats.Properties.Resources.view;
-            this.pbCSenha2.InitialImage = global::ecoEats.Properties.Resources.hide;
-            this.pbCSenha2.Location = new System.Drawing.Point(250, 348);
+            this.pbCSenha2.InitialImage = global::ecoEats.Properties.Resources.view;
+            this.pbCSenha2.Location = new System.Drawing.Point(250, 342);
             this.pbCSenha2.Name = "pbCSenha2";
             this.pbCSenha2.Size = new System.Drawing.Size(29, 17);
             this.pbCSenha2.TabIndex = 28;
@@ -316,8 +335,8 @@
             // pbCSenha
             // 
             this.pbCSenha.Image = global::ecoEats.Properties.Resources.view;
-            this.pbCSenha.InitialImage = global::ecoEats.Properties.Resources.hide;
-            this.pbCSenha.Location = new System.Drawing.Point(566, 348);
+            this.pbCSenha.InitialImage = null;
+            this.pbCSenha.Location = new System.Drawing.Point(624, 342);
             this.pbCSenha.Name = "pbCSenha";
             this.pbCSenha.Size = new System.Drawing.Size(29, 17);
             this.pbCSenha.TabIndex = 29;
@@ -325,12 +344,27 @@
             this.pbCSenha.UseWaitCursor = true;
             this.pbCSenha.Click += new System.EventHandler(this.txtCSenha_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(18, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 29);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Voltar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmCadastroCnpj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbCSenha);
             this.Controls.Add(this.pbCSenha2);
             this.Controls.Add(this.btnCadastrar);
@@ -400,6 +434,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.PictureBox pbCSenha2;
         private System.Windows.Forms.PictureBox pbCSenha;
-
+        private System.Windows.Forms.Button button1;
     }
 }

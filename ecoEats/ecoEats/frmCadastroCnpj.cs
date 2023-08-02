@@ -51,9 +51,9 @@ namespace ecoEats
                 pbCSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
             }
-            if (txtCSenha.Text == txtSenha.Text)
+            if (txtCSenha.Text != txtSenha.Text)
             {
-                MessageBox.Show("Senha cadastrada!");
+                MessageBox.Show("Senha cadastrada");
             }
 
         }
@@ -205,6 +205,21 @@ namespace ecoEats
                     txtEmail.BackColor = Color.PaleVioletRed;
                 }
             }
+        }
+
+        private void lbLTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbConfirmar_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
