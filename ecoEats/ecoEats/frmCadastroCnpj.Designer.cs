@@ -59,7 +59,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.pbCSenha2 = new System.Windows.Forms.PictureBox();
             this.pbCSenha = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +114,6 @@
             this.lbLTelefone.Size = new System.Drawing.Size(65, 17);
             this.lbLTelefone.TabIndex = 4;
             this.lbLTelefone.Text = "Telefone:";
-            this.lbLTelefone.Click += new System.EventHandler(this.lbLTelefone_Click);
             // 
             // lblEndereco
             // 
@@ -290,7 +289,6 @@
             this.lblUf.Size = new System.Drawing.Size(28, 17);
             this.lblUf.TabIndex = 25;
             this.lblUf.Text = "UF:";
-            this.lblUf.Click += new System.EventHandler(this.lblUf_Click);
             // 
             // rdbConfirmar
             // 
@@ -303,7 +301,6 @@
             this.rdbConfirmar.TabStop = true;
             this.rdbConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
             this.rdbConfirmar.UseVisualStyleBackColor = true;
-            this.rdbConfirmar.CheckedChanged += new System.EventHandler(this.rdbConfirmar_CheckedChanged);
             // 
             // btnCadastrar
             // 
@@ -323,40 +320,43 @@
             // 
             // pbCSenha2
             // 
-            this.pbCSenha2.Image = global::ecoEats.Properties.Resources.view;
-            this.pbCSenha2.InitialImage = global::ecoEats.Properties.Resources.view;
-            this.pbCSenha2.Location = new System.Drawing.Point(250, 342);
+            this.pbCSenha2.Image = global::ecoEats.Properties.Resources.hide;
+            this.pbCSenha2.InitialImage = global::ecoEats.Properties.Resources.hide;
+            this.pbCSenha2.Location = new System.Drawing.Point(250, 339);
             this.pbCSenha2.Name = "pbCSenha2";
-            this.pbCSenha2.Size = new System.Drawing.Size(29, 17);
+            this.pbCSenha2.Size = new System.Drawing.Size(29, 20);
+            this.pbCSenha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCSenha2.TabIndex = 28;
             this.pbCSenha2.TabStop = false;
             this.pbCSenha2.Click += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // pbCSenha
             // 
-            this.pbCSenha.Image = global::ecoEats.Properties.Resources.view;
-            this.pbCSenha.InitialImage = null;
-            this.pbCSenha.Location = new System.Drawing.Point(624, 342);
+            this.pbCSenha.Image = global::ecoEats.Properties.Resources.hide;
+            this.pbCSenha.InitialImage = global::ecoEats.Properties.Resources.hide;
+            this.pbCSenha.Location = new System.Drawing.Point(624, 339);
             this.pbCSenha.Name = "pbCSenha";
-            this.pbCSenha.Size = new System.Drawing.Size(29, 17);
+            this.pbCSenha.Size = new System.Drawing.Size(29, 20);
+            this.pbCSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCSenha.TabIndex = 29;
             this.pbCSenha.TabStop = false;
             this.pbCSenha.UseWaitCursor = true;
             this.pbCSenha.Click += new System.EventHandler(this.txtCSenha_TextChanged);
             // 
-            // button1
+            // btnVoltar
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(18, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 29);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Voltar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVoltar.AutoSize = true;
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(18, 431);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(124, 29);
+            this.btnVoltar.TabIndex = 30;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmCadastroCnpj
             // 
@@ -364,7 +364,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(800, 472);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.pbCSenha);
             this.Controls.Add(this.pbCSenha2);
             this.Controls.Add(this.btnCadastrar);
@@ -434,6 +434,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.PictureBox pbCSenha2;
         private System.Windows.Forms.PictureBox pbCSenha;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
