@@ -23,8 +23,11 @@ namespace ecoEats
         }
         private void btnRedefinirSenha_Click(object sender, EventArgs e)
         {
-            // Redireciona para a tela da ana
-            MessageBox.Show("Tela em construção!");
+          
+           frmAlterarSenha frm = new frmAlterarSenha();
+           this.Hide();
+           frm.FormBorderStyle = FormBorderStyle.Sizable;
+           frm.Show();
 
         }
 
