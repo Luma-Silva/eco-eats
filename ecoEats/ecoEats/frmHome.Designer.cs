@@ -74,7 +74,7 @@
             this.produtos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.produtos.Image = global::ecoEats.Properties.Resources.new_features;
             this.produtos.Name = "produtos";
-            this.produtos.Size = new System.Drawing.Size(188, 30);
+            this.produtos.Size = new System.Drawing.Size(151, 22);
             this.produtos.Text = "Seus Produtos";
             // 
             // comprarSelo
@@ -82,7 +82,7 @@
             this.comprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.comprarSelo.Image = global::ecoEats.Properties.Resources.cart;
             this.comprarSelo.Name = "comprarSelo";
-            this.comprarSelo.Size = new System.Drawing.Size(188, 30);
+            this.comprarSelo.Size = new System.Drawing.Size(151, 22);
             this.comprarSelo.Text = "Comprar Selos";
             // 
             // toolStripMenuItem4
@@ -100,7 +100,7 @@
             this.CadastroNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroNome.Image = global::ecoEats.Properties.Resources.signature;
             this.CadastroNome.Name = "CadastroNome";
-            this.CadastroNome.Size = new System.Drawing.Size(191, 30);
+            this.CadastroNome.Size = new System.Drawing.Size(183, 22);
             this.CadastroNome.Text = "Por nome";
             // 
             // CadastroCodigo
@@ -108,7 +108,7 @@
             this.CadastroCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroCodigo.Image = global::ecoEats.Properties.Resources.barcode;
             this.CadastroCodigo.Name = "CadastroCodigo";
-            this.CadastroCodigo.Size = new System.Drawing.Size(191, 30);
+            this.CadastroCodigo.Size = new System.Drawing.Size(183, 22);
             this.CadastroCodigo.Text = "Por código de barras";
             // 
             // toolStripMenuItem5
@@ -127,6 +127,7 @@
             this.alterarSenha.Name = "alterarSenha";
             this.alterarSenha.Size = new System.Drawing.Size(188, 30);
             this.alterarSenha.Text = "Alterar Senha";
+            this.alterarSenha.Click += new System.EventHandler(this.alterarSenha_Click);
             // 
             // Sair
             // 
