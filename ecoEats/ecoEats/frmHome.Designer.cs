@@ -100,7 +100,7 @@
             this.CadastroNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroNome.Image = global::ecoEats.Properties.Resources.signature;
             this.CadastroNome.Name = "CadastroNome";
-            this.CadastroNome.Size = new System.Drawing.Size(191, 30);
+            this.CadastroNome.Size = new System.Drawing.Size(183, 22);
             this.CadastroNome.Text = "Por nome";
             // 
             // CadastroCodigo
@@ -108,7 +108,7 @@
             this.CadastroCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroCodigo.Image = global::ecoEats.Properties.Resources.barcode;
             this.CadastroCodigo.Name = "CadastroCodigo";
-            this.CadastroCodigo.Size = new System.Drawing.Size(191, 30);
+            this.CadastroCodigo.Size = new System.Drawing.Size(183, 22);
             this.CadastroCodigo.Text = "Por código de barras";
             this.CadastroCodigo.Click += new System.EventHandler(this.CadastroCodigo_Click);
             // 
@@ -128,6 +128,7 @@
             this.alterarSenha.Name = "alterarSenha";
             this.alterarSenha.Size = new System.Drawing.Size(144, 22);
             this.alterarSenha.Text = "Alterar Senha";
+            this.alterarSenha.Click += new System.EventHandler(this.alterarSenha_Click);
             // 
             // Sair
             // 
