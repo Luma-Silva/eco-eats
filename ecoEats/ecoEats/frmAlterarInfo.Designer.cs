@@ -1,6 +1,6 @@
 ﻿namespace ecoEats
 {
-    partial class frmAlterarInfo
+    partial class frmAlterarSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -46,47 +46,47 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblEmail.Location = new System.Drawing.Point(75, 119);
+            this.lblEmail.Location = new System.Drawing.Point(24, 117);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(128, 20);
+            this.lblEmail.Size = new System.Drawing.Size(172, 24);
             this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "E-mail ou CPF:";
+            this.lblEmail.Text = "E-mail ou CPF :";
             // 
             // lblNSenha
             // 
             this.lblNSenha.AutoSize = true;
             this.lblNSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblNSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNSenha.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblNSenha.Location = new System.Drawing.Point(87, 175);
+            this.lblNSenha.Location = new System.Drawing.Point(48, 173);
             this.lblNSenha.Name = "lblNSenha";
-            this.lblNSenha.Size = new System.Drawing.Size(111, 20);
+            this.lblNSenha.Size = new System.Drawing.Size(148, 24);
             this.lblNSenha.TabIndex = 1;
-            this.lblNSenha.Text = "Nova Senha:";
+            this.lblNSenha.Text = "Nova Senha :";
             // 
             // lblRsenha
             // 
             this.lblRsenha.AutoSize = true;
             this.lblRsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblRsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRsenha.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRsenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblRsenha.Location = new System.Drawing.Point(63, 227);
+            this.lblRsenha.Location = new System.Drawing.Point(12, 227);
             this.lblRsenha.Name = "lblRsenha";
-            this.lblRsenha.Size = new System.Drawing.Size(139, 20);
+            this.lblRsenha.Size = new System.Drawing.Size(184, 24);
             this.lblRsenha.TabIndex = 2;
-            this.lblRsenha.Text = "Repita a Senha:";
+            this.lblRsenha.Text = "Repita a Senha :";
             // 
             // lblConfirm
             // 
             this.lblConfirm.AutoSize = true;
             this.lblConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirm.Font = new System.Drawing.Font("Lucida Handwriting", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblConfirm.Location = new System.Drawing.Point(63, 281);
+            this.lblConfirm.Location = new System.Drawing.Point(13, 279);
             this.lblConfirm.Name = "lblConfirm";
-            this.lblConfirm.Size = new System.Drawing.Size(151, 20);
+            this.lblConfirm.Size = new System.Drawing.Size(183, 23);
             this.lblConfirm.TabIndex = 3;
             this.lblConfirm.Text = "Confirmação por :";
             // 
@@ -94,21 +94,23 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Lucida Calligraphy", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.label5.Location = new System.Drawing.Point(254, 54);
+            this.label5.Location = new System.Drawing.Point(224, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 28);
+            this.label5.Size = new System.Drawing.Size(242, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Recuperar Senha:";
             // 
             // rbtnEmail
             // 
             this.rbtnEmail.AutoSize = true;
+            this.rbtnEmail.Checked = true;
+            this.rbtnEmail.Font = new System.Drawing.Font("Lucida Fax", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.rbtnEmail.Location = new System.Drawing.Point(231, 284);
+            this.rbtnEmail.Location = new System.Drawing.Point(230, 281);
             this.rbtnEmail.Name = "rbtnEmail";
-            this.rbtnEmail.Size = new System.Drawing.Size(52, 17);
+            this.rbtnEmail.Size = new System.Drawing.Size(66, 19);
             this.rbtnEmail.TabIndex = 5;
             this.rbtnEmail.TabStop = true;
             this.rbtnEmail.Text = "e-mail";
@@ -118,12 +120,12 @@
             // 
             this.rbtnCelular.AutoSize = true;
             this.rbtnCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
+            this.rbtnCelular.Font = new System.Drawing.Font("Lucida Fax", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.rbtnCelular.Location = new System.Drawing.Point(349, 284);
+            this.rbtnCelular.Location = new System.Drawing.Point(413, 282);
             this.rbtnCelular.Name = "rbtnCelular";
-            this.rbtnCelular.Size = new System.Drawing.Size(56, 17);
+            this.rbtnCelular.Size = new System.Drawing.Size(72, 19);
             this.rbtnCelular.TabIndex = 6;
-            this.rbtnCelular.TabStop = true;
             this.rbtnCelular.Text = "celular";
             this.rbtnCelular.UseVisualStyleBackColor = false;
             // 
@@ -158,10 +160,10 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(272, 336);
+            this.btnConfirmar.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(295, 333);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(133, 47);
             this.btnConfirmar.TabIndex = 10;
@@ -178,7 +180,7 @@
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.btnMostrar.Location = new System.Drawing.Point(509, 198);
+            this.btnMostrar.Location = new System.Drawing.Point(509, 192);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(100, 29);
             this.btnMostrar.TabIndex = 11;
@@ -186,7 +188,7 @@
             this.btnMostrar.UseVisualStyleBackColor = false;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // frmAlterarInfo
+            // frmAlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,8 +206,10 @@
             this.Controls.Add(this.lblRsenha);
             this.Controls.Add(this.lblNSenha);
             this.Controls.Add(this.lblEmail);
-            this.Name = "frmAlterarInfo";
-            this.Text = "Alterar Informações";
+            this.ForeColor = System.Drawing.Color.DarkGreen;
+            this.Name = "frmAlterarSenha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alterar Senha";
             this.Load += new System.EventHandler(this.frmAlterarInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
