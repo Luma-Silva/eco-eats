@@ -84,6 +84,7 @@
             this.btn_cnpj.TabIndex = 6;
             this.btn_cnpj.Text = "Cadastre-se CNPJ";
             this.btn_cnpj.UseVisualStyleBackColor = false;
+            this.btn_cnpj.Click += new System.EventHandler(this.btn_cnpj_Click);
             // 
             // label4
             // 
@@ -108,6 +109,7 @@
             this.btn_cpf.TabIndex = 9;
             this.btn_cpf.Text = "Cadastre-se CPF";
             this.btn_cpf.UseVisualStyleBackColor = false;
+            this.btn_cpf.Click += new System.EventHandler(this.btn_cpf_Click);
             // 
             // btnLogin
             // 
@@ -126,24 +128,26 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.BackgroundImage = global::ecoEats.Properties.Resources.Design_sem_nome;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(751, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(633, 755);
-            this.panel1.TabIndex = 12;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackgroundImage = global::ecoEats.Properties.Resources.imagemScore;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 417);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(221, 233);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::ecoEats.Properties.Resources.imagemScore;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(12, 400);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(713, 463);
-            this.panel2.TabIndex = 13;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.BackgroundImage = global::ecoEats.Properties.Resources.Design_sem_nome;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox3.Location = new System.Drawing.Point(578, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(705, 682);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // frmPrincipal
             // 
@@ -151,9 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(239)))), ((int)(((byte)(216)))));
-            this.ClientSize = new System.Drawing.Size(1384, 755);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1283, 682);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btn_cpf);
             this.Controls.Add(this.label4);
@@ -165,6 +168,9 @@
             this.Name = "frmPrincipal";
             this.Text = "Bem-Vinda(o)!";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
