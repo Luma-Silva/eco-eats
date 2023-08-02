@@ -53,6 +53,11 @@ namespace ecoEats
                 txtSenha.BackColor = Color.White;
                 return;
             }
+            MessageBox.Show("login realizado com suscesso!");
+            frmHome frm = new frmHome();
+            this.Hide();
+            frm.Show();
+
         }
 
         private void picMostrarEsconder_Click(object sender, EventArgs e)
