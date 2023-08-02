@@ -37,5 +37,10 @@ namespace ecoEats
             frm.Show();
         
         }
+
+        private void comprarSelo_Click(object sender, EventArgs e)
+        {
+            MostraForm(new frmPagamento());
+        }
     }
 }

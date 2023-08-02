@@ -84,6 +84,7 @@
             this.comprarSelo.Name = "comprarSelo";
             this.comprarSelo.Size = new System.Drawing.Size(188, 30);
             this.comprarSelo.Text = "Comprar Selos";
+            this.comprarSelo.Click += new System.EventHandler(this.comprarSelo_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -100,7 +101,7 @@
             this.CadastroNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroNome.Image = global::ecoEats.Properties.Resources.signature;
             this.CadastroNome.Name = "CadastroNome";
-            this.CadastroNome.Size = new System.Drawing.Size(191, 30);
+            this.CadastroNome.Size = new System.Drawing.Size(183, 22);
             this.CadastroNome.Text = "Por nome";
             // 
             // CadastroCodigo
@@ -108,7 +109,7 @@
             this.CadastroCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroCodigo.Image = global::ecoEats.Properties.Resources.barcode;
             this.CadastroCodigo.Name = "CadastroCodigo";
-            this.CadastroCodigo.Size = new System.Drawing.Size(191, 30);
+            this.CadastroCodigo.Size = new System.Drawing.Size(183, 22);
             this.CadastroCodigo.Text = "Por código de barras";
             // 
             // toolStripMenuItem5
@@ -125,7 +126,7 @@
             this.alterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.alterarSenha.Image = global::ecoEats.Properties.Resources.change_management;
             this.alterarSenha.Name = "alterarSenha";
-            this.alterarSenha.Size = new System.Drawing.Size(188, 30);
+            this.alterarSenha.Size = new System.Drawing.Size(144, 22);
             this.alterarSenha.Text = "Alterar Senha";
             // 
             // Sair

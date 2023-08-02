@@ -57,7 +57,7 @@
             // ckbCredito
             // 
             this.ckbCredito.AutoSize = true;
-            this.ckbCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.ckbCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.ckbCredito.Location = new System.Drawing.Point(262, 23);
             this.ckbCredito.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ckbCredito.Name = "ckbCredito";
@@ -80,7 +80,7 @@
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.lblCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblCpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
             this.lblCpf.Location = new System.Drawing.Point(50, 133);
             this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -92,7 +92,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.lblCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
             this.lblCodigo.Location = new System.Drawing.Point(47, 323);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -104,7 +104,7 @@
             // lblDataDeValidade
             // 
             this.lblDataDeValidade.AutoSize = true;
-            this.lblDataDeValidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.lblDataDeValidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblDataDeValidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
             this.lblDataDeValidade.Location = new System.Drawing.Point(47, 278);
             this.lblDataDeValidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -116,7 +116,7 @@
             // lblNumeroDoCartao
             // 
             this.lblNumeroDoCartao.AutoSize = true;
-            this.lblNumeroDoCartao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.lblNumeroDoCartao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblNumeroDoCartao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
             this.lblNumeroDoCartao.Location = new System.Drawing.Point(47, 227);
             this.lblNumeroDoCartao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -128,7 +128,7 @@
             // lblNomeNoCartao
             // 
             this.lblNomeNoCartao.AutoSize = true;
-            this.lblNomeNoCartao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.lblNomeNoCartao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblNomeNoCartao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
             this.lblNomeNoCartao.Location = new System.Drawing.Point(47, 175);
             this.lblNomeNoCartao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -140,7 +140,7 @@
             // btnConfirmarPagamento
             // 
             this.btnConfirmarPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
-            this.btnConfirmarPagamento.Location = new System.Drawing.Point(530, 358);
+            this.btnConfirmarPagamento.Location = new System.Drawing.Point(324, 372);
             this.btnConfirmarPagamento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmarPagamento.Name = "btnConfirmarPagamento";
             this.btnConfirmarPagamento.Size = new System.Drawing.Size(145, 51);
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(157)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.ClientSize = new System.Drawing.Size(933, 450);
             this.Controls.Add(this.dtpDataDeValidade);
             this.Controls.Add(this.txtCodigo);
@@ -214,6 +214,7 @@
             this.Controls.Add(this.ckbCredito);
             this.Controls.Add(this.lblFormadepagamento);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmPagamento";
             this.Text = "Compra de selo";
