@@ -191,5 +191,8 @@
   <ItemGroup>
     <None Include="Resources\change-management.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\iconEco.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

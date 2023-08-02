@@ -30,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCnpj));
             this.lblDados = new System.Windows.Forms.Label();
             this.lblCnpj = new System.Windows.Forms.Label();
             this.lblRazao = new System.Windows.Forms.Label();
@@ -394,6 +395,7 @@
             this.Controls.Add(this.lblRazao);
             this.Controls.Add(this.lblCnpj);
             this.Controls.Add(this.lblDados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastroCnpj";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha2)).EndInit();
