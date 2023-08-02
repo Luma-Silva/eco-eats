@@ -162,7 +162,10 @@ namespace ecoEats
             else
             {
                 MessageBox.Show("Cadastro concluído!");
-            }
+                Form home = new frmHome();
+                home.Show();
+                this.Hide();
+            } 
 
         }
 
@@ -234,6 +237,19 @@ namespace ecoEats
         private void txtCSenha_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmCadastroCPF_Load_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            
+            Form principal = new frmPrincipal();
+            principal.Show();
+            this.Hide();
         }
     }
 }

@@ -42,7 +42,7 @@
             this.lblCódBarras.Name = "lblCódBarras";
             this.lblCódBarras.Size = new System.Drawing.Size(139, 21);
             this.lblCódBarras.TabIndex = 2;
-            this.lblCódBarras.Text = "Código de barras";  
+            this.lblCódBarras.Text = "Código de barras";
             // 
             // btnContinuar
             // 
@@ -70,7 +70,6 @@
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
-
             // 
             // textBoxDigCod
             // 
