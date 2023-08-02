@@ -242,7 +242,7 @@ namespace ecoEats
         private void frmCadastroCPF_Load_1(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Microsoft Tai Le", 14, FontStyle.Regular);
+            Font fontePadrao = new Font("Microsoft Tai Le", 14, FontStyle.Bold);
 
 
 
