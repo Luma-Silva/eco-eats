@@ -19,8 +19,30 @@ namespace ecoEats
 
         private void frmProduto_Load(object sender, EventArgs e)
         {
+            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
+            Font fontePadrao = new Font("Arial", 12, FontStyle.Regular);
 
+            // Percorre todos os controles do formulário e aplica a fonte padrão
+            AplicarFonteControles(this, fontePadrao);
+            // Verifica se o formulário está maximizado
+            
+            // Calcula a posição para centralizar o formulário na tela
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
+
+            // Ajusta a posição do formulário
+            groupBox1.Location = new Point(x, y);
         }
+
+        private void AplicarFonteControles(Control control, Font fonte)
+        {
+            control.Font = fonte;
+
+            foreach (Control filho in control.Controls)
+            {
+                AplicarFonteControles(filho, fonte);
+            }
+            }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //esse if serve para verificar se o txt esta vazio se estiver ele vai aparecer a massage box 
@@ -86,6 +108,16 @@ namespace ecoEats
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
             DTPFabricacao.Value = DateTime.Now;
+        }
+
+        private void frmPorNome_SizeChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,5 +37,10 @@ namespace ecoEats
             frm.Show();
         
         }
+
+        private void CadastroNome_Click(object sender, EventArgs e)
+        {
+            MostraForm(new frmPorNome());
+        }
     }
 }
