@@ -460,6 +460,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmCadastroCPF";
             this.Text = " Cadastro CPF";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCadastroCPF_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfirmarSenha)).EndInit();
