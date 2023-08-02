@@ -37,5 +37,13 @@ namespace ecoEats
             frm.Show();
         
         }
+
+        private void CadastroCodigo_Click(object sender, EventArgs e)
+        {
+            MostraForm (new frmCodigoBarras());
+
+
+
+        }
     }
 }
