@@ -79,21 +79,24 @@ namespace ecoEats
             string Nome = txtNome.Text;
             string Valor = txtValor.Text;
             string Categoria = CBCategoria.SelectedItem.ToString();
+            string descricao = txtDescricao.Text;
             //na proxima linha eu fiz uma variavel para aparecer esta mensagem no mensagem boox.show
             // $ este simbolo de cifrão serve para concatenar a mensagem igual ao simbolo de +
-            string mensagem = $"Nome do Produto: {Nome}\n" +
+            string mensagem = $"Código de Barras: {codigo}\n" +
 
-                              $"Código de Barras: {codigo}\n" +
-
-                              $"Lote: {Lote}\n" +
-
-                              $"Categoria do Produto:{Categoria}\n" +
+                              $"Nome do Produto: {Nome}\n" +
 
                               $"Valor: {Valor:C}\n" +
 
-                              $"Vencimento: {Validade}\n" +
+                              $"Categoria do Produto:{Categoria}\n" +
 
-                              $"Data de Fabricação: {Fabricacao}";
+                              $"Descrição do Produto:{descricao}\n" +
+
+                              $"Data de Validade: {Validade}\n" +
+
+                              $"Data de Fabricação: {Fabricacao}\n" +
+
+                              $"Lote: {Lote}\n" ;
 
             //Ao inves do menssage box, jogar para o banco de dados (depois)
             // este MessageBoxButtons serve para eu criar uma caixa com o ok ou cancel
@@ -119,5 +122,9 @@ namespace ecoEats
             DTPFabricacao.Value = DateTime.Now;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
