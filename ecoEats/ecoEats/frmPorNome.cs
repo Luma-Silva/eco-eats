@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ecoEats
 {
@@ -19,10 +20,42 @@ namespace ecoEats
 
         private void frmProduto_Load(object sender, EventArgs e)
         {
+            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
+            Font fontePadrao = new Font("Arial", 10, FontStyle.Regular);
+
+            // Percorre todos os controles do formulário e aplica a fonte padrão
+            AplicarFonteControles(this, fontePadrao);
+            // Verifica se o formulário está maximizado
+            
+            // Calcula a posição para centralizar o formulário na tela
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 1;
+
+            // Ajusta a posição do formulário
+            groupBox1.Location = new Point(x, y);
+
+
+            groupBox1.BackColor = this.BackColor;
+
 
         }
-        private void btnSalvar_Click(object sender, EventArgs e)
+
+        private void AplicarFonteControles(Control control, Font fonte)
         {
+            control.Font = fonte;
+
+            foreach (Control filho in control.Controls)
+            {
+                AplicarFonteControles(filho, fonte);
+            }
+        }
+      
+
+
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+
             //esse if serve para verificar se o txt esta vazio se estiver ele vai aparecer a massage box 
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
@@ -46,21 +79,24 @@ namespace ecoEats
             string Nome = txtNome.Text;
             string Valor = txtValor.Text;
             string Categoria = CBCategoria.SelectedItem.ToString();
+            string descricao = txtDescricao.Text;
             //na proxima linha eu fiz uma variavel para aparecer esta mensagem no mensagem boox.show
             // $ este simbolo de cifrão serve para concatenar a mensagem igual ao simbolo de +
-            string mensagem = $"Nome do Produto: {Nome}\n" +
+            string mensagem = $"Código de Barras: {codigo}\n" +
 
-                              $"Código de Barras: {codigo}\n" +
-
-                              $"Lote: {Lote}\n" +
-
-                              $"Categoria do Produto:{Categoria}\n" +
+                              $"Nome do Produto: {Nome}\n" +
 
                               $"Valor: {Valor:C}\n" +
 
-                              $"Vencimento: {Validade}\n" +
+                              $"Categoria do Produto:{Categoria}\n" +
 
-                              $"Data de Fabricação: {Fabricacao}";
+                              $"Descrição do Produto:{descricao}\n" +
+
+                              $"Data de Validade: {Validade}\n" +
+
+                              $"Data de Fabricação: {Fabricacao}\n" +
+
+                              $"Lote: {Lote}\n" ;
 
             //Ao inves do menssage box, jogar para o banco de dados (depois)
             // este MessageBoxButtons serve para eu criar uma caixa com o ok ou cancel
@@ -69,13 +105,11 @@ namespace ecoEats
             MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
 
-
-
         }
 
-
-        private void btnLimpar_Click(object sender, EventArgs e)
+        private void btnLimpar_Click_1(object sender, EventArgs e)
         {
+
             //o empty significa vazio e o noww volta para data de hoje
 
             txtCodigo.Text = string.Empty;
@@ -86,6 +120,11 @@ namespace ecoEats
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
             DTPFabricacao.Value = DateTime.Now;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

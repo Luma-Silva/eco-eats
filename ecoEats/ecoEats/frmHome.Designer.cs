@@ -103,6 +103,7 @@
             this.CadastroNome.Name = "CadastroNome";
             this.CadastroNome.Size = new System.Drawing.Size(183, 22);
             this.CadastroNome.Text = "Por nome";
+            this.CadastroNome.Click += new System.EventHandler(this.CadastroNome_Click);
             // 
             // CadastroCodigo
             // 

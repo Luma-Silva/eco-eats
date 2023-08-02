@@ -38,6 +38,11 @@ namespace ecoEats
         
         }
 
+        private void CadastroNome_Click(object sender, EventArgs e)
+        {
+            MostraForm(new frmPorNome());
+        }
+
         private void CadastroCodigo_Click(object sender, EventArgs e)
         {
             MostraForm (new frmCodigoBarras());
