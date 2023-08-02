@@ -39,7 +39,13 @@ namespace ecoEats
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //redireciona par a tela da Luiza/Login
+            //redireciona para tela da Luiza/Login
+            frmLogin frm =new frmLogin();
+            this.Hide();
+            frm.Show();
+
         }
+
+       
     }
 }

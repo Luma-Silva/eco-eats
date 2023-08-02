@@ -70,5 +70,14 @@ namespace ecoEats
                 picMostrarEsconder.BackgroundImage = Properties.Resources.view;
             }
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frm = new frmPrincipal();
+            this.Hide();
+            frm.Show();
+            
+            
+        }
     }
 }
