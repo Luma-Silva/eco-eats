@@ -241,7 +241,23 @@ namespace ecoEats
 
         private void frmCadastroCPF_Load_1(object sender, EventArgs e)
         {
-            
+            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
+            Font fontePadrao = new Font("Microsoft Tai Le", 14, FontStyle.Regular);
+
+
+
+            // Percorre todos os controles do formulário e aplica a fonte padrão
+            AplicarFonteControles(this, fontePadrao);
+            // Verifica se o formulário está maximizado
+
+            // Calcula a posição para centralizar o formulário na tela
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
+
+
+
+            // Ajusta a posição do formulário
+            groupBox1.Location = new Point(x, y);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -250,6 +266,17 @@ namespace ecoEats
             Form principal = new frmPrincipal();
             principal.Show();
             this.Hide();
+        }
+        private void AplicarFonteControles(Control control, Font fonte)
+        {
+            control.Font = fonte;
+
+
+
+            foreach (Control filho in control.Controls)
+            {
+                AplicarFonteControles(filho, fonte);
+            }
         }
     }
 }
