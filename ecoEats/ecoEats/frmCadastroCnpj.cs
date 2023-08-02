@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ecoEats
 {
@@ -216,5 +217,22 @@ namespace ecoEats
             this.Hide();
         }
 
+        private void frmCadastroCnpj_Load(object sender, EventArgs e)
+        {
+           Font fontePadrao = new Font("Nirmala Ui", 12 , FontStyle.Bold);
+           AplicarFonteControles(this, fontePadrao);
+           int x = (Screen.PrimaryScreen.WorkingArea.Width - gBPrincipal.Width) / 2;
+           int y = (Screen.PrimaryScreen.WorkingArea.Height - gBPrincipal.Height) / 2;
+           gBPrincipal.Location = new Point(x, y);
+           lblDados.Font = new Font("Nirmala Ui", 16, FontStyle.Bold);
+        }
+        private void AplicarFonteControles(Control control, Font fonte)
+        {
+            control.Font = fonte;
+            foreach (Control filho in control.Controls)
+            {
+                AplicarFonteControles(filho, fonte);
+            }
+        }
     }
 }
