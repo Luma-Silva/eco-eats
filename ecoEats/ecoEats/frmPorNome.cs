@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ecoEats
 {
@@ -20,7 +21,7 @@ namespace ecoEats
         private void frmProduto_Load(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Arial", 12, FontStyle.Regular);
+            Font fontePadrao = new Font("Arial", 10, FontStyle.Regular);
 
             // Percorre todos os controles do formulário e aplica a fonte padrão
             AplicarFonteControles(this, fontePadrao);
@@ -28,10 +29,15 @@ namespace ecoEats
             
             // Calcula a posição para centralizar o formulário na tela
             int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
-            int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 1;
 
             // Ajusta a posição do formulário
             groupBox1.Location = new Point(x, y);
+
+
+            groupBox1.BackColor = this.BackColor;
+
+
         }
 
         private void AplicarFonteControles(Control control, Font fonte)
@@ -42,9 +48,14 @@ namespace ecoEats
             {
                 AplicarFonteControles(filho, fonte);
             }
-            }
-        private void btnSalvar_Click(object sender, EventArgs e)
+        }
+      
+
+
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
+
             //esse if serve para verificar se o txt esta vazio se estiver ele vai aparecer a massage box 
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
@@ -91,13 +102,11 @@ namespace ecoEats
             MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
 
-
-
         }
 
-
-        private void btnLimpar_Click(object sender, EventArgs e)
+        private void btnLimpar_Click_1(object sender, EventArgs e)
         {
+
             //o empty significa vazio e o noww volta para data de hoje
 
             txtCodigo.Text = string.Empty;
@@ -110,14 +119,5 @@ namespace ecoEats
             DTPFabricacao.Value = DateTime.Now;
         }
 
-        private void frmPorNome_SizeChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
