@@ -231,7 +231,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(169, 20);
             this.txtSenha.TabIndex = 18;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
+
             // 
             // txtCSenha
             // 
@@ -240,7 +240,6 @@
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(169, 20);
             this.txtCSenha.TabIndex = 19;
-            this.txtCSenha.TextChanged += new System.EventHandler(this.txtCSenha_TextChanged);
             // 
             // mkdTCnpj
             // 
@@ -300,7 +299,7 @@
             // 
             this.rdbConfirmar.AutoSize = true;
             this.rdbConfirmar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbConfirmar.Location = new System.Drawing.Point(35, 414);
+            this.rdbConfirmar.Location = new System.Drawing.Point(35, 423);
             this.rdbConfirmar.Name = "rdbConfirmar";
             this.rdbConfirmar.Size = new System.Drawing.Size(421, 21);
             this.rdbConfirmar.TabIndex = 26;
@@ -327,14 +326,14 @@
             // pbCSenha2
             // 
             this.pbCSenha2.Image = global::ecoEats.Properties.Resources.hide;
-            this.pbCSenha2.InitialImage = global::ecoEats.Properties.Resources.hide;
+            this.pbCSenha2.InitialImage = null;
             this.pbCSenha2.Location = new System.Drawing.Point(271, 378);
             this.pbCSenha2.Name = "pbCSenha2";
             this.pbCSenha2.Size = new System.Drawing.Size(29, 20);
             this.pbCSenha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCSenha2.TabIndex = 28;
             this.pbCSenha2.TabStop = false;
-            this.pbCSenha2.Click += new System.EventHandler(this.txtSenha_TextChanged);
+            this.pbCSenha2.Click += new System.EventHandler(this.pbCSenha2_Click);
             // 
             // pbCSenha
             // 
@@ -347,7 +346,7 @@
             this.pbCSenha.TabIndex = 29;
             this.pbCSenha.TabStop = false;
             this.pbCSenha.UseWaitCursor = true;
-            this.pbCSenha.Click += new System.EventHandler(this.txtCSenha_TextChanged);
+            this.pbCSenha.Click += new System.EventHandler(this.pbCSenha_Click);
             // 
             // btnVoltar
             // 

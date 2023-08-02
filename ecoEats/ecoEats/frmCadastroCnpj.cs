@@ -20,44 +20,6 @@ namespace ecoEats
         {
             InitializeComponent();
         }
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
-            if (txtSenha.PasswordChar == '*')
-            {
-                txtSenha.PasswordChar = '\0';
-                pbCSenha2.Image = Resources.view;
-                txtSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenha.PasswordChar = '*';
-                pbCSenha2.Image = Resources.hide;
-                txtSenha.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void txtCSenha_TextChanged(object sender, EventArgs e)
-        {
-
-            if (txtCSenha.PasswordChar == '*')
-            {
-                txtCSenha.PasswordChar = '\0';
-                pbCSenha.Image = Resources.view;
-                txtCSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtCSenha.PasswordChar = '*';
-                pbCSenha.Image = Resources.hide;
-                txtCSenha.UseSystemPasswordChar = false;
-            }
-            if (txtCSenha.Text == txtSenha.Text)
-            {
-                MessageBox.Show("Senha cadastrada");
-            }
-
-        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string cnpj = mkdTCnpj.Text;
@@ -232,6 +194,43 @@ namespace ecoEats
             foreach (Control filho in control.Controls)
             {
                 AplicarFonteControles(filho, fonte);
+            }
+        }
+
+        private void pbCSenha_Click(object sender, EventArgs e)
+        {
+
+            if (txtCSenha.PasswordChar == '*')
+            {
+                txtCSenha.PasswordChar = '\0';
+                pbCSenha.Image = Resources.view;
+                txtCSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtCSenha.PasswordChar = '*';
+                pbCSenha.Image = Resources.hide;
+                txtCSenha.UseSystemPasswordChar = false;
+            }
+            if (txtCSenha.Text == txtSenha.Text)
+            {
+                MessageBox.Show("Senha cadastrada");
+            }
+        }
+
+        private void pbCSenha2_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.PasswordChar == '*')
+            {
+                txtSenha.PasswordChar = '\0';
+                pbCSenha2.Image = Resources.view;
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.PasswordChar = '*';
+                pbCSenha2.Image = Resources.hide;
+                txtSenha.UseSystemPasswordChar = false;
             }
         }
     }
