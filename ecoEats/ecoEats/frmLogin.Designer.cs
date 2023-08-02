@@ -48,7 +48,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Source Code Pro Black", 45F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(179)))), ((int)(((byte)(89)))));
-            this.label1.Location = new System.Drawing.Point(419, 139);
+            this.label1.Location = new System.Drawing.Point(206, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 75);
             this.label1.TabIndex = 0;
@@ -58,12 +58,13 @@
             // 
             this.btnLogar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(193)))), ((int)(((byte)(95)))));
-            this.btnLogar.FlatAppearance.BorderSize = 0;
+            this.btnLogar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnLogar.FlatAppearance.BorderSize = 3;
             this.btnLogar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogar.Font = new System.Drawing.Font("Source Code Pro Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogar.Location = new System.Drawing.Point(459, 405);
+            this.btnLogar.Location = new System.Drawing.Point(231, 355);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Size = new System.Drawing.Size(167, 53);
+            this.btnLogar.Size = new System.Drawing.Size(217, 69);
             this.btnLogar.TabIndex = 1;
             this.btnLogar.Text = "Fazer Login";
             this.btnLogar.UseVisualStyleBackColor = false;
@@ -74,7 +75,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Source Code Pro Semibold", 14.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(279, 239);
+            this.label2.Location = new System.Drawing.Point(75, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 2;
@@ -85,7 +86,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Source Code Pro Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(315, 293);
+            this.label3.Location = new System.Drawing.Point(75, 276);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 3;
@@ -95,19 +96,19 @@
             // 
             this.txtCPF_CNPJ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCPF_CNPJ.BackColor = System.Drawing.Color.White;
-            this.txtCPF_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF_CNPJ.Location = new System.Drawing.Point(432, 239);
+            this.txtCPF_CNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF_CNPJ.Location = new System.Drawing.Point(205, 195);
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
-            this.txtCPF_CNPJ.Size = new System.Drawing.Size(235, 26);
+            this.txtCPF_CNPJ.Size = new System.Drawing.Size(267, 29);
             this.txtCPF_CNPJ.TabIndex = 4;
             // 
             // txtSenha
             // 
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(432, 292);
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(205, 274);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(235, 26);
+            this.txtSenha.Size = new System.Drawing.Size(267, 29);
             this.txtSenha.TabIndex = 5;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -117,9 +118,9 @@
             this.btnRedefinirSenha.BackColor = System.Drawing.Color.Transparent;
             this.btnRedefinirSenha.FlatAppearance.BorderSize = 0;
             this.btnRedefinirSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRedefinirSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedefinirSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRedefinirSenha.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRedefinirSenha.Location = new System.Drawing.Point(432, 340);
+            this.btnRedefinirSenha.Location = new System.Drawing.Point(219, 309);
             this.btnRedefinirSenha.Name = "btnRedefinirSenha";
             this.btnRedefinirSenha.Size = new System.Drawing.Size(229, 40);
             this.btnRedefinirSenha.TabIndex = 7;
@@ -133,9 +134,9 @@
             this.picMostrarEsconder.BackColor = System.Drawing.Color.Transparent;
             this.picMostrarEsconder.BackgroundImage = global::ecoEats.Properties.Resources.view;
             this.picMostrarEsconder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picMostrarEsconder.Location = new System.Drawing.Point(695, 292);
+            this.picMostrarEsconder.Location = new System.Drawing.Point(512, 276);
             this.picMostrarEsconder.Name = "picMostrarEsconder";
-            this.picMostrarEsconder.Size = new System.Drawing.Size(36, 24);
+            this.picMostrarEsconder.Size = new System.Drawing.Size(54, 34);
             this.picMostrarEsconder.TabIndex = 8;
             this.picMostrarEsconder.TabStop = false;
             this.picMostrarEsconder.Click += new System.EventHandler(this.picMostrarEsconder_Click);
@@ -156,9 +157,9 @@
             this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtCPF_CNPJ);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(194, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1054, 583);
+            this.panel1.Size = new System.Drawing.Size(647, 559);
             this.panel1.TabIndex = 9;
             // 
             // btnVoltar
@@ -170,9 +171,9 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Source Code Pro Semibold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnVoltar.Location = new System.Drawing.Point(459, 483);
+            this.btnVoltar.Location = new System.Drawing.Point(231, 440);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(167, 53);
+            this.btnVoltar.Size = new System.Drawing.Size(217, 61);
             this.btnVoltar.TabIndex = 9;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -182,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(238)))), ((int)(((byte)(212)))));
             this.ClientSize = new System.Drawing.Size(1054, 583);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
