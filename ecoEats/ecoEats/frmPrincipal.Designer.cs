@@ -37,6 +37,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.Panel();
+            this.imgScore = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -128,26 +130,37 @@
             // 
             // panel1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackgroundImage = global::ecoEats.Properties.Resources.imagemScore;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 417);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 233);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::ecoEats.Properties.Resources.Design_sem_nome;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox3.Location = new System.Drawing.Point(578, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(705, 682);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 0;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgLogo.BackgroundImage = global::ecoEats.Properties.Resources.Design_sem_nome;
+            this.imgLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgLogo.Location = new System.Drawing.Point(652, -75);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(631, 758);
+            this.imgLogo.TabIndex = 11;
+            // 
+            // imgScore
+            // 
+            this.imgScore.AutoSize = true;
+            this.imgScore.BackgroundImage = global::ecoEats.Properties.Resources.imagemScore;
+            this.imgScore.Location = new System.Drawing.Point(74, 420);
+            this.imgScore.Name = "imgScore";
+            this.imgScore.Size = new System.Drawing.Size(484, 467);
+            this.imgScore.TabIndex = 12;
             // 
             // frmPrincipal
             // 
@@ -156,7 +169,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(239)))), ((int)(((byte)(216)))));
             this.ClientSize = new System.Drawing.Size(1283, 682);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgScore);
+            this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btn_cpf);
             this.Controls.Add(this.label4);
@@ -168,9 +182,6 @@
             this.Name = "frmPrincipal";
             this.Text = "Bem-Vinda(o)!";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmPrincipal_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +208,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel imgLogo;
+        private System.Windows.Forms.Panel imgScore;
     }
 }
 
