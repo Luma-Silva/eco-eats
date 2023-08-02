@@ -30,16 +30,27 @@ namespace ecoEats
         private void btn_cnpj_Click(object sender, EventArgs e)
         {
             //redireciona par a tela da Alana/Cadastro CNPJ
+            Form cnpj = new frmCadastroCnpj();
+            cnpj.Show();
+            this.Hide();
         }
 
         private void btn_cpf_Click(object sender, EventArgs e)
         {
             //redireciona par a tela da Bea/Cadastro CPF
+            Form cpf = new frmCadastroCPF();
+            cpf.Show();
+            this.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //redireciona par a tela da Luiza/Login
+        }
+
+        private void frmPrincipal_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
