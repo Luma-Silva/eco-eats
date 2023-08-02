@@ -84,6 +84,7 @@
             this.comprarSelo.Name = "comprarSelo";
             this.comprarSelo.Size = new System.Drawing.Size(151, 22);
             this.comprarSelo.Text = "Comprar Selos";
+            this.comprarSelo.Click += new System.EventHandler(this.comprarSelo_Click);
             // 
             // toolStripMenuItem4
             // 

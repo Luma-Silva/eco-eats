@@ -50,5 +50,10 @@ namespace ecoEats
         {
             MostraForm(new frmAlterarSenha());
         }
+
+        private void comprarSelo_Click(object sender, EventArgs e)
+        {
+            MostraForm(new frmPagamento());
+        }
     }
 }
