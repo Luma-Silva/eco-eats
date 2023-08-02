@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ecoEats
 {
@@ -18,44 +19,6 @@ namespace ecoEats
         public frmCadastroCnpj()
         {
             InitializeComponent();
-        }
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
-            if (txtSenha.PasswordChar == '*')
-            {
-                txtSenha.PasswordChar = '\0';
-                pbCSenha2.Image = Resources.view;
-                txtSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenha.PasswordChar = '*';
-                pbCSenha2.Image = Resources.hide;
-                txtSenha.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void txtCSenha_TextChanged(object sender, EventArgs e)
-        {
-
-            if (txtCSenha.PasswordChar == '*')
-            {
-                txtCSenha.PasswordChar = '\0';
-                pbCSenha.Image = Resources.view;
-                txtCSenha.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtCSenha.PasswordChar = '*';
-                pbCSenha.Image = Resources.hide;
-                txtCSenha.UseSystemPasswordChar = false;
-            }
-            if (txtCSenha.Text == txtSenha.Text)
-            {
-                MessageBox.Show("Senha cadastrada");
-            }
-
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -216,5 +179,59 @@ namespace ecoEats
             this.Hide();
         }
 
+        private void frmCadastroCnpj_Load(object sender, EventArgs e)
+        {
+           Font fontePadrao = new Font("Nirmala Ui", 12 , FontStyle.Bold);
+           AplicarFonteControles(this, fontePadrao);
+           int x = (Screen.PrimaryScreen.WorkingArea.Width - gBPrincipal.Width) / 2;
+           int y = (Screen.PrimaryScreen.WorkingArea.Height - gBPrincipal.Height) / 2;
+           gBPrincipal.Location = new Point(x, y);
+           lblDados.Font = new Font("Nirmala Ui", 16, FontStyle.Bold);
+        }
+        private void AplicarFonteControles(Control control, Font fonte)
+        {
+            control.Font = fonte;
+            foreach (Control filho in control.Controls)
+            {
+                AplicarFonteControles(filho, fonte);
+            }
+        }
+
+        private void pbCSenha_Click(object sender, EventArgs e)
+        {
+
+            if (txtCSenha.PasswordChar == '*')
+            {
+                txtCSenha.PasswordChar = '\0';
+                pbCSenha.Image = Resources.view;
+                txtCSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtCSenha.PasswordChar = '*';
+                pbCSenha.Image = Resources.hide;
+                txtCSenha.UseSystemPasswordChar = false;
+            }
+            if (txtCSenha.Text == txtSenha.Text)
+            {
+                MessageBox.Show("Senha cadastrada");
+            }
+        }
+
+        private void pbCSenha2_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.PasswordChar == '*')
+            {
+                txtSenha.PasswordChar = '\0';
+                pbCSenha2.Image = Resources.view;
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.PasswordChar = '*';
+                pbCSenha2.Image = Resources.hide;
+                txtSenha.UseSystemPasswordChar = false;
+            }
+        }
     }
 }
