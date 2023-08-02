@@ -164,7 +164,8 @@ namespace ecoEats
                 MessageBox.Show("Cadastro concluído!");
                 Form home = new frmHome();
                 home.Show();
-            }
+                this.Hide();
+            } 
 
         }
 
@@ -248,6 +249,7 @@ namespace ecoEats
             
             Form principal = new frmPrincipal();
             principal.Show();
+            this.Hide();
         }
     }
 }
