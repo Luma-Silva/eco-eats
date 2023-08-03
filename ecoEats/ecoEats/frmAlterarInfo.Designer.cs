@@ -41,6 +41,7 @@
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,11 +80,11 @@
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.lblEmail.Font = new System.Drawing.Font("Source Code Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblEmail.Location = new System.Drawing.Point(34, 91);
+            this.lblEmail.Location = new System.Drawing.Point(111, 90);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(175, 24);
+            this.lblEmail.Size = new System.Drawing.Size(98, 24);
             this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "E-mail ou CPF :";
+            this.lblEmail.Text = "E-mail :";
             // 
             // lblNSenha
             // 
@@ -147,7 +148,7 @@
             this.lblConfirm.Size = new System.Drawing.Size(180, 22);
             this.lblConfirm.TabIndex = 3;
             this.lblConfirm.Text = "Confirmação por :";
-            this.lblConfirm.Click += new System.EventHandler(this.lblConfirm_Click);
+       
             // 
             // label5
             // 
@@ -160,7 +161,7 @@
             this.label5.Size = new System.Drawing.Size(238, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Recuperar Senha:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+          
             // 
             // btnMostrar
             // 
@@ -194,6 +195,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnVoltar);
             this.groupBox1.Controls.Add(this.txtNsenha);
             this.groupBox1.Controls.Add(this.btnMostrar);
             this.groupBox1.Controls.Add(this.lblEmail);
@@ -211,6 +213,21 @@
             this.groupBox1.Size = new System.Drawing.Size(641, 344);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Source Code Pro", 8.25F);
+            this.btnVoltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnVoltar.Location = new System.Drawing.Point(420, 267);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(88, 25);
+            this.btnVoltar.TabIndex = 12;
+            this.btnVoltar.Text = "VOLTAR";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Visible = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // frmAlterarSenha
             // 
@@ -246,5 +263,6 @@
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -186,42 +186,42 @@
             this.txtRazao.Location = new System.Drawing.Point(354, 111);
             this.txtRazao.Name = "txtRazao";
             this.txtRazao.Size = new System.Drawing.Size(320, 20);
-            this.txtRazao.TabIndex = 12;
+            this.txtRazao.TabIndex = 2;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(92, 167);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(582, 20);
-            this.txtName.TabIndex = 13;
+            this.txtName.TabIndex = 3;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(106, 216);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(309, 20);
-            this.txtEndereco.TabIndex = 14;
+            this.txtEndereco.TabIndex = 4;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(450, 216);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(58, 20);
-            this.txtNumero.TabIndex = 15;
+            this.txtNumero.TabIndex = 5;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(566, 216);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(108, 20);
-            this.txtBairro.TabIndex = 16;
+            this.txtBairro.TabIndex = 6;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(323, 325);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(351, 20);
-            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TabIndex = 10;
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // txtSenha
@@ -230,8 +230,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(169, 20);
-            this.txtSenha.TabIndex = 18;
-
+            this.txtSenha.TabIndex = 11;
             // 
             // txtCSenha
             // 
@@ -239,7 +238,7 @@
             this.txtCSenha.Name = "txtCSenha";
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(169, 20);
-            this.txtCSenha.TabIndex = 19;
+            this.txtCSenha.TabIndex = 12;
             // 
             // mkdTCnpj
             // 
@@ -247,7 +246,7 @@
             this.mkdTCnpj.Mask = "00.000.000/0000-00";
             this.mkdTCnpj.Name = "mkdTCnpj";
             this.mkdTCnpj.Size = new System.Drawing.Size(113, 20);
-            this.mkdTCnpj.TabIndex = 20;
+            this.mkdTCnpj.TabIndex = 1;
             this.mkdTCnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // mkdTTelefone
@@ -256,7 +255,7 @@
             this.mkdTTelefone.Mask = "(00)00000-0000";
             this.mkdTTelefone.Name = "mkdTTelefone";
             this.mkdTTelefone.Size = new System.Drawing.Size(90, 20);
-            this.mkdTTelefone.TabIndex = 21;
+            this.mkdTTelefone.TabIndex = 9;
             this.mkdTTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblCSenha
@@ -275,7 +274,7 @@
             this.mdkTCep.Mask = "00.000-000";
             this.mdkTCep.Name = "mdkTCep";
             this.mdkTCep.Size = new System.Drawing.Size(80, 20);
-            this.mdkTCep.TabIndex = 23;
+            this.mdkTCep.TabIndex = 7;
             this.mdkTCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtEstado
@@ -283,7 +282,7 @@
             this.txtEstado.Location = new System.Drawing.Point(245, 267);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(29, 20);
-            this.txtEstado.TabIndex = 24;
+            this.txtEstado.TabIndex = 8;
             // 
             // lblUf
             // 

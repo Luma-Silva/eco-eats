@@ -23,8 +23,7 @@ namespace ecoEats
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            Form mostrar = new Form();
-            mostrar.Show();
+          
 
             string cod = textBoxDigCod.Text;
 

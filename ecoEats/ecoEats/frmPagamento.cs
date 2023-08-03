@@ -32,18 +32,74 @@ namespace ecoEats
 
             string NomeNoCartão = txtNomeNoCartao.Text;
 
-            string NúmeroDoCartão = txtNumeroDoCartao.Text;
+            string NumeroDoCartão = txtNumeroDoCartao.Text;
 
-            string Código = txtCodigo.Text;
+            string codigo = txtCodigo.Text;
 
-            string DataDeValidade = dtpDataDeValidade.Value.ToString("MM-yy");
+            string dataDeValidade = dtpDataDeValidade.Value.ToString("MM-yy");
+            if (CPF =="" || NomeNoCartão=="" || NumeroDoCartão=="" ||codigo=="" || dataDeValidade=="") {
+                
+                if(CPF == "") 
+                {
+                    txtCpf.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtCpf.BackColor = Color.White;
+                }
+                
+                if (NomeNoCartão == "") {
+                    txtNomeNoCartao.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtNomeNoCartao.BackColor = Color.White;
+                }
+                if (codigo == "") {
+                    txtCodigo.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtCodigo.BackColor = Color.White;
+                }
+                
+                if (NumeroDoCartão == "") {
+                    txtNumeroDoCartao.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtNumeroDoCartao.BackColor = Color.White;
+                }
+               
+                
+                MessageBox.Show("Preencha todos os campos!");
 
-            MessageBox.Show("CPF:" + CPF + "\n" +
-                "Nome No Cartão:" + NomeNoCartão + "\n" +
-                "Número Do Cartão:" + NúmeroDoCartão + "\n" +
-                "Código:" + Código + "\n" +
-                "Data De Validade:" + DataDeValidade + "\n" +
-                "Tipo de pagamento:" + Tipodopagamento);
+            }
+            
+            else if (ckbDebito.Checked == true && ckbCredito.Checked == true)
+            {
+                MessageBox.Show("Selecione SOMENTE UMA forma de pagamento!!");
+            }
+            else if (ckbDebito.Checked == false && ckbCredito.Checked == false)
+            {
+                MessageBox.Show("Selecione a forma de pagamento!!");
+            }
+            else
+            {
+                if(ckbDebito.Checked == true || ckbCredito.Checked == true)
+                {
+                    MessageBox.Show("CPF:" + CPF + "\n" +
+              "Nome No Cartão:" + NomeNoCartão + "\n" +
+              "Número Do Cartão:" + NumeroDoCartão + "\n" +
+              "Código:" + codigo + "\n" +
+              "Data De Validade:" + dataDeValidade + "\n" +
+              "Forma de pagamento:" + Tipodopagamento);
+
+                }
+               
+            }
+
+           
 
         }
 

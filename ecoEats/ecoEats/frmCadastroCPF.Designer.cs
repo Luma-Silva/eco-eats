@@ -285,7 +285,6 @@
             this.rdBtnConfirmar.Name = "rdBtnConfirmar";
             this.rdBtnConfirmar.Size = new System.Drawing.Size(405, 20);
             this.rdBtnConfirmar.TabIndex = 27;
-            this.rdBtnConfirmar.TabStop = true;
             this.rdBtnConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
             this.rdBtnConfirmar.UseVisualStyleBackColor = true;
             this.rdBtnConfirmar.CheckedChanged += new System.EventHandler(this.rdBtnConfirmar_CheckedChanged);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ecoEats.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,10 +25,11 @@ namespace ecoEats
         private void btnRedefinirSenha_Click(object sender, EventArgs e)
         {
           
-           frmAlterarSenha frm = new frmAlterarSenha();
+           frmAlterarSenha frm = new frmAlterarSenha(true);
            this.Hide();
            frm.FormBorderStyle = FormBorderStyle.Sizable;
-           frm.Show();
+
+            frm.Show();
 
         }
 
@@ -87,5 +89,6 @@ namespace ecoEats
             
             
         }
+       
     }
 }

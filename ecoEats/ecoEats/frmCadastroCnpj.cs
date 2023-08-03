@@ -34,9 +34,9 @@ namespace ecoEats
             string email = txtEmail.Text;
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
-            string dados = rdbConfirmar.Text;
             
-            if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
+            
+            if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
             {
                 if (cnpj == "")
                 {
@@ -141,21 +141,27 @@ namespace ecoEats
                     {
                     MessageBox.Show("Preencha todos os campos!");
                     }
+                if (rdbConfirmar.Checked == false)
+                {
+                    MessageBox.Show("Confirme a veracidade dos dados!");
+                }
             }
             else
             {    
                 if (txtCSenha.Text != txtSenha.Text)
                 {
                     MessageBox.Show("Senhas diferentes!");
-                    BackColor = Color.PaleVioletRed;
+                    txtSenha.BackColor = Color.PaleVioletRed;
+                    txtCSenha.BackColor = Color.PaleVioletRed;
                 }
                 else
                 {
                     MessageBox.Show("Cadastro concluído");
+                    Form home = new frmHome();
+                    home.Show();
+                    this.Hide();
                 }              
-                Form home = new frmHome();
-                home.Show();
-                this.Hide();              
+                             
             }
         }
 
@@ -212,10 +218,7 @@ namespace ecoEats
                 pbCSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
             }
-            if (txtCSenha.Text == txtSenha.Text)
-            {
-                MessageBox.Show("Senha cadastrada");
-            }
+            
         }
 
         private void pbCSenha2_Click(object sender, EventArgs e)

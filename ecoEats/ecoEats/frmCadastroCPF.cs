@@ -37,130 +37,142 @@ namespace ecoEats
             string cep = mskCep.Text;
             string telefone = mskTelefone.Text;
             string email = txtEmail.Text;
-            string confirmar = rdBtnConfirmar.Text;
+           
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
 
-            if (cpf == "")
-            {
-                mskCpf.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                mskCpf.BackColor = Color.White;
-            }
-            if (nome == "")
-            {
-                txtNome.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtNome.BackColor = Color.White;
-            }
-            if (sexo == "")
-            {
-                cmbBxSexo.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                cmbBxSexo.BackColor = Color.White;
-            }
-            if (nascimento == "")
-            {
-                mskNascimento.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                mskNascimento.BackColor = Color.White;
-            }
-            if (uf == "")
-            {
-                txtUf.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtUf.BackColor = Color.White;
-            }
-            if (naturalidade == "")
-            {
-                txtNaturalidade.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtNaturalidade.BackColor = Color.White;
-            }
-            if (endereco == "")
-            {
-                txtEndereco.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtEndereco.BackColor = Color.White;
-            }
-            if (numero == "")
-            {
-                txtNumero.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtNumero.BackColor = Color.White;
-            }
-            if (bairro == "")
-            {
-                txtBairro.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtBairro.BackColor = Color.White;
-            }
-            if (cep == "")
-            {
-                mskCep.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                mskCep.BackColor = Color.White;
-            }
-            if (telefone == "")
-            {
-                mskTelefone.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                mskTelefone.BackColor = Color.White;
-            }
-            if (email == "")
-            {
-                txtEmail.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtEmail.BackColor = Color.White;
-            }
-            if (senha == "")
-            {
-                txtSenha.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtSenha.BackColor = Color.White;
-            }
-            if (confirmarsenha == "")
-            {
-                txtCSenha.BackColor = Color.PaleVioletRed;
-            }
-            else
-            {
-                txtCSenha.BackColor = Color.White;
-            }
+            
 
             if
-                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
+                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdBtnConfirmar.Checked==false)
             {
+                if (cpf == "")
+                {
+                    mskCpf.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    mskCpf.BackColor = Color.White;
+                }
+                if (nome == "")
+                {
+                    txtNome.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtNome.BackColor = Color.White;
+                }
+                if (sexo == "")
+                {
+                    cmbBxSexo.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    cmbBxSexo.BackColor = Color.White;
+                }
+                if (nascimento == "")
+                {
+                    mskNascimento.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    mskNascimento.BackColor = Color.White;
+                }
+                if (uf == "")
+                {
+                    txtUf.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtUf.BackColor = Color.White;
+                }
+                if (naturalidade == "")
+                {
+                    txtNaturalidade.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtNaturalidade.BackColor = Color.White;
+                }
+                if (endereco == "")
+                {
+                    txtEndereco.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtEndereco.BackColor = Color.White;
+                }
+                if (numero == "")
+                {
+                    txtNumero.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtNumero.BackColor = Color.White;
+                }
+                if (bairro == "")
+                {
+                    txtBairro.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtBairro.BackColor = Color.White;
+                }
+                if (cep == "")
+                {
+                    mskCep.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    mskCep.BackColor = Color.White;
+                }
+                if (telefone == "")
+                {
+                    mskTelefone.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    mskTelefone.BackColor = Color.White;
+                }
+                if (email == "")
+                {
+                    txtEmail.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtEmail.BackColor = Color.White;
+                }
+                if (senha == "")
+                {
+                    txtSenha.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtSenha.BackColor = Color.White;
+                }
+                if (confirmarsenha == "")
+                {
+                    txtCSenha.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtCSenha.BackColor = Color.White;
+                }
+                if (rdBtnConfirmar.Checked != true)
+                {
+                    MessageBox.Show("Confirme a veracidade dos dados");
+                }
+                
                 MessageBox.Show("Preencha todos os campos");
             }
-            else
+            else if (senha != confirmarsenha)
             {
+
+                MessageBox.Show("Senhas diferentes!");
+                txtCSenha.BackColor = Color.PaleVioletRed;
+                txtSenha.BackColor = Color.PaleVioletRed;
+            }
+            else{
                 MessageBox.Show("Cadastro concluído!");
                 Form home = new frmHome();
                 home.Show();

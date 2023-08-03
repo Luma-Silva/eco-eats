@@ -138,6 +138,7 @@
             this.Sair.Name = "Sair";
             this.Sair.Size = new System.Drawing.Size(62, 28);
             this.Sair.Text = "Sair";
+            this.Sair.Click += new System.EventHandler(this.Sair_Click);
             // 
             // panelPrincipal
             // 

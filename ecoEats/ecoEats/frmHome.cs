@@ -53,12 +53,19 @@ namespace ecoEats
 
         private void alterarSenha_Click(object sender, EventArgs e)
         {
-            MostraForm(new frmAlterarSenha());
+            MostraForm(new frmAlterarSenha(false));
         }
 
         private void comprarSelo_Click(object sender, EventArgs e)
         {
             MostraForm(new frmPagamento());
+        }
+
+        private void Sair_Click(object sender, EventArgs e)
+        {
+           frmPrincipal frm = new frmPrincipal();
+            this.Hide();
+            frm.Show();
         }
     }
 }

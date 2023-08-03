@@ -12,10 +12,17 @@ namespace ecoEats
 {
     public partial class frmAlterarSenha : Form
     {
-        public frmAlterarSenha()
+    
+        public frmAlterarSenha(bool isLogin)
         {
+      
             InitializeComponent();
+            if (isLogin)
+            {
+                btnVoltar.Visible = true;
+            }
         }
+        
 
         private void frmAlterarInfo_Load(object sender, EventArgs e)
         {
@@ -56,40 +63,70 @@ namespace ecoEats
             string senha1 = txtNsenha.Text;
             string senha2 = txtRsenha.Text;
             bool senhasConferem = (senha1 == senha2);
+            string email = txtEmail.Text;
 
-            if (senhasConferem)
+           
+
+            string confirmasenha = lblConfirm.Text;
+
+           
+            if(senha1 ==""|| senha2 =="" || email == "" )
             {
-                string confirmação = "";
-
-                if (rbtnEmail.Checked)
+                if(senha1 == "")
                 {
-                    confirmação = "Email";
-                    MessageBox.Show("Código de verificação enviado por email");
+                    txtNsenha.BackColor = Color.Red;
                 }
                 else
                 {
-                    confirmação = "celular";
-                    MessageBox.Show("Número de verificação enviado por SMS");
+                    txtNsenha.BackColor = Color.White;
                 }
+                if (senha2 == "")
+                {
+                    txtRsenha.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtRsenha.BackColor = Color.White;
+                }
+                if (email == "")
+                {
+                    txtEmail.BackColor = Color.Red;
+                }
+                else
+                {
+                    txtEmail.BackColor = Color.White;
+                }
+                MessageBox.Show("Preencha todos os campos!");
             }
-            else
-            {
-                MessageBox.Show("As senhas não conferem");
+            else {
+                if (senhasConferem)
+                {
+                    string confirmação = "";
+
+                    if (rbtnEmail.Checked)
+                    {
+                        confirmação = "Email";
+                        MessageBox.Show("Código de verificação enviado por email");
+                    }
+                    else
+                    {
+                        confirmação = "celular";
+                        MessageBox.Show("Número de verificação enviado por SMS");
+                    }
+                    MessageBox.Show("Senha Redefinida :)");
+                }
+                else
+                {
+                    MessageBox.Show("As senhas não conferem");
+                }
+              
             }
+           
 
-            string email = lblEmail.Text;
-
-            string novasenha = lblNSenha.Text;
-
-            string recuperasenha = lblRsenha.Text;
-
-            string confirmasenha = lblConfirm.Text;
+           
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
@@ -114,34 +151,12 @@ namespace ecoEats
 
        
 
-        private void txtRsenha_TextChanged(object sender, EventArgs e)
+
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void rbtnEmail_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbtnCelular_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblConfirm_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            frmLogin frm = new frmLogin();
+            this.Hide();
+            frm.Show();
         }
     }
 }
