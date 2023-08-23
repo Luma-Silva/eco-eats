@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ecoEats
 {
@@ -23,7 +24,7 @@ namespace ecoEats
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-          
+           
 
             string cod = textBoxDigCod.Text;
 
@@ -31,6 +32,15 @@ namespace ecoEats
             {
                 MessageBox.Show("Digite algum código de barras");
                 return;
+            }
+
+            using (MyDbContext db = new MyDbContext())
+            {
+
+                string query = "SELECT * FROM ecoeats.produtos WHERE codigo_barras = "+cod+";";
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query);
+
             }
 
             MessageBox.Show("Código:" + cod);
