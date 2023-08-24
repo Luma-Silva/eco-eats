@@ -62,6 +62,8 @@
             this.pbCSenha = new System.Windows.Forms.PictureBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.gBPrincipal = new System.Windows.Forms.GroupBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.lblCidade = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCSenha)).BeginInit();
             this.gBPrincipal.SuspendLayout();
@@ -73,7 +75,7 @@
             this.lblDados.AutoSize = true;
             this.lblDados.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDados.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDados.Location = new System.Drawing.Point(26, 43);
+            this.lblDados.Location = new System.Drawing.Point(193, 143);
             this.lblDados.Name = "lblDados";
             this.lblDados.Size = new System.Drawing.Size(203, 34);
             this.lblDados.TabIndex = 0;
@@ -85,7 +87,7 @@
             // 
             this.lblCnpj.AutoSize = true;
             this.lblCnpj.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCnpj.Location = new System.Drawing.Point(32, 111);
+            this.lblCnpj.Location = new System.Drawing.Point(199, 211);
             this.lblCnpj.Name = "lblCnpj";
             this.lblCnpj.Size = new System.Drawing.Size(43, 17);
             this.lblCnpj.TabIndex = 1;
@@ -95,7 +97,7 @@
             // 
             this.lblRazao.AutoSize = true;
             this.lblRazao.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazao.Location = new System.Drawing.Point(260, 111);
+            this.lblRazao.Location = new System.Drawing.Point(427, 211);
             this.lblRazao.Name = "lblRazao";
             this.lblRazao.Size = new System.Drawing.Size(88, 17);
             this.lblRazao.TabIndex = 2;
@@ -105,7 +107,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(32, 167);
+            this.lblNome.Location = new System.Drawing.Point(199, 267);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(49, 17);
             this.lblNome.TabIndex = 3;
@@ -115,7 +117,7 @@
             // 
             this.lbLTelefone.AutoSize = true;
             this.lbLTelefone.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLTelefone.Location = new System.Drawing.Point(32, 325);
+            this.lbLTelefone.Location = new System.Drawing.Point(199, 425);
             this.lbLTelefone.Name = "lbLTelefone";
             this.lbLTelefone.Size = new System.Drawing.Size(65, 17);
             this.lbLTelefone.TabIndex = 4;
@@ -125,17 +127,18 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(32, 219);
+            this.lblEndereco.Location = new System.Drawing.Point(199, 319);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(68, 17);
+            this.lblEndereco.Size = new System.Drawing.Size(35, 17);
             this.lblEndereco.TabIndex = 5;
-            this.lblEndereco.Text = "Endereço:";
+            this.lblEndereco.Text = "Rua:";
+            this.lblEndereco.Click += new System.EventHandler(this.lblEndereco_Click);
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(421, 216);
+            this.lblNumero.Location = new System.Drawing.Point(588, 319);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(23, 17);
             this.lblNumero.TabIndex = 6;
@@ -145,7 +148,7 @@
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(514, 216);
+            this.lblBairro.Location = new System.Drawing.Point(681, 319);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(49, 17);
             this.lblBairro.TabIndex = 7;
@@ -155,7 +158,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(266, 325);
+            this.lblEmail.Location = new System.Drawing.Point(433, 425);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 17);
             this.lblEmail.TabIndex = 8;
@@ -165,7 +168,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(36, 378);
+            this.lblSenha.Location = new System.Drawing.Point(203, 478);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 9;
@@ -175,7 +178,7 @@
             // 
             this.lblCep.AutoSize = true;
             this.lblCep.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCep.Location = new System.Drawing.Point(32, 267);
+            this.lblCep.Location = new System.Drawing.Point(199, 367);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(35, 17);
             this.lblCep.TabIndex = 10;
@@ -183,42 +186,42 @@
             // 
             // txtRazao
             // 
-            this.txtRazao.Location = new System.Drawing.Point(354, 111);
+            this.txtRazao.Location = new System.Drawing.Point(521, 211);
             this.txtRazao.Name = "txtRazao";
             this.txtRazao.Size = new System.Drawing.Size(320, 20);
             this.txtRazao.TabIndex = 2;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(92, 167);
+            this.txtName.Location = new System.Drawing.Point(259, 267);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(582, 20);
             this.txtName.TabIndex = 3;
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(106, 216);
+            this.txtEndereco.Location = new System.Drawing.Point(240, 319);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(309, 20);
+            this.txtEndereco.Size = new System.Drawing.Size(342, 20);
             this.txtEndereco.TabIndex = 4;
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(450, 216);
+            this.txtNumero.Location = new System.Drawing.Point(617, 319);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(58, 20);
             this.txtNumero.TabIndex = 5;
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(566, 216);
+            this.txtBairro.Location = new System.Drawing.Point(733, 319);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(108, 20);
             this.txtBairro.TabIndex = 6;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(323, 325);
+            this.txtEmail.Location = new System.Drawing.Point(490, 425);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(351, 20);
             this.txtEmail.TabIndex = 10;
@@ -226,7 +229,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(96, 378);
+            this.txtSenha.Location = new System.Drawing.Point(263, 478);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(169, 20);
@@ -234,7 +237,7 @@
             // 
             // txtCSenha
             // 
-            this.txtCSenha.Location = new System.Drawing.Point(470, 378);
+            this.txtCSenha.Location = new System.Drawing.Point(637, 478);
             this.txtCSenha.Name = "txtCSenha";
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(169, 20);
@@ -242,7 +245,7 @@
             // 
             // mkdTCnpj
             // 
-            this.mkdTCnpj.Location = new System.Drawing.Point(91, 111);
+            this.mkdTCnpj.Location = new System.Drawing.Point(258, 211);
             this.mkdTCnpj.Mask = "00.000.000/0000-00";
             this.mkdTCnpj.Name = "mkdTCnpj";
             this.mkdTCnpj.Size = new System.Drawing.Size(113, 20);
@@ -251,7 +254,7 @@
             // 
             // mkdTTelefone
             // 
-            this.mkdTTelefone.Location = new System.Drawing.Point(103, 325);
+            this.mkdTTelefone.Location = new System.Drawing.Point(270, 425);
             this.mkdTTelefone.Mask = "(00)00000-0000";
             this.mkdTTelefone.Name = "mkdTTelefone";
             this.mkdTTelefone.Size = new System.Drawing.Size(90, 20);
@@ -262,7 +265,7 @@
             // 
             this.lblCSenha.AutoSize = true;
             this.lblCSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCSenha.Location = new System.Drawing.Point(350, 378);
+            this.lblCSenha.Location = new System.Drawing.Point(517, 478);
             this.lblCSenha.Name = "lblCSenha";
             this.lblCSenha.Size = new System.Drawing.Size(114, 17);
             this.lblCSenha.TabIndex = 22;
@@ -270,7 +273,7 @@
             // 
             // mdkTCep
             // 
-            this.mdkTCep.Location = new System.Drawing.Point(73, 267);
+            this.mdkTCep.Location = new System.Drawing.Point(240, 367);
             this.mdkTCep.Mask = "00.000-000";
             this.mdkTCep.Name = "mdkTCep";
             this.mdkTCep.Size = new System.Drawing.Size(80, 20);
@@ -279,7 +282,7 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(245, 267);
+            this.txtEstado.Location = new System.Drawing.Point(812, 367);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(29, 20);
             this.txtEstado.TabIndex = 8;
@@ -288,7 +291,7 @@
             // 
             this.lblUf.AutoSize = true;
             this.lblUf.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUf.Location = new System.Drawing.Point(214, 267);
+            this.lblUf.Location = new System.Drawing.Point(778, 367);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(28, 17);
             this.lblUf.TabIndex = 25;
@@ -298,7 +301,7 @@
             // 
             this.rdbConfirmar.AutoSize = true;
             this.rdbConfirmar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbConfirmar.Location = new System.Drawing.Point(35, 423);
+            this.rdbConfirmar.Location = new System.Drawing.Point(202, 523);
             this.rdbConfirmar.Name = "rdbConfirmar";
             this.rdbConfirmar.Size = new System.Drawing.Size(421, 21);
             this.rdbConfirmar.TabIndex = 26;
@@ -314,7 +317,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(685, 470);
+            this.btnCadastrar.Location = new System.Drawing.Point(717, 559);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(124, 29);
             this.btnCadastrar.TabIndex = 27;
@@ -326,7 +329,7 @@
             // 
             this.pbCSenha2.Image = global::ecoEats.Properties.Resources.hide;
             this.pbCSenha2.InitialImage = null;
-            this.pbCSenha2.Location = new System.Drawing.Point(271, 378);
+            this.pbCSenha2.Location = new System.Drawing.Point(438, 478);
             this.pbCSenha2.Name = "pbCSenha2";
             this.pbCSenha2.Size = new System.Drawing.Size(29, 20);
             this.pbCSenha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -338,7 +341,7 @@
             // 
             this.pbCSenha.Image = global::ecoEats.Properties.Resources.hide;
             this.pbCSenha.InitialImage = global::ecoEats.Properties.Resources.hide;
-            this.pbCSenha.Location = new System.Drawing.Point(645, 378);
+            this.pbCSenha.Location = new System.Drawing.Point(812, 478);
             this.pbCSenha.Name = "pbCSenha";
             this.pbCSenha.Size = new System.Drawing.Size(29, 20);
             this.pbCSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -354,7 +357,7 @@
             this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(39, 470);
+            this.btnVoltar.Location = new System.Drawing.Point(206, 570);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(124, 29);
             this.btnVoltar.TabIndex = 30;
@@ -364,6 +367,8 @@
             // 
             // gBPrincipal
             // 
+            this.gBPrincipal.Controls.Add(this.txtCidade);
+            this.gBPrincipal.Controls.Add(this.lblCidade);
             this.gBPrincipal.Controls.Add(this.txtName);
             this.gBPrincipal.Controls.Add(this.btnVoltar);
             this.gBPrincipal.Controls.Add(this.lblDados);
@@ -394,18 +399,36 @@
             this.gBPrincipal.Controls.Add(this.txtEmail);
             this.gBPrincipal.Controls.Add(this.txtNumero);
             this.gBPrincipal.Controls.Add(this.txtBairro);
-            this.gBPrincipal.Location = new System.Drawing.Point(131, 113);
+            this.gBPrincipal.Location = new System.Drawing.Point(3, 1);
             this.gBPrincipal.Name = "gBPrincipal";
-            this.gBPrincipal.Size = new System.Drawing.Size(824, 554);
+            this.gBPrincipal.Size = new System.Drawing.Size(1115, 790);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
+            this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(442, 367);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(309, 20);
+            this.txtCidade.TabIndex = 32;
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCidade.Location = new System.Drawing.Point(382, 370);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(54, 17);
+            this.lblCidade.TabIndex = 31;
+            this.lblCidade.Text = "Cidade:";
             // 
             // frmCadastroCnpj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1099, 794);
+            this.ClientSize = new System.Drawing.Size(1120, 794);
             this.Controls.Add(this.gBPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastroCnpj";
@@ -452,5 +475,7 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox gBPrincipal;
         public System.Windows.Forms.Label lblDados;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label lblCidade;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ecoEats.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace ecoEats
             string cnpj = mkdTCnpj.Text;
             string razao = txtRazao.Text;
             string nome = txtName.Text;
-            string endereco = txtEndereco.Text;
+            string rua = txtEndereco.Text;
             string numero = txtNumero.Text;
             string bairro = txtBairro.Text;
             string cep = mdkTCep.Text;
@@ -34,9 +35,9 @@ namespace ecoEats
             string email = txtEmail.Text;
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
+            string cidade = txtCidade.Text;
             
-            
-            if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
+            if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == ""|| estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
             {
                 if (cnpj == "")
                 {
@@ -62,7 +63,7 @@ namespace ecoEats
                 {
                     txtName.BackColor = Color.White;
                 }
-                if (endereco == "")
+                if (rua == "")
                 {
                     txtEndereco.BackColor = Color.PaleVioletRed;
                 }
@@ -93,6 +94,14 @@ namespace ecoEats
                 else
                 {
                     mdkTCep.BackColor = Color.White;
+                }
+                if (cidade == "")
+                {
+                    txtCidade.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtCidade.BackColor = Color.White;
                 }
                 if (estado == "")
                 {
@@ -137,7 +146,7 @@ namespace ecoEats
                     txtCSenha.BackColor = Color.White;
 
                 }
-                if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
+                if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
                     {
                     MessageBox.Show("Preencha todos os campos!");
                     }
@@ -163,6 +172,54 @@ namespace ecoEats
                 }              
                              
             }
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+                string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@nome, @email, @telefone, @senha);";
+
+                var parameters = new[]
+
+                {
+
+                    new MySqlParameter("@nome", nome),
+
+                    new MySqlParameter("@email", email),
+
+                    new MySqlParameter("@telefone", telefone),
+
+                    new MySqlParameter("@senha", senha)
+                };
+
+                /*query += @"INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
+
+                var parameters = new[]
+
+                {
+
+                    new MySqlParameter("@cnpj", cnpj),
+
+                    new MySqlParameter("@razao_social", razao),
+
+                    new MySqlParameter("@fk_pj_user", ) 
+                };
+                query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, fk_end_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
+
+                var parameters = new[]
+
+                {
+
+                    new MySqlParameter("@cnpj", cnpj),
+
+                    new MySqlParameter("@razao_social", razao),
+
+                    new MySqlParameter("@fk_pj_user", )
+                };*/
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+
+            }
+
         }
 
         private void txtEmail_Validated(object sender, EventArgs e)
@@ -235,6 +292,16 @@ namespace ecoEats
                 pbCSenha2.Image = Resources.hide;
                 txtSenha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void gBPrincipal_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEndereco_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
