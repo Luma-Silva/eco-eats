@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.MySqlClient;
 
 namespace ecoEats
 {
@@ -21,8 +26,7 @@ namespace ecoEats
         private void frmProduto_Load(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Arial", 14, FontStyle.Regular);
-
+           Font fontePadrao = new Font("Source Code Pro Semibold", 10 ,FontStyle.Regular); 
             // Percorre todos os controles do formulário e aplica a fonte padrão
             AplicarFonteControles(this, fontePadrao);
             // Verifica se o formulário está maximizado
@@ -78,8 +82,9 @@ namespace ecoEats
             string Lote = txtLote.Text;
             string Nome = txtNome.Text;
             string Valor = txtValor.Text;
-            string Categoria = CBCategoria.SelectedItem.ToString();
+            string categoria = CBCategoria.SelectedItem.ToString();
             string descricao = txtDescricao.Text;
+            string score = lblscore.Text;
             //na proxima linha eu fiz uma variavel para aparecer esta mensagem no mensagem boox.show
             // $ este simbolo de cifrão serve para concatenar a mensagem igual ao simbolo de +
             string mensagem = $"Código de Barras: {codigo}\n" +
@@ -88,7 +93,7 @@ namespace ecoEats
 
                               $"Valor: {Valor:C}\n" +
 
-                              $"Categoria do Produto:{Categoria}" +
+                              $"Categoria do Produto:{categoria}" +
 
                               $"Descrição do Produto:{descricao}\n" +
 
@@ -96,13 +101,45 @@ namespace ecoEats
 
                               $"Data de Fabricação: {Fabricacao}\n" +
 
-                              $"Lote: {Lote}\n" ;
+                              $"Lote: {Lote}\n" +
+
+                              $"Score:{score}\n";
 
             //Ao inves do menssage box, jogar para o banco de dados (depois)
             // este MessageBoxButtons serve para eu criar uma caixa com o ok ou cancel
 
             // o messageBoxIcon serve para eu colocar o simbolo de informação na message show
             MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto, score) 
+                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto, @score);";
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@codigo_barras",codigo),
+                    
+                    new MySqlParameter("@nome",Nome),
+
+                    new MySqlParameter("@data_validade",Validade),
+                    new MySqlParameter("@fabricacao" ,Fabricacao),
+                    new MySqlParameter("@valor_produto",Valor),
+                    new MySqlParameter("@descricao", descricao),
+                    new MySqlParameter("@lote",Lote),
+                    new MySqlParameter("@categoria_produto",categoria),
+                    new MySqlParameter("@score",score),
+                   
+
+                };
+
+
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+
+            }
 
 
         }
@@ -123,6 +160,16 @@ namespace ecoEats
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
         {
 
         }
