@@ -8,6 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+
+using System.Data.Entity.ModelConfiguration.Conventions;
+
+using MySql.Data.MySqlClient;
+using System.Xml.Linq;
 
 namespace ecoEats
 {
@@ -57,6 +63,26 @@ namespace ecoEats
                 txtCPF_CNPJ.BackColor = Color.White;
                 txtSenha.BackColor = Color.White;
                 return;
+            }
+            using (MyDbContext db = new MyDbContext())
+            {
+
+                string query = "SELECT u.id, u.nome" +
+                    "FROM  usuarios AS u ";
+                if (documento.Length == 14 || documento.Length==11) {
+                    query += "JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id AND pf.cpf = " +documento+" AND u.senha= "+senha+";" ;
+                    int rowsAffected = db.Database.ExecuteSqlCommand(query);
+
+                }
+                else if (documento.Length == 18 || documento.Length == 14) {
+                    query += "JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id AND pj.cnpj = " +documento+ "AND u.senha= "+senha+";";
+                    int rowsAffected = db.Database.ExecuteSqlCommand(query);
+                }
+                else
+                {
+                    MessageBox.Show("Informações inválidas!");
+                }
+
             }
             MessageBox.Show("login realizado com suscesso!");
             frmHome frm = new frmHome();
