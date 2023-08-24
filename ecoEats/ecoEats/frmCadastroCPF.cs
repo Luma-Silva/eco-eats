@@ -1,4 +1,5 @@
 ﻿using ecoEats.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ecoEats
 {
@@ -37,6 +39,7 @@ namespace ecoEats
             string cep = mskCep.Text;
             string telefone = mskTelefone.Text;
             string email = txtEmail.Text;
+            string cidade = txtCidade.Text;
            
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
@@ -44,7 +47,7 @@ namespace ecoEats
             
 
             if
-                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdBtnConfirmar.Checked==false)
+                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || cidade == "" || rdBtnConfirmar.Checked==false)
             {
                 if (cpf == "")
                 {
@@ -158,12 +161,21 @@ namespace ecoEats
                 {
                     txtCSenha.BackColor = Color.White;
                 }
+                if (cidade == "")
+                {
+                    txtCidade.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtCidade.BackColor = Color.White;
+                }
                 if (rdBtnConfirmar.Checked != true)
                 {
                     MessageBox.Show("Confirme a veracidade dos dados");
                 }
                 
                 MessageBox.Show("Preencha todos os campos");
+
             }
             else if (senha != confirmarsenha)
             {
@@ -177,8 +189,67 @@ namespace ecoEats
                 Form home = new frmHome();
                 home.Show();
                 this.Hide();
-            } 
+            }
+            int fk = 8;
 
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+                /*string query = @"INSERT INTO usuarios (nome, email, telefone,senha) VALUES (@nome, @email, @telefone, @senha);";
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@nome", nome),
+
+                    new MySqlParameter("@email", email),
+
+                    new MySqlParameter("telefone", telefone),
+
+                    new MySqlParameter("senha", senha)
+
+                };*/
+
+
+                 /*query += @"INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES (@cpf, @data_nascimento, @sexo, @fk_pk_user);";
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@cpf", cpf),
+
+                    new MySqlParameter("@data_nascimento", nascimento),
+
+                    new MySqlParameter("@sexo", sexo),
+
+                    new MySqlParameter("fk_pk_user", fk)
+
+                };*/
+
+                 string query = @"INSERT INTO usuarios (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES (@rua, @numero, @cep, @cidade, @bairro, @naturalidade, @uf, @fk_end_user)";
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@rua", endereco),
+
+                    new MySqlParameter("@numero", numero),
+
+                    new MySqlParameter("cep", cep),
+
+                    new MySqlParameter("cidade", cidade),
+
+                    new MySqlParameter("bairro", bairro),
+
+                    new MySqlParameter("naturalidade", naturalidade),
+
+                    new MySqlParameter("uf", uf),
+
+                    new MySqlParameter("fk_end_user", fk)
+
+                };
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+
+            }
         }
 
         private void cmbBxSexo_SelectedIndexChanged(object sender, EventArgs e)
