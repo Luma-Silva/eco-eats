@@ -166,6 +166,8 @@
     <Compile Include="frmPorNome.Designer.cs">
       <DependentUpon>frmPorNome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Selo.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

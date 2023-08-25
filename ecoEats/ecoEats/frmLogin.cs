@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using ecoEats.Models;
 
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -67,16 +68,22 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
 
-                string query = "SELECT u.id, u.nome" +
-                    "FROM  usuarios AS u ";
-                if (documento.Length == 14 || documento.Length==11) {
-                    query += "JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id AND pf.cpf = " +documento+" AND u.senha= "+senha+";" ;
+                string query;
+                if (documento.Length==11) {
+                    query = "SELECT u.id , u.nome " +
+                    "FROM  usuarios AS u "+
+                    "JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf = " +documento+" AND u.senha= "+senha+";" ;
                     int rowsAffected = db.Database.ExecuteSqlCommand(query);
+                    List<Usuario> usuarios = db.Database.SqlQuery<Usuario>(query).ToList();
+
 
                 }
-                else if (documento.Length == 18 || documento.Length == 14) {
-                    query += "JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id AND pj.cnpj = " +documento+ "AND u.senha= "+senha+";";
+                else if (documento.Length == 14) {
+                    query = "SELECT u.id , u.nome " +
+                            "FROM  usuarios AS u " +
+                            "JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj = " +documento+ "AND u.senha= "+senha+";";
                     int rowsAffected = db.Database.ExecuteSqlCommand(query);
+                    List<Usuario> usuarios = db.Database.SqlQuery<Usuario>(query).ToList();
                 }
                 else
                 {
@@ -84,7 +91,8 @@ namespace ecoEats
                 }
 
             }
-            MessageBox.Show("login realizado com suscesso!");
+           // MessageBox.Show("login realizado com suscesso!");
+
             frmHome frm = new frmHome();
             this.Hide();
             frm.Show();
