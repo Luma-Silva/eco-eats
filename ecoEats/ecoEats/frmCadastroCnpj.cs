@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using ecoEats.Models;
 
 namespace ecoEats
 {
@@ -176,20 +177,21 @@ namespace ecoEats
 
             {
 
-                string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@nome, @email, @telefone, @senha);";
+                string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha);";
 
                 var parameters = new[]
 
                 {
 
-                    new MySqlParameter("@nome", nome),
+                    new MySqlParameter("@pnome", nome),
 
-                    new MySqlParameter("@email", email),
+                    new MySqlParameter("@pemail", email),
 
-                    new MySqlParameter("@telefone", telefone),
+                    new MySqlParameter("@ptelefone", telefone),
 
-                    new MySqlParameter("@senha", senha)
+                    new MySqlParameter("@psenha", senha)
                 };
+
 
                 /*query += @"INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
 
@@ -203,17 +205,24 @@ namespace ecoEats
 
                     new MySqlParameter("@fk_pj_user", ) 
                 };
-                query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, fk_end_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
+                
+                query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, fk_end_user) VALUES (@prua, @pnumero, @pcep, @cidade, @pbairro, fk_end_user);";
 
                 var parameters = new[]
 
                 {
 
-                    new MySqlParameter("@cnpj", cnpj),
+                    new MySqlParameter("@prua", rua),
 
-                    new MySqlParameter("@razao_social", razao),
+                    new MySqlParameter("@pnumero", numero),
 
-                    new MySqlParameter("@fk_pj_user", )
+                    new MySqlParameter("@pcep", cep),
+
+                    new MySqlParameter("@pcidade", cidade),
+                    
+                    new MySqlParameter("@pbairro", bairro),
+                  
+                    new MySqlParameter("fk_end_user
                 };*/
 
                 int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
