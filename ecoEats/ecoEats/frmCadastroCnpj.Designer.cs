@@ -132,7 +132,6 @@
             this.lblEndereco.Size = new System.Drawing.Size(35, 17);
             this.lblEndereco.TabIndex = 5;
             this.lblEndereco.Text = "Rua:";
-            this.lblEndereco.Click += new System.EventHandler(this.lblEndereco_Click);
             // 
             // lblNumero
             // 
@@ -404,7 +403,6 @@
             this.gBPrincipal.Size = new System.Drawing.Size(1115, 790);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
-            this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
             // 
             // txtCidade
             // 

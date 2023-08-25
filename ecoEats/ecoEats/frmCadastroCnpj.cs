@@ -13,6 +13,9 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using ecoEats.Models;
+using Org.BouncyCastle.Utilities.Collections;
+using System.Data.Entity.Migrations.Model;
+using System.Data.Entity;
 
 namespace ecoEats
 {
@@ -170,15 +173,18 @@ namespace ecoEats
                     Form home = new frmHome();
                     home.Show();
                     this.Hide();
-                }              
-                             
+                }
+                           
             }
             using (MyDbContext db = new MyDbContext())
 
             {
+                int fk = 9;
+
+
+
 
                 string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha);";
-
                 var parameters = new[]
 
                 {
@@ -192,10 +198,8 @@ namespace ecoEats
                     new MySqlParameter("@psenha", senha)
                 };
 
-
-                /*query += @"INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
-
-                var parameters = new[]
+                query += @"INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
+                var parameters1 = new[]
 
                 {
 
@@ -203,12 +207,10 @@ namespace ecoEats
 
                     new MySqlParameter("@razao_social", razao),
 
-                    new MySqlParameter("@fk_pj_user", ) 
+                    new MySqlParameter("@fk_pj_user", fk ) 
                 };
-                
                 query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, fk_end_user) VALUES (@prua, @pnumero, @pcep, @cidade, @pbairro, fk_end_user);";
-
-                var parameters = new[]
+                var parameters2 = new[]
 
                 {
 
@@ -222,13 +224,14 @@ namespace ecoEats
                     
                     new MySqlParameter("@pbairro", bairro),
                   
-                    new MySqlParameter("fk_end_user
-                };*/
+                    new MySqlParameter("fk_end_user", fk )
+                };
+
+                
 
                 int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
 
             }
-
         }
 
         private void txtEmail_Validated(object sender, EventArgs e)
