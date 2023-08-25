@@ -65,7 +65,10 @@ namespace ecoEats
             {
 
                 MessageBox.Show("O Nome do Produto é obrigatório.", "Campo Obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // o return sai do erro e segue o programa 
+                txtNome.BackColor = Color.Red;
+                return;
+                // o return sai do erro e segue o programa 
+
 
 
             }
@@ -73,11 +76,13 @@ namespace ecoEats
             {
 
                 MessageBox.Show("O Codigo do Produto é  obrigatório.", "Campo Obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCodigo.BackColor = Color.Red;
                 return;
             }
-            //estou declarando as variaveis para elas ficarem salvas no Botão salvar
-            String Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
-            String Fabricacao = DTPFabricacao.Value.ToString("yyyy-MM-dd");
+           
+                        //estou declarando as variaveis para elas ficarem salvas no Botão salvar
+                string Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
+            string Fabricacao = DTPFabricacao.Value.ToString("yyyy-MM-dd");
             string codigo = txtCodigo.Text;
             string Lote = txtLote.Text;
             string Nome = txtNome.Text;
