@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using ecoEats.Models;
 
 namespace ecoEats
 {
@@ -30,7 +31,10 @@ namespace ecoEats
             string cpf = mskCpf.Text;
             string nome = txtNome.Text;
             string sexo = cmbBxSexo.Text;
-            string nascimento = mskNascimento.Text;
+            string nascimento = dpNascimento.Value.ToString("yyyy-MM-dd");
+            DateTime today = DateTime.Now;
+            DateTime dataNascimento = dpNascimento.Value;
+            int age = (int)((today - dataNascimento).TotalDays / 365.25);
             string uf = txtUf.Text;
             string naturalidade = txtNaturalidade.Text;
             string endereco = txtEndereco.Text;
@@ -75,11 +79,11 @@ namespace ecoEats
                 }
                 if (nascimento == "")
                 {
-                    mskNascimento.BackColor = Color.PaleVioletRed;
+                    dpNascimento.BackColor = Color.PaleVioletRed;
                 }
                 else
                 {
-                    mskNascimento.BackColor = Color.White;
+                    dpNascimento.BackColor = Color.White;
                 }
                 if (uf == "")
                 {
@@ -196,57 +200,58 @@ namespace ecoEats
 
             {
 
-                /*string query = @"INSERT INTO usuarios (nome, email, telefone,senha) VALUES (@nome, @email, @telefone, @senha);";
+                /*string query = @"INSERT INTO usuarios (nome, email, telefone,senha) VALUES (@pnome, @pemail, @ptelefone, @psenha);";
                 var parameters = new[]
                 {
 
-                    new MySqlParameter("@nome", nome),
+                    new MySqlParameter("@pnome", nome),
 
-                    new MySqlParameter("@email", email),
+                    new MySqlParameter("@pemail", email),
 
-                    new MySqlParameter("telefone", telefone),
+                    new MySqlParameter("@ptelefone", telefone),
 
-                    new MySqlParameter("senha", senha)
+                    new MySqlParameter("@psenha", senha)
 
                 };*/
 
 
-                 /*query += @"INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES (@cpf, @data_nascimento, @sexo, @fk_pk_user);";
+                 string query = @"INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES (@pcpf, @pdata_nascimento, @psexo, @pfk_pk_user)";
                 var parameters = new[]
                 {
 
-                    new MySqlParameter("@cpf", cpf),
+                    new MySqlParameter("@pcpf", cpf),
 
-                    new MySqlParameter("@data_nascimento", nascimento),
+                    new MySqlParameter("@pdata_nascimento", nascimento),
 
-                    new MySqlParameter("@sexo", sexo),
+                    new MySqlParameter("@psexo", sexo),
 
-                    new MySqlParameter("fk_pk_user", fk)
-
-                };*/
-
-                 string query = @"INSERT INTO usuarios (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES (@rua, @numero, @cep, @cidade, @bairro, @naturalidade, @uf, @fk_end_user)";
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@rua", endereco),
-
-                    new MySqlParameter("@numero", numero),
-
-                    new MySqlParameter("cep", cep),
-
-                    new MySqlParameter("cidade", cidade),
-
-                    new MySqlParameter("bairro", bairro),
-
-                    new MySqlParameter("naturalidade", naturalidade),
-
-                    new MySqlParameter("uf", uf),
-
-                    new MySqlParameter("fk_end_user", fk)
+                    new MySqlParameter("@pfk_pk_user", fk)
 
                 };
 
+                /*(query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES (@prua, @pnumero, @pcep, @pcidade, @pbairro, @pnaturalidade, @puf, @pfk_end_user);";
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@prua", endereco),
+
+                    new MySqlParameter("@pnumero", numero),
+
+                    new MySqlParameter("@pcep", cep),
+
+                    new MySqlParameter("@pcidade", cidade),
+
+                    new MySqlParameter("@pbairro", bairro),
+
+                    new MySqlParameter("@pnaturalidade", naturalidade),
+
+                    new MySqlParameter("@puf", uf),
+
+                    new MySqlParameter("@pfk_end_user", fk)
+
+                };*/
+
+                
                 int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
 
             }
