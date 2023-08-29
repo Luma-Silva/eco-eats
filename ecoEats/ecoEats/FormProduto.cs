@@ -23,62 +23,9 @@ namespace ecoEats
         {
             InitializeComponent();
 
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = "SELECT * FROM produtos;";
-
-                List<Produto> produtos = db.Database.SqlQuery<Produto>(query).ToList();
-
-                dgvProduto.DataSource = produtos;
-
-            }
 
 
 
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = "SELECT * FROM impactos_ambientais;";
-
-                List<ImpactoAmbientais> impactos_ambientais = db.Database.SqlQuery<ImpactoAmbientais>(query).ToList();
-
-                dgvProduto.DataSource = impactos_ambientais;
-
-
-            }
-
-
-
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = "SELECT * FROM p_alternativos;";
-
-                List<Palternativos> p_alternativos = db.Database.SqlQuery<Palternativos>(query).ToList();
-
-                dgvProduto.DataSource = p_alternativos;
-
-
-            }
-
-
-
-
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = "SELECT * FROM valores_nutricionais;";
-
-                List<ValoresNutricionais> valores_nutricionais = db.Database.SqlQuery<ValoresNutricionais>(query).ToList();
-
-                dgvProduto.DataSource = valores_nutricionais;
-
-            }
 
 
 
