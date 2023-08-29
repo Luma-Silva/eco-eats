@@ -116,12 +116,27 @@ namespace ecoEats
             // o messageBoxIcon serve para eu colocar o simbolo de informação na message show
             MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             using (MyDbContext db = new MyDbContext())
 
             {
 
                 string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto, score) 
-                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto, @score);";
+                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto, @score); SELECT LAST_INSERT_ID();";
                 var parameters = new[]
                 {
 
@@ -165,16 +180,6 @@ namespace ecoEats
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
         {
 
         }

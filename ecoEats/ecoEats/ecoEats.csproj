@@ -112,6 +112,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlterarInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,16 +172,16 @@
     <Compile Include="frmPorNome.Designer.cs">
       <DependentUpon>frmPorNome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\FormProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Models\FormProduto.Designer.cs">
-      <DependentUpon>FormProduto.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Models\ImpactoAmbientais.cs" />
+    <Compile Include="Models\Palternativos.cs" />
     <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ValoresNutricionais.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormProduto.resx">
+      <DependentUpon>FormProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlterarInfo.resx">
       <DependentUpon>frmAlterarInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,9 +208,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPorNome.resx">
       <DependentUpon>frmPorNome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Models\FormProduto.resx">
-      <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

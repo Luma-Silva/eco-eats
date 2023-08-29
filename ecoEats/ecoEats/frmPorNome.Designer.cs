@@ -226,7 +226,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1022, 539);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblscore
             // 
@@ -248,7 +248,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Nome do Produto:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -345,7 +344,6 @@
             this.Name = "frmPorNome";
             this.Text = "Cadastro do Produto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmProduto_Load);
             this.Resize += new System.EventHandler(this.frmProduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
