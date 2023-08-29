@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using ecoEats.Models;
 
 namespace ecoEats
 {
     public partial class frmHome : Form
     {
-        public frmHome()
+        int userid;
+        public frmHome(int userid)
         {
+            this.userid= userid;
             InitializeComponent();
         }
         private Form frmAtivo;
@@ -67,5 +71,20 @@ namespace ecoEats
             this.Hide();
             frm.Show();
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            using (MyDbContext db = new MyDbContext())
+            {
+
+                string query;
+                query = "SELECT u.nome FROM usuarios AS u WHERE u.id =" + this.userid + ";";
+                string username = db.Database.SqlQuery<string>(query).Single();
+                menuUser.Text="Olá!,"+username;
+
+
+
+                }
+            }
     }
 }

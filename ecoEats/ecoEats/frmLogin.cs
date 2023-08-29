@@ -65,25 +65,37 @@ namespace ecoEats
                 txtSenha.BackColor = Color.White;
                 return;
             }
+            
+
+
             using (MyDbContext db = new MyDbContext())
             {
-
+               
                 string query;
-                if (documento.Length==11) {
-                    query = "SELECT u.id , u.nome " +
-                    "FROM  usuarios AS u "+
-                    "JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf = " +documento+" AND u.senha= "+senha+";" ;
-                    int rowsAffected = db.Database.ExecuteSqlCommand(query);
-                    List<Usuario> usuarios = db.Database.SqlQuery<Usuario>(query).ToList();
+                if (documento.Length==11 || documento.Length == 14) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf ='"+documento+"'  AND u.senha ='"+senha+"';";
+      
+                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    MessageBox.Show("login realizado com suscesso!");
+                    MessageBox.Show(IdUser.ToString());
+
+                    frmHome frm = new frmHome(IdUser);
+                    this.Hide();
+                    frm.Show();
+
 
 
                 }
-                else if (documento.Length == 14) {
-                    query = "SELECT u.id , u.nome " +
-                            "FROM  usuarios AS u " +
-                            "JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj = " +documento+ "AND u.senha= "+senha+";";
-                    int rowsAffected = db.Database.ExecuteSqlCommand(query);
-                    List<Usuario> usuarios = db.Database.SqlQuery<Usuario>(query).ToList();
+                else if (documento.Length == 18 || documento.Length == 14) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "';";
+
+                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    MessageBox.Show("login realizado com suscesso!");
+                    MessageBox.Show(IdUser.ToString());
+
+                    frmHome frm = new frmHome(IdUser);
+                    this.Hide();
+                    frm.Show();
                 }
                 else
                 {
@@ -91,11 +103,6 @@ namespace ecoEats
                 }
 
             }
-           // MessageBox.Show("login realizado com suscesso!");
-
-            frmHome frm = new frmHome();
-            this.Hide();
-            frm.Show();
 
         }
 
