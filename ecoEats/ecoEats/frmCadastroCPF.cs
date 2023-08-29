@@ -188,73 +188,47 @@ namespace ecoEats
                 txtCSenha.BackColor = Color.PaleVioletRed;
                 txtSenha.BackColor = Color.PaleVioletRed;
             }
-            else{
-                MessageBox.Show("Cadastro concluído!");
-                Form home = new frmHome();
-                home.Show();
-                this.Hide();
-            }
-            int fk = 8;
-
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                /*string query = @"INSERT INTO usuarios (nome, email, telefone,senha) VALUES (@pnome, @pemail, @ptelefone, @psenha);";
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@pnome", nome),
-
-                    new MySqlParameter("@pemail", email),
-
-                    new MySqlParameter("@ptelefone", telefone),
-
-                    new MySqlParameter("@psenha", senha)
-
-                };*/
-
-
-                 string query = @"INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES (@pcpf, @pdata_nascimento, @psexo, @pfk_pk_user)";
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@pcpf", cpf),
-
-                    new MySqlParameter("@pdata_nascimento", nascimento),
-
-                    new MySqlParameter("@psexo", sexo),
-
-                    new MySqlParameter("@pfk_pk_user", fk)
-
-                };
-
-                /*(query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES (@prua, @pnumero, @pcep, @pcidade, @pbairro, @pnaturalidade, @puf, @pfk_end_user);";
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@prua", endereco),
-
-                    new MySqlParameter("@pnumero", numero),
-
-                    new MySqlParameter("@pcep", cep),
-
-                    new MySqlParameter("@pcidade", cidade),
-
-                    new MySqlParameter("@pbairro", bairro),
-
-                    new MySqlParameter("@pnaturalidade", naturalidade),
-
-                    new MySqlParameter("@puf", uf),
-
-                    new MySqlParameter("@pfk_end_user", fk)
-
-                };*/
-
+            else{                
                 
-                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+                using (MyDbContext db = new MyDbContext())
+
+                {
+
+                    string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha); SELECT LAST_INSERT_ID();";
+                    var parameters = new[]
+
+                    {
+
+                     new MySqlParameter("@pnome", nome),
+
+                     new MySqlParameter("@pemail", email),
+
+                     new MySqlParameter("@ptelefone", telefone),
+
+                     new MySqlParameter("@psenha", senha)
+
+                    };
+
+                    int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
+
+                    MessageBox.Show(newUserId.ToString());
+
+                    query = "INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES ('"+cpf+"', '"+nascimento+"', '"+sexo+"', '"+newUserId+"');";                                     
+                    
+                    db.Database.SqlQuery<int>(query, parameters).Single();
+
+
+                    query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES ('"+endereco+"', '"+numero+"', '"+cep+"', '"+cidade+"', '"+bairro+"', '"+naturalidade+"','"+uf+"', '"+newUserId+"');";                  
+                    
+                    db.Database.SqlQuery<int>(query, parameters).Single();
+                    MessageBox.Show("Cadastro concluído!");
+                    frmHome frm = new frmHome(newUserId);
+                    this.Hide();
+                    frm.Show();
+                }
 
             }
+                        
         }
 
         private void cmbBxSexo_SelectedIndexChanged(object sender, EventArgs e)

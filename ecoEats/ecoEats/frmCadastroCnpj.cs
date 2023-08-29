@@ -157,9 +157,9 @@ namespace ecoEats
                 else
                 {
                     MessageBox.Show("Cadastro concluído");
-                    Form home = new frmHome();
-                    home.Show();
-                    this.Hide();
+                   // Form home = new frmHome();
+                   // home.Show();
+                   // this.Hide();
                 }              
                              
             }
