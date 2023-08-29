@@ -59,9 +59,9 @@ namespace ecoEats
                 return;
             }
             MessageBox.Show("login realizado com suscesso!");
-            frmHome frm = new frmHome();
+            /*frmHome frm = new frmHome();
             this.Hide();
-            frm.Show();
+            frm.Show();*/
 
         }
 

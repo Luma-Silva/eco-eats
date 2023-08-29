@@ -12,7 +12,7 @@ namespace ecoEats
 {
     public partial class frmHome : Form
     {
-        public frmHome()
+        public frmHome(int userId)
         {
             InitializeComponent();
         }
@@ -66,6 +66,11 @@ namespace ecoEats
            frmPrincipal frm = new frmPrincipal();
             this.Hide();
             frm.Show();
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

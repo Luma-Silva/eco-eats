@@ -41,6 +41,7 @@ namespace ecoEats
             string confirmarsenha = txtCSenha.Text;
             string cidade = txtCidade.Text;
             
+
             if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == ""|| estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
             {
                 if (cnpj == "")
@@ -169,26 +170,13 @@ namespace ecoEats
                 }
                 else
                 {
-                    MessageBox.Show("Cadastro concluído");
-                    Form home = new frmHome();
-                    home.Show();
-                    this.Hide();
-                }
-                           
-            }
-            using (MyDbContext db = new MyDbContext())
+                  using (MyDbContext db = new MyDbContext())
 
-            {
-                int fk = 9;
+                  {
+                  string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha); SELECT LAST_INSERT_ID();";
+                  var parameters = new[]
 
-
-
-
-                string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha);";
-                var parameters = new[]
-
-                {
-
+                  {
                     new MySqlParameter("@pnome", nome),
 
                     new MySqlParameter("@pemail", email),
@@ -196,42 +184,24 @@ namespace ecoEats
                     new MySqlParameter("@ptelefone", telefone),
 
                     new MySqlParameter("@psenha", senha)
-                };
+                  };
+                  int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
 
-                query += @"INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES (@cnpj, @razao_social, fk_pj_user);";
-                var parameters1 = new[]
+                        query = "INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES ('" + cnpj + "', '" + razao + "', " + newUserId + ");";
 
-                {
+                        db.Database.ExecuteSqlCommand(query);
 
-                    new MySqlParameter("@cnpj", cnpj),
+                        query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, uf, fk_end_user) VALUES ('" + rua + "', '" + numero + "', '" + cep + "', '" + cidade + "', '" + bairro + "', '" + estado + "', " + newUserId + ");";
 
-                    new MySqlParameter("@razao_social", razao),
-
-                    new MySqlParameter("@fk_pj_user", fk ) 
-                };
-                query += @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, fk_end_user) VALUES (@prua, @pnumero, @pcep, @cidade, @pbairro, fk_end_user);";
-                var parameters2 = new[]
-
-                {
-
-                    new MySqlParameter("@prua", rua),
-
-                    new MySqlParameter("@pnumero", numero),
-
-                    new MySqlParameter("@pcep", cep),
-
-                    new MySqlParameter("@pcidade", cidade),
-                    
-                    new MySqlParameter("@pbairro", bairro),
+                        db.Database.ExecuteSqlCommand(query);
+                        MessageBox.Show("Cadastro concluído");
+                        frmHome frm = new frmHome(newUserId);
+                        this.Hide();
+                        frm.Show();
+                  }
                   
-                    new MySqlParameter("fk_end_user", fk )
-                };
-
-                
-
-                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
-
-            }
+                }                          
+            }            
         }
 
         private void txtEmail_Validated(object sender, EventArgs e)
@@ -304,16 +274,6 @@ namespace ecoEats
                 pbCSenha2.Image = Resources.hide;
                 txtSenha.UseSystemPasswordChar = false;
             }
-        }
-
-        private void gBPrincipal_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEndereco_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
