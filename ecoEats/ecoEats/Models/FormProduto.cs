@@ -37,5 +37,22 @@ namespace ecoEats.Models
         {
             
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+                string query = "SELECT * FROM ecoeats.produtos;";
+
+               // List<FormProduto> produto = db.Database.SqlQuery<Produto>(query).ToList (0);
+
+                //dGVProduto.DataSource = produto;
+
+
+            }
+        }
     }
 }
