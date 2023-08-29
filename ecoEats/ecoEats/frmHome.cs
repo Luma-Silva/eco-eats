@@ -58,7 +58,7 @@ namespace ecoEats
 
         private void comprarSelo_Click(object sender, EventArgs e)
         {
-            MostraForm(new frmPagamento());
+            MostraForm(new frmPagamento(2));
         }
 
         private void Sair_Click(object sender, EventArgs e)
