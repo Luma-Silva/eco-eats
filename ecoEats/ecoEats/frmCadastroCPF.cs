@@ -210,17 +210,16 @@ namespace ecoEats
                     };
 
                     int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
+                
 
-                    MessageBox.Show(newUserId.ToString());
-
-                    query = "INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES ('"+cpf+"', '"+nascimento+"', '"+sexo+"', '"+newUserId+"');";                                     
+                   query = "INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES ('"+cpf+"', '"+nascimento+"', '"+sexo+"', "+newUserId+");";                                     
                     
-                    db.Database.SqlQuery<int>(query, parameters).Single();
+                    db.Database.ExecuteSqlCommand(query);
 
 
-                    query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES ('"+endereco+"', '"+numero+"', '"+cep+"', '"+cidade+"', '"+bairro+"', '"+naturalidade+"','"+uf+"', '"+newUserId+"');";                  
+                  query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES ('"+endereco+"', '"+numero+"', '"+cep+"', '"+cidade+"', '"+bairro+"', '"+naturalidade+"','"+uf+"', "+newUserId+");";                  
                     
-                    db.Database.SqlQuery<int>(query, parameters).Single();
+                    db.Database.ExecuteSqlCommand(query);
                     MessageBox.Show("Cadastro concluído!");
                     frmHome frm = new frmHome(newUserId);
                     this.Hide();
