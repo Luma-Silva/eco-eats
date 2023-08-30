@@ -157,7 +157,7 @@ namespace ecoEats
 
 
 
-                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+                int produtoId = db.Database.SqlQuery<int>(query, parameters).Single();
 
             }
 

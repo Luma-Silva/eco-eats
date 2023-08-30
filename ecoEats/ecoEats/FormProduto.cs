@@ -22,23 +22,12 @@ namespace ecoEats
         public FormProduto()
         {
             InitializeComponent();
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
         private void FormProduto_Load(object sender, EventArgs e)
         {
 
         }
+      
     }
 }
