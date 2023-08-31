@@ -12,7 +12,6 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using MySql.Data.MySqlClient;
 
 namespace ecoEats
 {

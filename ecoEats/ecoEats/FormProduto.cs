@@ -35,12 +35,14 @@ namespace ecoEats
                 query = "SELECT p.codigo_barras, p.nome, COALESCE(p.data_validade, 'N/A'),COALESCE(p.fabricacao, 'N/A'),COALESCE(p.valor_produto, 'N/A'),COALESCE(p.descricao, 'N/A'),COALESCE(p.lote, 'N/A'),COALESCE(p.categoria_produto, 'N/A') FROM produtos AS p WHERE p.id =" + this.prodId + ";";
                 List<Produto> produto = db.Database.SqlQuery<Produto>(query).ToList();
 
-                foreach (Produto p in produto) {
-                 
-                 
-                    if (p.fabricacao == null || p.data_validade==null || p.valor_produto==0 || p.descricao==null || p.lote==null || p.categoria_produto==null )
+                foreach (Produto p in produto)
+                {
+
+
+                    if (p.fabricacao == null || p.data_validade == null || p.valor_produto == 0 || p.descricao == null || p.lote == null || p.categoria_produto == null)
                     {
-                        if (p.fabricacao == null) {
+                        if (p.fabricacao == null)
+                        {
                             p.fabricacao = "N/A";
                         }
                         if (p.data_validade == null)
@@ -63,13 +65,13 @@ namespace ecoEats
                         {
                             p.categoria_produto = "N/A";
                         }
-                       
-                            lCod.Text = p.codigo_barras;
-                            lCategoria.Text = p.categoria_produto;
-                            lDescricao.Text = p.descricao;
-                            lFab.Text = p.fabricacao.ToString();
-                            lLote.Text = p.lote;
-                            lPreco.Text = p.valor_produto.ToString();
+
+                        lCod.Text = p.codigo_barras;
+                        lCategoria.Text = p.categoria_produto;
+                        lDescricao.Text = p.descricao;
+                        lFab.Text = p.fabricacao.ToString();
+                        lLote.Text = p.lote;
+                        lPreco.Text = p.valor_produto.ToString();
                         lValidade.Text = p.data_validade.ToString();
                     }
                     else
@@ -83,34 +85,68 @@ namespace ecoEats
                         lValidade.Text = p.data_validade.ToString();
 
                     }
-                   
+
 
                 }
-                
-               string  queryImpacto = "SELECT i.carbono, i.cultivo, i.embalagem, i.perdas, i.impacto, i.agua FROM impactos_ambientais AS i WHERE i.fk_impact_prod =" + this.prodId + ";";
-                List<ImpactoAmbiental> impactos = db.Database.SqlQuery<ImpactoAmbiental>(queryImpacto).ToList();
-                foreach(ImpactoAmbiental i in impactos)
-                {
-                    lImpacto.Text = i.impacto.ToString();
-                    lAgua.Text = i.agua.ToString();
-                    lCarbono.Text=i.carbono.ToString();
-                    lCultivo.Text=i.cultivo.ToString();
-                    lEmbalagem.Text=i.embalagem.ToString();
-                    lPerdas.Text=i.perdas.ToString();
 
+                string queryImpacto = "SELECT i.carbono, i.cultivo, i.embalagem, i.perdas, i.impacto, i.agua FROM impactos_ambientais AS i WHERE i.fk_impact_prod =" + this.prodId + ";";
+                List<ImpactoAmbiental> impactos = db.Database.SqlQuery<ImpactoAmbiental>(queryImpacto).ToList();
+                foreach (ImpactoAmbiental i in impactos)
+                {
+                    if (i.carbono == null || i.cultivo == null || i.embalagem == null || i.perdas == null || i.impacto == null || i.agua == null)
+                    {
+
+                        if (i.carbono == null)
+                        {
+                            i.carbono = "N/A";
+                        }
+                        if (i.cultivo == null)
+                        {
+                            i.cultivo = "N/A";
+                        }
+                        if (i.embalagem == null)
+                        {
+                            i.embalagem = "N/A";
+                        }
+                        if (i.perdas == null)
+                        {
+                            i.perdas = "N/A";
+                        }
+                        if (i.impacto == null)
+                        {
+                            i.impacto = "N/A";
+                        }
+                        if (i.agua == null)
+                        {
+                            i.agua = "N/A";
+                        }
+                        lImpacto.Text = i.impacto.ToString();
+                        lAgua.Text = i.agua.ToString();
+                        lCarbono.Text = i.carbono.ToString();
+                        lCultivo.Text = i.cultivo.ToString();
+                        lEmbalagem.Text = i.embalagem.ToString();
+                        lPerdas.Text = i.perdas.ToString();
+                    }
+
+                    else
+                    {
+                        lImpacto.Text = i.impacto.ToString();
+                        lAgua.Text = i.agua.ToString();
+                        lCarbono.Text = i.carbono.ToString();
+                        lCultivo.Text = i.cultivo.ToString();
+                        lEmbalagem.Text = i.embalagem.ToString();
+                        lPerdas.Text = i.perdas.ToString();
 
                     }
-                }
-            
 
+                }
             }
+        }
 
         private void label10_Click(object sender, EventArgs e)
         {
 
         }
     }
-
-      
-    }
+}
 

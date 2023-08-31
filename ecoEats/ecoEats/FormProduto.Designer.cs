@@ -34,6 +34,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lAgua = new System.Windows.Forms.Label();
+            this.lImpacto = new System.Windows.Forms.Label();
+            this.lPerdas = new System.Windows.Forms.Label();
+            this.lEmbalagem = new System.Windows.Forms.Label();
+            this.lCultivo = new System.Windows.Forms.Label();
+            this.lCarbono = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lFab = new System.Windows.Forms.Label();
             this.lValidade = new System.Windows.Forms.Label();
@@ -50,19 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.aa = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.test = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lCarbono = new System.Windows.Forms.Label();
-            this.lCultivo = new System.Windows.Forms.Label();
-            this.lEmbalagem = new System.Windows.Forms.Label();
-            this.lPerdas = new System.Windows.Forms.Label();
-            this.lImpacto = new System.Windows.Forms.Label();
-            this.lAgua = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picSelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScore)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,6 +144,133 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 339);
             this.panel1.TabIndex = 14;
+            // 
+            // lAgua
+            // 
+            this.lAgua.AutoSize = true;
+            this.lAgua.BackColor = System.Drawing.Color.Transparent;
+            this.lAgua.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAgua.Location = new System.Drawing.Point(131, 278);
+            this.lAgua.Name = "lAgua";
+            this.lAgua.Size = new System.Drawing.Size(0, 18);
+            this.lAgua.TabIndex = 33;
+            // 
+            // lImpacto
+            // 
+            this.lImpacto.AutoSize = true;
+            this.lImpacto.BackColor = System.Drawing.Color.Transparent;
+            this.lImpacto.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lImpacto.Location = new System.Drawing.Point(158, 233);
+            this.lImpacto.Name = "lImpacto";
+            this.lImpacto.Size = new System.Drawing.Size(0, 18);
+            this.lImpacto.TabIndex = 32;
+            // 
+            // lPerdas
+            // 
+            this.lPerdas.AutoSize = true;
+            this.lPerdas.BackColor = System.Drawing.Color.Transparent;
+            this.lPerdas.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPerdas.Location = new System.Drawing.Point(136, 194);
+            this.lPerdas.Name = "lPerdas";
+            this.lPerdas.Size = new System.Drawing.Size(0, 18);
+            this.lPerdas.TabIndex = 31;
+            // 
+            // lEmbalagem
+            // 
+            this.lEmbalagem.AutoSize = true;
+            this.lEmbalagem.BackColor = System.Drawing.Color.Transparent;
+            this.lEmbalagem.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEmbalagem.Location = new System.Drawing.Point(118, 157);
+            this.lEmbalagem.Name = "lEmbalagem";
+            this.lEmbalagem.Size = new System.Drawing.Size(0, 18);
+            this.lEmbalagem.TabIndex = 30;
+            // 
+            // lCultivo
+            // 
+            this.lCultivo.AutoSize = true;
+            this.lCultivo.BackColor = System.Drawing.Color.Transparent;
+            this.lCultivo.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lCultivo.Location = new System.Drawing.Point(104, 111);
+            this.lCultivo.Name = "lCultivo";
+            this.lCultivo.Size = new System.Drawing.Size(0, 18);
+            this.lCultivo.TabIndex = 29;
+            // 
+            // lCarbono
+            // 
+            this.lCarbono.AutoSize = true;
+            this.lCarbono.BackColor = System.Drawing.Color.Transparent;
+            this.lCarbono.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lCarbono.Location = new System.Drawing.Point(131, 66);
+            this.lCarbono.Name = "lCarbono";
+            this.lCarbono.Size = new System.Drawing.Size(0, 18);
+            this.lCarbono.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(17, 155);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 19);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Embalagem:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(17, 194);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(117, 19);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Desperdício:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(17, 233);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 19);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Impacto Geral:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(17, 276);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(108, 19);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Total Água:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(17, 109);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 19);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Cultivo:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 63);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 19);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Carbono/Kg:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel2
             // 
@@ -322,148 +448,12 @@
             this.panel3.Size = new System.Drawing.Size(332, 339);
             this.panel3.TabIndex = 15;
             // 
-            // test
-            // 
-            this.test.Location = new System.Drawing.Point(472, 90);
-            this.test.Multiline = true;
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(179, 134);
-            this.test.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 63);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 19);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Carbono/Kg:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(17, 109);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 19);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Cultivo:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(17, 276);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 19);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Total Água:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(17, 233);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(135, 19);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Impacto Geral:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 194);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 19);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Desperdício:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Source Code Pro Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(17, 155);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 19);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Embalagem:";
-            // 
-            // lCarbono
-            // 
-            this.lCarbono.AutoSize = true;
-            this.lCarbono.BackColor = System.Drawing.Color.Transparent;
-            this.lCarbono.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCarbono.Location = new System.Drawing.Point(131, 66);
-            this.lCarbono.Name = "lCarbono";
-            this.lCarbono.Size = new System.Drawing.Size(0, 18);
-            this.lCarbono.TabIndex = 23;
-            // 
-            // lCultivo
-            // 
-            this.lCultivo.AutoSize = true;
-            this.lCultivo.BackColor = System.Drawing.Color.Transparent;
-            this.lCultivo.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCultivo.Location = new System.Drawing.Point(104, 111);
-            this.lCultivo.Name = "lCultivo";
-            this.lCultivo.Size = new System.Drawing.Size(0, 18);
-            this.lCultivo.TabIndex = 29;
-            // 
-            // lEmbalagem
-            // 
-            this.lEmbalagem.AutoSize = true;
-            this.lEmbalagem.BackColor = System.Drawing.Color.Transparent;
-            this.lEmbalagem.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lEmbalagem.Location = new System.Drawing.Point(118, 157);
-            this.lEmbalagem.Name = "lEmbalagem";
-            this.lEmbalagem.Size = new System.Drawing.Size(0, 18);
-            this.lEmbalagem.TabIndex = 30;
-            // 
-            // lPerdas
-            // 
-            this.lPerdas.AutoSize = true;
-            this.lPerdas.BackColor = System.Drawing.Color.Transparent;
-            this.lPerdas.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPerdas.Location = new System.Drawing.Point(136, 194);
-            this.lPerdas.Name = "lPerdas";
-            this.lPerdas.Size = new System.Drawing.Size(0, 18);
-            this.lPerdas.TabIndex = 31;
-            // 
-            // lImpacto
-            // 
-            this.lImpacto.AutoSize = true;
-            this.lImpacto.BackColor = System.Drawing.Color.Transparent;
-            this.lImpacto.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lImpacto.Location = new System.Drawing.Point(158, 233);
-            this.lImpacto.Name = "lImpacto";
-            this.lImpacto.Size = new System.Drawing.Size(0, 18);
-            this.lImpacto.TabIndex = 32;
-            // 
-            // lAgua
-            // 
-            this.lAgua.AutoSize = true;
-            this.lAgua.BackColor = System.Drawing.Color.Transparent;
-            this.lAgua.Font = new System.Drawing.Font("Source Code Pro Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAgua.Location = new System.Drawing.Point(131, 278);
-            this.lAgua.Name = "lAgua";
-            this.lAgua.Size = new System.Drawing.Size(0, 18);
-            this.lAgua.TabIndex = 33;
-            // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1275, 734);
-            this.Controls.Add(this.test);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -482,7 +472,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -509,7 +498,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox test;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
