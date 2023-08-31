@@ -40,7 +40,9 @@ namespace ecoEats
 
         private void CadastroNome_Click(object sender, EventArgs e)
         {
-            MostraForm(new frmPorNome());
+            MostraForm(new frmPorNome()); 
+
+
         }
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
@@ -66,6 +68,16 @@ namespace ecoEats
            frmPrincipal frm = new frmPrincipal();
             this.Hide();
             frm.Show();
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

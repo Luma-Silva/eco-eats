@@ -41,7 +41,6 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblscore = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -197,7 +196,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblscore);
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.btnLimpar);
@@ -227,15 +225,6 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // lblscore
-            // 
-            this.lblscore.AutoSize = true;
-            this.lblscore.Location = new System.Drawing.Point(868, 72);
-            this.lblscore.Name = "lblscore";
-            this.lblscore.Size = new System.Drawing.Size(21, 16);
-            this.lblscore.TabIndex = 24;
-            this.lblscore.Text = "11";
             // 
             // label16
             // 
@@ -374,6 +363,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblscore;
     }
 }

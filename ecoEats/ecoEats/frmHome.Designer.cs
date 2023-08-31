@@ -152,6 +152,7 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(617, 328);
             this.panelPrincipal.TabIndex = 2;
+            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
             // frmHome
             // 
@@ -166,6 +167,7 @@
             this.Name = "frmHome";
             this.Text = "Home Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
