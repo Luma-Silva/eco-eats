@@ -140,6 +140,19 @@ namespace ecoEats
                     }
 
                 }
+
+                //CARREGANDO INFORMAÇÕES DO VALOR NUTRICIONAL:
+                string queryNutricional = "SELECT n.valor_energetico, n.proteinas, n.gorduras_totais, n.carboidrato, n.acucares FROM nutricional AS n WHERE n.fk_nutri_prod=" + this.prodId + ";";
+                List<ValoresNutricionais> nutri = db.Database.SqlQuery<ValoresNutricionais>(queryNutricional).ToList();
+                foreach(ValoresNutricionais n in nutri)
+                {
+                    lEnergetico.Text=n.valor_energetico.ToString();
+                    lGordura.Text=n.gorduras_totais.ToString();
+                    lProt.Text=n.proteinas.ToString();
+                    lAcucar.Text=n.acucares.ToString();
+                    lCarbo.Text=n.carboidrato.ToString();
+                }
+
             }
         }
 

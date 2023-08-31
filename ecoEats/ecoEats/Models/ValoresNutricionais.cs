@@ -29,18 +29,6 @@ namespace ecoEats.Models
         public string gorduras_totais { get; set; }
 
 
-        [Column("gorduras_saturadas")]
-        public string gorduras_saturadas { get; set; }
-
-
-        [Column("gorduras_trans")]
-        public string gorduras_trans { get; set; }
-
-
-
-        [Column("fibra")]
-        public string fibra { get; set; }
-
 
         [Column("carboidrato")]
         public string carboidrato { get; set; }
@@ -50,8 +38,6 @@ namespace ecoEats.Models
         public string acucares { get; set; }
 
 
-        [Column("porcao")]
-        public string porcao { get; set; }
 
         [Column("fk_nutri_prod")]
         public int fk_nutri_prod { get; set; }
