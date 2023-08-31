@@ -91,13 +91,17 @@ namespace ecoEats
                 List<ImpactoAmbiental> impactos = db.Database.SqlQuery<ImpactoAmbiental>(queryImpacto).ToList();
                 foreach(ImpactoAmbiental i in impactos)
                 {
-                    i.lista();
-                    test.Text = i.lista().ToString();
+                    lImpacto.Text = i.impacto.ToString();
+                    lAgua.Text = i.agua.ToString();
+                    lCarbono.Text=i.carbono.ToString();
+                    lCultivo.Text=i.cultivo.ToString();
+                    lEmbalagem.Text=i.embalagem.ToString();
+                    lPerdas.Text=i.perdas.ToString();
 
 
                     }
                 }
-
+            
 
             }
 
