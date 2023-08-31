@@ -172,7 +172,7 @@
     <Compile Include="frmPorNome.Designer.cs">
       <DependentUpon>frmPorNome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ImpactoAmbientais.cs" />
+    <Compile Include="Models\ImpactoAmbiental.cs" />
     <Compile Include="Models\Palternativos.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ValoresNutricionais.cs" />

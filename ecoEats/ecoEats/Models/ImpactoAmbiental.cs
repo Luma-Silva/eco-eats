@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ecoEats.Models
 {
-    public class ImpactoAmbientais
+    public class ImpactoAmbiental
     {
         [Column("id")]
         public int Id { get; set; }
@@ -18,25 +18,9 @@ namespace ecoEats.Models
         public string carbono { get; set; }
 
 
-        [Column("muda_terra_usada")]
-        public string muda_terra_usada { get; set; }
-
-
-
-        [Column("alimentacao_producao")]
-        public string alimentacao_producao { get; set; }
-
 
         [Column("cultivo")]
         public string cultivo { get; set; }
-
-
-        [Column("processo")]
-        public string processo { get; set; }
-
-
-        [Column("transportacao")]
-        public string transportacao { get; set; }
 
 
 
@@ -62,6 +46,19 @@ namespace ecoEats.Models
         [Column("fk_impact_prod")]
         public int fk_impact_prodd { get; set; }
 
+        public Array lista()
+        {
+            string[] lista = new string[6] ;
+            lista.Append(this.carbono);
+            lista.Append(this.cultivo);
+            lista.Append(this.embalagem);
+            lista.Append(this.perdas);
+            lista.Append(this.impacto);
+            lista.Append(this.agua);
+            return lista;
+
+           
+        }
 
 
 
