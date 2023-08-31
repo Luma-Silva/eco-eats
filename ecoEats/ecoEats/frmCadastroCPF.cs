@@ -21,11 +21,7 @@ namespace ecoEats
         {
             InitializeComponent();
         }
-
-        private void frmCadastroCPF_Load(object sender, EventArgs e)
-        {
-
-        }
+      
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string cpf = mskCpf.Text;
@@ -43,13 +39,11 @@ namespace ecoEats
             string cep = mskCep.Text;
             string telefone = mskTelefone.Text;
             string email = txtEmail.Text;
-            string cidade = txtCidade.Text;
-           
+            string cidade = txtCidade.Text;         
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
 
             
-
             if
                 (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || cidade == "" || rdBtnConfirmar.Checked==false)
             {
@@ -233,18 +227,7 @@ namespace ecoEats
         private void cmbBxSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sexo = cmbBxSexo.SelectedItem.ToString();
-        }
-
-        private void rdBtnConfirmar_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }     
 
         private void txtEmail_Validated(object sender, EventArgs e)
         {
@@ -254,11 +237,6 @@ namespace ecoEats
             {
                 MessageBox.Show("Email inválido!");
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pbSenha_Click(object sender, EventArgs e)
@@ -295,29 +273,15 @@ namespace ecoEats
             }
         }
 
-        private void txtCSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmCadastroCPF_Load_1(object sender, EventArgs e)
-        {
-            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
+        {           
             Font fontePadrao = new Font("Microsoft Tai Le", 14, FontStyle.Bold);
-
-
-
-            // Percorre todos os controles do formulário e aplica a fonte padrão
+            
             AplicarFonteControles(this, fontePadrao);
-            // Verifica se o formulário está maximizado
-
-            // Calcula a posição para centralizar o formulário na tela
+                        
             int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
             int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
-
-
-
-            // Ajusta a posição do formulário
+         
             groupBox1.Location = new Point(x, y);
         }
 
@@ -332,12 +296,10 @@ namespace ecoEats
         {
             control.Font = fonte;
 
-
-
             foreach (Control filho in control.Controls)
             {
                 AplicarFonteControles(filho, fonte);
             }
-        }
+        }      
     }
 }

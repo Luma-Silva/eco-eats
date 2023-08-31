@@ -64,9 +64,9 @@
             this.pbConfirmarSenha = new System.Windows.Forms.PictureBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dpNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.dpNascimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfirmarSenha)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -241,8 +241,7 @@
             this.txtEmail.Location = new System.Drawing.Point(373, 317);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(249, 21);
-            this.txtEmail.TabIndex = 21;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.TabIndex = 21;          
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // txtBairro
@@ -288,8 +287,7 @@
             this.rdBtnConfirmar.Size = new System.Drawing.Size(405, 20);
             this.rdBtnConfirmar.TabIndex = 27;
             this.rdBtnConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
-            this.rdBtnConfirmar.UseVisualStyleBackColor = true;
-            this.rdBtnConfirmar.CheckedChanged += new System.EventHandler(this.rdBtnConfirmar_CheckedChanged);
+            this.rdBtnConfirmar.UseVisualStyleBackColor = true;            
             // 
             // cmbBxSexo
             // 
@@ -326,6 +324,7 @@
             this.mskCpf.Size = new System.Drawing.Size(88, 20);
             this.mskCpf.TabIndex = 31;
             this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            
             // 
             // mskCep
             // 
@@ -365,7 +364,7 @@
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(154, 20);
             this.txtCSenha.TabIndex = 29;
-            this.txtCSenha.TextChanged += new System.EventHandler(this.txtCSenha_TextChanged);
+            
             // 
             // txtSenha
             // 
@@ -457,6 +456,14 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             // 
+            // dpNascimento
+            // 
+            this.dpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpNascimento.Location = new System.Drawing.Point(95, 143);
+            this.dpNascimento.Name = "dpNascimento";
+            this.dpNascimento.Size = new System.Drawing.Size(103, 20);
+            this.dpNascimento.TabIndex = 43;
+            // 
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,14 +481,6 @@
             this.label16.Size = new System.Drawing.Size(53, 16);
             this.label16.TabIndex = 41;
             this.label16.Text = "Cidade:";
-            // 
-            // dpNascimento
-            // 
-            this.dpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpNascimento.Location = new System.Drawing.Point(95, 143);
-            this.dpNascimento.Name = "dpNascimento";
-            this.dpNascimento.Size = new System.Drawing.Size(103, 20);
-            this.dpNascimento.TabIndex = 43;
             // 
             // frmCadastroCPF
             // 
