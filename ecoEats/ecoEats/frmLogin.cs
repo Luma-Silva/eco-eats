@@ -8,6 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using ecoEats.Models;
+
+using System.Data.Entity.ModelConfiguration.Conventions;
+
+using MySql.Data.MySqlClient;
+using System.Xml.Linq;
 
 namespace ecoEats
 {
@@ -58,10 +65,44 @@ namespace ecoEats
                 txtSenha.BackColor = Color.White;
                 return;
             }
-            MessageBox.Show("login realizado com suscesso!");
-            /*frmHome frm = new frmHome();
-            this.Hide();
-            frm.Show();*/
+            
+
+
+            using (MyDbContext db = new MyDbContext())
+            {
+               
+                string query;
+                if (documento.Length==11 || documento.Length == 14) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf ='"+documento+"'  AND u.senha ='"+senha+"';";
+      
+                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    MessageBox.Show("login realizado com suscesso!");
+                    MessageBox.Show(IdUser.ToString());
+
+                    frmHome frm = new frmHome(IdUser);
+                    this.Hide();
+                    frm.Show();
+
+
+
+                }
+                else if (documento.Length == 18 || documento.Length == 14) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "';";
+
+                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    MessageBox.Show("login realizado com suscesso!");
+                    MessageBox.Show(IdUser.ToString());
+
+                    frmHome frm = new frmHome(IdUser);
+                    this.Hide();
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Informações inválidas!");
+                }
+
+            }
 
         }
 

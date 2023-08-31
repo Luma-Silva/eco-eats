@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.produtos = new System.Windows.Forms.ToolStripMenuItem();
             this.comprarSelo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +48,7 @@
             this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(204)))), ((int)(((byte)(123)))));
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
+            this.menuUser,
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
             this.Sair});
@@ -59,22 +59,22 @@
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // toolStripMenuItem3
+            // menuUser
             // 
-            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtos,
             this.comprarSelo});
-            this.toolStripMenuItem3.Image = global::ecoEats.Properties.Resources.CapiIcon;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(106, 28);
-            this.toolStripMenuItem3.Text = "Olá, [nome]";
+            this.menuUser.Image = global::ecoEats.Properties.Resources.CapiIcon;
+            this.menuUser.Name = "menuUser";
+            this.menuUser.Size = new System.Drawing.Size(106, 28);
+            this.menuUser.Text = "Olá, [nome]";
             // 
             // produtos
             // 
             this.produtos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.produtos.Image = global::ecoEats.Properties.Resources.new_features;
             this.produtos.Name = "produtos";
-            this.produtos.Size = new System.Drawing.Size(151, 22);
+            this.produtos.Size = new System.Drawing.Size(188, 30);
             this.produtos.Text = "Seus Produtos";
             // 
             // comprarSelo
@@ -82,7 +82,7 @@
             this.comprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.comprarSelo.Image = global::ecoEats.Properties.Resources.cart;
             this.comprarSelo.Name = "comprarSelo";
-            this.comprarSelo.Size = new System.Drawing.Size(151, 22);
+            this.comprarSelo.Size = new System.Drawing.Size(188, 30);
             this.comprarSelo.Text = "Comprar Selos";
             this.comprarSelo.Click += new System.EventHandler(this.comprarSelo_Click);
             // 
@@ -167,6 +167,7 @@
             this.Name = "frmHome";
             this.Text = "Home Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmHome_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -176,7 +177,7 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem produtos;
         private System.Windows.Forms.ToolStripMenuItem comprarSelo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
