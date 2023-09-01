@@ -275,5 +275,10 @@ namespace ecoEats
                 txtSenha.UseSystemPasswordChar = false;
             }
         }
+
+        private void gBPrincipal_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
