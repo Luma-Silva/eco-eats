@@ -14,16 +14,17 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
+using ecoEats.Models;
 
 namespace ecoEats
 {
     public partial class frmPorNome : Form
     {
         int userid;
-        public frmPorNome()
+        public frmPorNome(int userid)
         {
             InitializeComponent();
-           // this.userid = userid;
+            this.userid = userid;
         }
 
         private void frmProduto_Load(object sender, EventArgs e)
@@ -150,17 +151,15 @@ namespace ecoEats
                 {
 
                     new MySqlParameter("@codigo_barras",codigo),
-                    
                     new MySqlParameter("@nome",Nome),
-
                     new MySqlParameter("@data_validade",Validade),
                     new MySqlParameter("@fabricacao" ,Fabricacao),
                     new MySqlParameter("@valor_produto",Valor),
                     new MySqlParameter("@descricao", descricao),
                     new MySqlParameter("@lote",Lote),
                     new MySqlParameter("@categoria_produto",categoria),
-                    
-                   
+
+
 
                 };
 
@@ -169,9 +168,58 @@ namespace ecoEats
                 int idProduto = db.Database.ExecuteSqlCommand(query, parameters);
 
                 //inserir na tabela cliente produto 
-               
+
+
+
+
+
+
+
+                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMITS 1;";
+
+                var parameters1 = new[]
+
+                {
+
+                    new MySqlParameter("i@d",this.userid),
+
+                    
+
+                };
+
+
+
+                Usuario usuario = db.Database.SqlQuery<Usuario>(query, parameters).Single();
+
+
+
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMITS 1;";
+
+                var parameters2 = new[]
+
+                {
+
+                    new MySqlParameter("@id",idProduto ),
+
+ 
+
+                };
+
+
+
+                Produto produto = db.Database.SqlQuery<Produto>(query, parameters).Single();
+
+
+
+
+
+
 
             }
+
+
+
+
 
 
         }
@@ -183,8 +231,8 @@ namespace ecoEats
 
             txtCodigo.Text = string.Empty;
             
-            txtNome.BackColor = Color.FromArgb(253, 238, 212);
-            txtCodigo.BackColor = Color.FromArgb(253,238, 212);
+            txtNome.BackColor = Color.White;
+            txtCodigo.BackColor = Color.White;
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
             CBCategoria.Text = string.Empty;
@@ -194,9 +242,7 @@ namespace ecoEats
             DTPFabricacao.Value = DateTime.Now;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

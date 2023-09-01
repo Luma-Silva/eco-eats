@@ -51,9 +51,9 @@ namespace ecoEats.Models
 
 
 
+        public virtual ICollection<Usuario> usuarios { get; set; }
 
 
-       
 
 
 
