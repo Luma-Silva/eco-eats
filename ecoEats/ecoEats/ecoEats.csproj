@@ -275,6 +275,12 @@
     <None Include="Resources\change-management.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\score100.png" />
+    <None Include="Resources\score50.png" />
+    <None Include="Resources\score0.png" />
+    <None Include="Resources\selo0.png" />
+    <None Include="Resources\selo50.png" />
+    <None Include="Resources\selo100.png" />
     <None Include="Resources\selos %281%29 %282%29.png" />
     <None Include="Resources\score %281%29.png" />
     <None Include="Resources\score.png" />
