@@ -47,7 +47,7 @@ namespace ecoEats.Models
 
 
         [Column("score")]
-        public float score { get; set; }
+        public float? score { get; set; }
 
 
         [Column("fk_cp_user")]
