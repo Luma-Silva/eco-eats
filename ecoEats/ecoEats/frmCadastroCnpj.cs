@@ -1,4 +1,5 @@
 ﻿using ecoEats.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using ecoEats.Models;
+using Org.BouncyCastle.Utilities.Collections;
+using System.Data.Entity.Migrations.Model;
+using System.Data.Entity;
 
 namespace ecoEats
 {
@@ -25,7 +30,7 @@ namespace ecoEats
             string cnpj = mkdTCnpj.Text;
             string razao = txtRazao.Text;
             string nome = txtName.Text;
-            string endereco = txtEndereco.Text;
+            string rua = txtEndereco.Text;
             string numero = txtNumero.Text;
             string bairro = txtBairro.Text;
             string cep = mdkTCep.Text;
@@ -34,9 +39,10 @@ namespace ecoEats
             string email = txtEmail.Text;
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
+            string cidade = txtCidade.Text;
             
-            
-            if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
+
+            if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == ""|| estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
             {
                 if (cnpj == "")
                 {
@@ -62,7 +68,7 @@ namespace ecoEats
                 {
                     txtName.BackColor = Color.White;
                 }
-                if (endereco == "")
+                if (rua == "")
                 {
                     txtEndereco.BackColor = Color.PaleVioletRed;
                 }
@@ -93,6 +99,14 @@ namespace ecoEats
                 else
                 {
                     mdkTCep.BackColor = Color.White;
+                }
+                if (cidade == "")
+                {
+                    txtCidade.BackColor = Color.PaleVioletRed;
+                }
+                else
+                {
+                    txtCidade.BackColor = Color.White;
                 }
                 if (estado == "")
                 {
@@ -137,7 +151,7 @@ namespace ecoEats
                     txtCSenha.BackColor = Color.White;
 
                 }
-                if (cnpj == "" || razao == "" || nome == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
+                if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
                     {
                     MessageBox.Show("Preencha todos os campos!");
                     }
@@ -156,13 +170,38 @@ namespace ecoEats
                 }
                 else
                 {
-                    MessageBox.Show("Cadastro concluído");
-                  //  Form home = new frmHome();
-                   // home.Show();
-                    //this.Hide();
-                }              
-                             
-            }
+                  using (MyDbContext db = new MyDbContext())
+
+                  {
+                  string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha); SELECT LAST_INSERT_ID();";
+                  var parameters = new[]
+
+                  {
+                    new MySqlParameter("@pnome", nome),
+
+                    new MySqlParameter("@pemail", email),
+
+                    new MySqlParameter("@ptelefone", telefone),
+
+                    new MySqlParameter("@psenha", senha)
+                  };
+                  int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
+
+                        query = "INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES ('" + cnpj + "', '" + razao + "', " + newUserId + ");";
+
+                        db.Database.ExecuteSqlCommand(query);
+
+                        query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, uf, fk_end_user) VALUES ('" + rua + "', '" + numero + "', '" + cep + "', '" + cidade + "', '" + bairro + "', '" + estado + "', " + newUserId + ");";
+
+                        db.Database.ExecuteSqlCommand(query);
+                        MessageBox.Show("Cadastro concluído");
+                        frmHome frm = new frmHome(newUserId);
+                        this.Hide();
+                        frm.Show();
+                  }
+                  
+                }                          
+            }            
         }
 
         private void txtEmail_Validated(object sender, EventArgs e)
@@ -235,6 +274,11 @@ namespace ecoEats
                 pbCSenha2.Image = Resources.hide;
                 txtSenha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void gBPrincipal_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
