@@ -9,14 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ecoEats.Models;
 
-namespace ecoEats.Models
+namespace ecoEats
 {
     public partial class FormProduto : Form
     {
-   //     public FormProduto()
-       // {
-          //  InitializeComponent();
-       // }
+        public FormProduto(string cod)
+       {
+            InitializeComponent();
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+
+                string query = "SELECT * FROM produtos WHERE codigo_barras = '" + cod + "';";
+                MessageBox.Show(query);
+             
+                List<Produto> produto = db.Database.SqlQuery<Produto>(query).ToList();
+
+                dataGProduto.DataSource = produto;
+
+
+            }
+        }
 
 
        // using (MyDbContext db = new MyDbContext())
@@ -41,18 +55,7 @@ namespace ecoEats.Models
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = "SELECT * FROM ecoeats.produtos;";
-
-               // List<FormProduto> produto = db.Database.SqlQuery<Produto>(query).ToList (0);
-
-                //dGVProduto.DataSource = produto;
-
-
-            }
+            
         }
     }
 }

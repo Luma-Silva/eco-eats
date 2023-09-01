@@ -23,15 +23,16 @@ namespace ecoEats.Models
 
 
         [Column("data_validade")]
-        public DateTime data_validade { get; set; }
+        public string data_validade { get; set; }
 
 
         [Column("fabricacao")]
-        public DateTime fabricacao { get; set; }
+
+        public string fabricacao { get; set; }
 
 
         [Column("valor_produto")]
-        public float valor_produto { get; set; }
+        public float? valor_produto { get; set; }
 
 
         [Column("descricao")]
@@ -47,7 +48,7 @@ namespace ecoEats.Models
 
 
         [Column("score")]
-        public float score { get; set; }
+        public float? score { get; set; }
 
 
 

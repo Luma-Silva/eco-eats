@@ -36,20 +36,11 @@ namespace ecoEats
                 return;
             }
 
-            using (MyDbContext db = new MyDbContext())
-            {
+           
+               Form formProduto = new FormProduto (cod);
+               formProduto.Show();
 
-                string query = "SELECT * FROM ecoeats.produtos WHERE codigo_barras = " + cod + ";";
-
-                int rowsAffected = db.Database.ExecuteSqlCommand(query);
-
-                int FrmProduto = db.Database.SqlQuery<int>(query).Single();
-
-               // Form formProduto = new Form (FormProduto);
-              //  formProduto.Show();
-
-            }
-
+         
 
 
 
