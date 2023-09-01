@@ -1,6 +1,4 @@
-﻿using ecoEats.Models;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,23 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using ecoEats.Models;
 
 namespace ecoEats
 {
-    public partial class frmAlterarInfo : Form
+    public partial class frmAlterarSenha : Form
     {
-    int userid;
-        private bool v;
-
-        public frmAlterarInfo(bool isLogin)
+    
+        public frmAlterarSenha(bool isLogin)
         {
+      
             InitializeComponent();
             if (isLogin)
             {
                 btnVoltar.Visible = true;
             }
         }
+        
 
         private void frmAlterarInfo_Load(object sender, EventArgs e)
         {
@@ -128,41 +125,34 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
 
-                string query = "SELECT * FROM usuarios WHERE email=@email LIMIT 1;";
-                var parameters = new[]
-               {
-                     new MySqlParameter("@email", email),
-                 };
+                string query = "SELECT * FROM users;";
 
-                Usuario user = db.Database.SqlQuery<Usuario>(query,parameters).Single();
+               // Usuarios user = db.Database.SqlQuery<Usuarios>(query).Single();
 
 
 
-                // string queryUpdate = "UPDATE usuarios SET senha= '' WHERE =  '' ;";
+                //string query = "UPDATE ecoeats.usuarios SET email='', senha= '' WHERE id= '' ;";
 
 
-                 string queryUp = "UPDATE usuarios SET senha= @senha WHERE id=@pid; ";
+                //  string query = @"UPDATE ecoeats.usuarios SET email= "@email", senha= "@senha" WHERE id="@id" ; ";
 
-                parameters = new[]
-                {
-                     new MySqlParameter("@pid", user.Id),
-                     new MySqlParameter("@senha", senha2),
-                 };
+                //  var parameters = new[]
 
 
-                int rowsAffected = db.Database.ExecuteSqlCommand(queryUp, parameters);
+                //   new MySqlParameter("@email", email)
 
-                MessageBox.Show("Senha alterada com sucesso!!!");
+                //  new MySqlParameter("@senha", novasenha)
 
-                frmLogin frm = new frmLogin();
-                this.Hide();
-                frm.Show();
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query);
+
+
             }
-           
+
 
         }
 
-      
+     
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
@@ -194,9 +184,5 @@ namespace ecoEats
             this.Hide();
             frm.Show();
         }
-    }
-
-    internal class usuarios
-    {
     }
 }

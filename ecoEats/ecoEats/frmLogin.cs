@@ -32,7 +32,7 @@ namespace ecoEats
         private void btnRedefinirSenha_Click(object sender, EventArgs e)
         {
           
-           frmAlterarSenha frm = new frmAlterarSenha(true);
+           frmAlterarInfo frm = new frmAlterarInfo(true);
            this.Hide();
            frm.FormBorderStyle = FormBorderStyle.Sizable;
 

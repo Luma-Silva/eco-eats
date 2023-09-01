@@ -66,7 +66,7 @@ namespace ecoEats
         }
 
         private void Sair_Click(object sender, EventArgs e)
-        {
+        { 
            frmPrincipal frm = new frmPrincipal();
             this.Hide();
             frm.Show();
