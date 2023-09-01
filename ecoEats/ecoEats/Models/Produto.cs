@@ -50,13 +50,10 @@ namespace ecoEats.Models
         public float score { get; set; }
 
 
-        [Column("fk_cp_user")]
-        public int fk_cp_user { get; set; }
+
+        public virtual ICollection<Usuario> usuarios { get; set; }
 
 
-
-
-       
 
 
 

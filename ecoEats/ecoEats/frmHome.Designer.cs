@@ -76,6 +76,7 @@
             this.produtos.Name = "produtos";
             this.produtos.Size = new System.Drawing.Size(188, 30);
             this.produtos.Text = "Seus Produtos";
+            this.produtos.Click += new System.EventHandler(this.produtos_Click);
             // 
             // comprarSelo
             // 
@@ -152,6 +153,7 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(617, 328);
             this.panelPrincipal.TabIndex = 2;
+            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
             // frmHome
             // 
