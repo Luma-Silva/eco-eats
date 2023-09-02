@@ -112,11 +112,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormProduto.cs">
+    <Compile Include="ConsultaProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProduto.Designer.cs">
-      <DependentUpon>FormProduto.cs</DependentUpon>
+    <Compile Include="ConsultaProdutos.Designer.cs">
+      <DependentUpon>ConsultaProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAlterarInfo.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormProduto.resx">
-      <DependentUpon>FormProduto.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaProdutos.resx">
+      <DependentUpon>ConsultaProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Usuarios.cs" />
     <EmbeddedResource Include="frmAlterarInfo.resx">
@@ -279,6 +279,12 @@
     <None Include="Resources\change-management.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\score100.png" />
+    <None Include="Resources\score50.png" />
+    <None Include="Resources\score0.png" />
+    <None Include="Resources\selo0.png" />
+    <None Include="Resources\selo50.png" />
+    <None Include="Resources\selo100.png" />
     <None Include="Resources\selos %281%29 %282%29.png" />
     <None Include="Resources\score %281%29.png" />
     <None Include="Resources\score.png" />

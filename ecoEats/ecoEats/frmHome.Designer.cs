@@ -76,6 +76,7 @@
             this.produtos.Name = "produtos";
             this.produtos.Size = new System.Drawing.Size(188, 30);
             this.produtos.Text = "Seus Produtos";
+            this.produtos.Click += new System.EventHandler(this.produtos_Click);
             // 
             // comprarSelo
             // 

@@ -9,9 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-
 namespace ecoEats
 {
     public partial class FormProduto : Form
@@ -169,8 +166,73 @@ namespace ecoEats
                     lAcucar.Text=n.acucares.ToString();
                     lCarbo.Text=n.carboidrato.ToString();
                 }
+
+                // CALCULANDO O SCORE
+               
+
+
             }
         }
-    }
+        private double calculaAmbiental(double carbono, double agua, double cultivo, double embalagem, double perdas)
+        {
+            double res;
+            res = (carbono * 2 + agua * 2 + cultivo + embalagem + perdas) / 6;
+        return res;
+        }
+        private double calculaNutricional(double energia, double proteina, double gordura, double carb, double sugar)
+        {
+            double res;
+            res = (energia+proteina+gordura+carb+sugar) / 5;
+        return res;
+        }
+        private double score(double ambiental,double nutricional)
+        {
+            double res;
+            res = (ambiental * 0.6) + (nutricional * 0.4) / 2;
+            return res;
+        }
+        private string InterpretarScore(double score)
+        {
+            using (MyDbContext db = new MyDbContext())
+            {
+                string query;
+                if (score <= 20)
+                {
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com alto impacto ambiental e baixo valor nutricional.')";
+                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
+                    picSelo.BackgroundImage = Resources.selo0;
+                    return "Produto com alto impacto ambiental e baixo valor nutricional.";
+                }
+                else if (score <= 40)
+                {
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com médio impacto ambiental e valor nutricional moderado.')";
+                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
+                    picSelo.BackgroundImage = Resources.selo50;
+                    return "Produto com médio impacto ambiental e valor nutricional moderado.";
+                }
+                else if (score <= 60)
+                {
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com impacto ambiental razoável e valor nutricional razoável.')";
+                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
+                    picSelo.BackgroundImage = Resources.selo50;
+                    return "Produto com impacto ambiental razoável e valor nutricional razoável.";
+                }
+                else if (score <= 80)
+                {
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com baixo impacto ambiental e bom valor nutricional.')";
+                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
+                    picSelo.BackgroundImage = Resources.selo100;
+                    return "Produto com baixo impacto ambiental e bom valor nutricional.";
+                }
+                else
+                {
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com muito baixo impacto ambiental e excelente valor nutricional.')";
+                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
+                    picSelo.BackgroundImage = Resources.selo100;
+                    return "Produto com muito baixo impacto ambiental e excelente valor nutricional.";
+                }
+            }
+        }
+    }  
 }
 

@@ -12,14 +12,19 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
+using ecoEats.Models;
 
 namespace ecoEats
 {
     public partial class frmPorNome : Form
     {
-        public frmPorNome()
+        int userid;
+        public frmPorNome(int userid)
         {
             InitializeComponent();
+            this.userid = userid;
         }
 
         private void frmProduto_Load(object sender, EventArgs e)
@@ -78,6 +83,10 @@ namespace ecoEats
                 txtCodigo.BackColor = Color.Red;
                 return;
             }
+
+
+
+
            
                         //estou declarando as variaveis para elas ficarem salvas no Botão salvar
                 string Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
@@ -88,37 +97,39 @@ namespace ecoEats
             string Valor = txtValor.Text;
             string categoria = CBCategoria.SelectedItem.ToString();
             string descricao = txtDescricao.Text;
-            string score = lblscore.Text;
-            //na proxima linha eu fiz uma variavel para aparecer esta mensagem no mensagem boox.show
-            // $ este simbolo de cifrão serve para concatenar a mensagem igual ao simbolo de +
+
+
+
+
+
+
+
+
+            
             string mensagem = $"Código de Barras: {codigo}\n" +
-
                               $"Nome do Produto: {Nome}\n" +
-
                               $"Valor: {Valor:C}\n" +
-
-                              $"Categoria do Produto:{categoria}" +
-
-                              $"Descrição do Produto:{descricao}\n" +
-
+                              $"Categoria do Produto: {categoria}\n" + // Certifique-se de adicionar \n para separar linhas
+                              $"Descrição do Produto: {descricao}\n" +
                               $"Data de Validade: {Validade}\n" +
-
                               $"Data de Fabricação: {Fabricacao}\n" +
+                              $"Lote: {Lote}\n";
 
-                              $"Lote: {Lote}\n" +
+            // Exibe o MessageBox com a variável 'mensagem' definida acima
+            DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
-                              $"Score:{score}\n";
+            if (result == DialogResult.OK)
+            {
 
-            //Ao inves do menssage box, jogar para o banco de dados (depois)
-            // este MessageBoxButtons serve para eu criar uma caixa com o ok ou cancel
+                
 
-            // o messageBoxIcon serve para eu colocar o simbolo de informação na message show
-            MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-
-
-
-
+               
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                // Código para lidar com o cancelamento
+                return;
+            }
 
 
 
@@ -134,31 +145,83 @@ namespace ecoEats
 
             {
 
-                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto, score) 
-                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto, @score); SELECT LAST_INSERT_ID();";
+                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID();";
                 var parameters = new[]
                 {
 
                     new MySqlParameter("@codigo_barras",codigo),
-                    
                     new MySqlParameter("@nome",Nome),
-
                     new MySqlParameter("@data_validade",Validade),
                     new MySqlParameter("@fabricacao" ,Fabricacao),
                     new MySqlParameter("@valor_produto",Valor),
                     new MySqlParameter("@descricao", descricao),
                     new MySqlParameter("@lote",Lote),
                     new MySqlParameter("@categoria_produto",categoria),
-                    new MySqlParameter("@score",score),
-                   
+
+
+
+                };
+
+
+                //cadastra o produto e pegar o ultimo id 
+                int idProduto = db.Database.ExecuteSqlCommand(query, parameters);
+
+                //inserir na tabela cliente produto 
+
+
+
+
+
+
+
+                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMITS 1;";
+
+                var parameters1 = new[]
+
+                {
+
+                    new MySqlParameter("i@d",this.userid),
+
+                    
 
                 };
 
 
 
-                int produtoId = db.Database.SqlQuery<int>(query, parameters).Single();
+                Usuario usuario = db.Database.SqlQuery<Usuario>(query, parameters).Single();
+
+
+
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMITS 1;";
+
+                var parameters2 = new[]
+
+                {
+
+                    new MySqlParameter("@id",idProduto ),
+
+ 
+
+                };
+
+
+
+                Produto produto = db.Database.SqlQuery<Produto>(query, parameters).Single();
+
+
+
+
+                produto.usuarios.Add(usuario);
+
+                db.SaveChanges();
+
 
             }
+
+
+
+
 
 
         }
@@ -169,6 +232,9 @@ namespace ecoEats
             //o empty significa vazio e o noww volta para data de hoje
 
             txtCodigo.Text = string.Empty;
+            
+            txtNome.BackColor = Color.White;
+            txtCodigo.BackColor = Color.White;
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
             CBCategoria.Text = string.Empty;

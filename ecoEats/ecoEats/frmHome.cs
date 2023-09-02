@@ -44,7 +44,9 @@ namespace ecoEats
 
         private void CadastroNome_Click(object sender, EventArgs e)
         {
-            MostraForm(new frmPorNome());
+            MostraForm(new frmPorNome(this.userid)); 
+
+
         }
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
@@ -86,5 +88,10 @@ namespace ecoEats
 
                 }
             }
+
+        private void produtos_Click(object sender, EventArgs e)
+        {
+            MostraForm(new ConsultaProdutos(this.userid));
+        }
     }
 }
