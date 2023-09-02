@@ -172,6 +172,8 @@
     <Compile Include="frmPorNome.Designer.cs">
       <DependentUpon>frmPorNome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Fisica.cs" />
     <Compile Include="Models\Pagamento.cs" />
     <Compile Include="Models\Recuperar_senha2.cs" />
     <Compile Include="Models\Juridica.cs" />

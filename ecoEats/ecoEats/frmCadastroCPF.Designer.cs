@@ -60,11 +60,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtCSenha = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.mskNascimento = new System.Windows.Forms.MaskedTextBox();
             this.pbSenha = new System.Windows.Forms.PictureBox();
             this.pbConfirmarSenha = new System.Windows.Forms.PictureBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dpNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfirmarSenha)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -239,8 +241,7 @@
             this.txtEmail.Location = new System.Drawing.Point(373, 317);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(249, 21);
-            this.txtEmail.TabIndex = 21;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.TabIndex = 21;          
             this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
             // 
             // txtBairro
@@ -286,8 +287,7 @@
             this.rdBtnConfirmar.Size = new System.Drawing.Size(405, 20);
             this.rdBtnConfirmar.TabIndex = 27;
             this.rdBtnConfirmar.Text = "Confirmo que as informações declaradas acima são verdadeiras.";
-            this.rdBtnConfirmar.UseVisualStyleBackColor = true;
-            this.rdBtnConfirmar.CheckedChanged += new System.EventHandler(this.rdBtnConfirmar_CheckedChanged);
+            this.rdBtnConfirmar.UseVisualStyleBackColor = true;            
             // 
             // cmbBxSexo
             // 
@@ -324,6 +324,7 @@
             this.mskCpf.Size = new System.Drawing.Size(88, 20);
             this.mskCpf.TabIndex = 31;
             this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            
             // 
             // mskCep
             // 
@@ -363,7 +364,7 @@
             this.txtCSenha.PasswordChar = '*';
             this.txtCSenha.Size = new System.Drawing.Size(154, 20);
             this.txtCSenha.TabIndex = 29;
-            this.txtCSenha.TextChanged += new System.EventHandler(this.txtCSenha_TextChanged);
+            
             // 
             // txtSenha
             // 
@@ -373,16 +374,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(154, 20);
             this.txtSenha.TabIndex = 29;
-            // 
-            // mskNascimento
-            // 
-            this.mskNascimento.Location = new System.Drawing.Point(90, 143);
-            this.mskNascimento.Mask = "00/00/0000";
-            this.mskNascimento.Name = "mskNascimento";
-            this.mskNascimento.Size = new System.Drawing.Size(66, 20);
-            this.mskNascimento.TabIndex = 37;
-            this.mskNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.mskNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // pbSenha
             // 
@@ -421,6 +412,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dpNascimento);
+            this.groupBox1.Controls.Add(this.txtCidade);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.mskCpf);
             this.groupBox1.Controls.Add(this.btnVoltar);
             this.groupBox1.Controls.Add(this.label1);
@@ -428,7 +422,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.pbSenha);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.mskNascimento);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtSenha);
             this.groupBox1.Controls.Add(this.label5);
@@ -462,6 +455,32 @@
             this.groupBox1.Size = new System.Drawing.Size(776, 496);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
+            // 
+            // dpNascimento
+            // 
+            this.dpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpNascimento.Location = new System.Drawing.Point(95, 143);
+            this.dpNascimento.Name = "dpNascimento";
+            this.dpNascimento.Size = new System.Drawing.Size(103, 20);
+            this.dpNascimento.TabIndex = 43;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Location = new System.Drawing.Point(385, 186);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(207, 21);
+            this.txtCidade.TabIndex = 42;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(326, 188);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 16);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "Cidade:";
             // 
             // frmCadastroCPF
             // 
@@ -515,11 +534,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCSenha;
-        private System.Windows.Forms.MaskedTextBox mskNascimento;
         private System.Windows.Forms.PictureBox pbSenha;
         private System.Windows.Forms.PictureBox pbConfirmarSenha;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.DateTimePicker dpNascimento;
     }
 }
