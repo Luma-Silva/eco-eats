@@ -8,16 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Data.Entity;
+
+using System.Data.Entity.ModelConfiguration.Conventions;
+
+using MySql.Data.MySqlClient;
+using ecoEats;
+using System.Data.SqlClient;
+using System.Xml.Linq;
+using System.Security.Cryptography;
+using System.Windows.Markup;
 
 namespace ecoEats
 {
     public partial class frmPagamento : Form
     {
-        public frmPagamento()
+        int userId;
+        public frmPagamento(int userId)
         {
+            this.userId = userId;
             InitializeComponent();
         }
         private void btnConfirmarPagamento_Click(object sender, EventArgs e)
+
         {
             string Tipodopagamento = "";
             if (ckbCredito.Checked)
@@ -37,9 +50,10 @@ namespace ecoEats
             string codigo = txtCodigo.Text;
 
             string dataDeValidade = dtpDataDeValidade.Value.ToString("MM-yy");
-            if (CPF =="" || NomeNoCartão=="" || NumeroDoCartão=="" ||codigo=="" || dataDeValidade=="") {
-                
-                if(CPF == "") 
+            if (CPF == "" || NomeNoCartão == "" || NumeroDoCartão == "" || codigo == "" || dataDeValidade == "")
+            {
+
+                if (CPF == "")
                 {
                     txtCpf.BackColor = Color.Red;
                 }
@@ -47,35 +61,40 @@ namespace ecoEats
                 {
                     txtCpf.BackColor = Color.White;
                 }
-                
-                if (NomeNoCartão == "") {
+
+                if (NomeNoCartão == "")
+                {
                     txtNomeNoCartao.BackColor = Color.Red;
                 }
                 else
                 {
                     txtNomeNoCartao.BackColor = Color.White;
                 }
-                if (codigo == "") {
+                if (codigo == "")
+                {
                     txtCodigo.BackColor = Color.Red;
                 }
                 else
                 {
                     txtCodigo.BackColor = Color.White;
                 }
-                
-                if (NumeroDoCartão == "") {
+
+                if (NumeroDoCartão == "")
+                {
                     txtNumeroDoCartao.BackColor = Color.Red;
                 }
                 else
                 {
                     txtNumeroDoCartao.BackColor = Color.White;
                 }
-               
-                
+
+
                 MessageBox.Show("Preencha todos os campos!");
 
             }
-            
+
+
+
             else if (ckbDebito.Checked == true && ckbCredito.Checked == true)
             {
                 MessageBox.Show("Selecione SOMENTE UMA forma de pagamento!!");
@@ -86,7 +105,7 @@ namespace ecoEats
             }
             else
             {
-                if(ckbDebito.Checked == true || ckbCredito.Checked == true)
+                if (ckbDebito.Checked == true || ckbCredito.Checked == true)
                 {
                     MessageBox.Show("CPF:" + CPF + "\n" +
               "Nome No Cartão:" + NomeNoCartão + "\n" +
@@ -96,10 +115,27 @@ namespace ecoEats
               "Forma de pagamento:" + Tipodopagamento);
 
                 }
-               
+
             }
 
-           
+
+            using (MyDbContext db = new MyDbContext())
+            {
+                string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj) " +
+                    "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk);";
+
+                var parameters = new[]
+                {
+                    new MySqlParameter("@forma_pagamento", Tipodopagamento ),
+                    new MySqlParameter("@cpf",CPF),
+                    new MySqlParameter("@cvv",codigo),
+                    new MySqlParameter("@nome_cartao",NomeNoCartão),
+                    new MySqlParameter("@numero_cartao",NumeroDoCartão),
+                    new MySqlParameter("@fk", this.userId)
+                };
+
+                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+            }
 
         }
 
@@ -136,4 +172,6 @@ namespace ecoEats
             }
         }
     }
+  
     }
+
