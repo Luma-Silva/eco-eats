@@ -35,11 +35,13 @@ namespace ecoEats
                 {
 
 
-                    string query = "SELECT id FROM produtos WHERE codigo_barras = '" + cod + "';";
+                    string query = "SELECT id FROM produtos WHERE codigo_barras = '" + cod + "' LIMIT 1;";
                     MessageBox.Show(query);
 
                     Produto produto = db.Database.SqlQuery<Produto>(query).SingleOrDefault();
-                    
+
+                    FormProduto frm = new FormProduto(produto.Id);
+                    frm.Show();
 
                    
 

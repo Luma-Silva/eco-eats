@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.MySqlClient;
+using System.Runtime.CompilerServices;
+using ecoEats.Properties;
 
 namespace ecoEats
 {
@@ -15,13 +20,13 @@ namespace ecoEats
     {
         int prodId;
         public FormProduto(int prodId)
-       {
+        {
             InitializeComponent();
             this.prodId = prodId;
         }
 
         private void FormProduto_Load(object sender, EventArgs e)
-            {
+        {
             using (MyDbContext db = new MyDbContext())
             {
                 string query;
@@ -76,9 +81,8 @@ namespace ecoEats
                         lValidade.Text = p.data_validade.ToString();
                         nome_produto.Text = p.nome.ToString();
 
-
-            }
-        }
+                    }
+                }
 
                 string queryImpacto = "SELECT i.carbono, i.cultivo, i.embalagem, i.perdas, i.impacto, i.agua FROM impactos_ambientais AS i WHERE i.fk_impact_prod =" + this.prodId + ";";
                 List<ImpactoAmbiental> impactos = db.Database.SqlQuery<ImpactoAmbiental>(queryImpacto).ToList();
@@ -149,11 +153,11 @@ namespace ecoEats
                             n.gorduras_totais = "N/A";
                         }
                         if(n.carboidrato == null)
-        {
+                        {
                             n.carboidrato = "N/A";
-        }
+                        }
                         if(n.acucares == null)
-        {
+                        {
                             n.acucares = "N/A";
                         }
                         lEnergetico.Text = n.valor_energetico.ToString();
@@ -272,7 +276,7 @@ namespace ecoEats
 
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
-            frmPagamento frm = new frmPagamento();
+            frmPagamento frm = new frmPagamento(this.prodId);
             frm.Show();
         }
     }  
