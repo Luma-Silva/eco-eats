@@ -165,7 +165,7 @@ namespace ecoEats
 
 
                 //cadastra o produto e pegar o ultimo id 
-                int idProduto = db.Database.ExecuteSqlCommand(query, parameters);
+                int idProduto = db.Database.SqlQuery<int>(query, parameters).SingleOrDefault();
 
                 //inserir na tabela cliente produto 
 
@@ -175,39 +175,29 @@ namespace ecoEats
 
 
 
-                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMITS 1;";
+                string quey1 = @"SELECT * FROM usuarios WHERE id = "+ this.userid + " LIMIT 1;";
 
-                var parameters1 = new[]
 
+
+
+                Usuario usuario = db.Database.SqlQuery<Usuario>(quey1).SingleOrDefault();
+
+                if (usuario == null)
                 {
+                    MessageBox.Show("Não encontrou");
+                    return;
+                }
 
-                    new MySqlParameter("i@d",this.userid),
-
-                    
-
-                };
-
-
-
-                Usuario usuario = db.Database.SqlQuery<Usuario>(query, parameters).Single();
-
-
-
-                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMITS 1;";
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
                 var parameters2 = new[]
-
                 {
-
-                    new MySqlParameter("@id",idProduto ),
-
- 
-
+                    new MySqlParameter("@id",idProduto )
                 };
 
 
 
-                Produto produto = db.Database.SqlQuery<Produto>(query, parameters).Single();
+                Produto produto = db.Database.SqlQuery<Produto>(query2, parameters2).Single();
 
 
 
