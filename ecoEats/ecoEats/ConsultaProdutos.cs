@@ -22,6 +22,27 @@ namespace ecoEats
         {
             InitializeComponent();
             this.userid = userid;
+            using (MyDbContext db = new MyDbContext())
+
+            {
+
+                string query = @"SELECT p.id, p.codigo_barras, p.nome, p.data_validade, p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto, p.score
+                                FROM produtos AS p  JOIN cliente_produto AS cp ON p.id = cp.fk_cp_prod JOIN usuarios AS u  ON cp.fk_cp_user = u.id  WHERE u.id = @id;";
+
+                var parameters = new[]
+                {
+
+                    new MySqlParameter("@id", this.userid),
+
+
+
+                };
+
+                List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
+                dgvlista.DataSource = produtos;
+
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,27 +76,7 @@ namespace ecoEats
 
 
 
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-                string query = @"SELECT p.id, p.codigo_barras, p.nome, p.data_validade, p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto, p.score
-                                FROM produtos AS p  JOIN cliente_produto AS cp ON p.id = cp.fk_cp_prod JOIN usuarios AS u  ON cp.fk_cp_user = u.id  WHERE p.id = @id;";
-
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@id", this.userid),
-
-                   
-
-                };
-
-                List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
-                dgvlista.DataSource = produtos;
-
-
-            }
+           
 
 
 

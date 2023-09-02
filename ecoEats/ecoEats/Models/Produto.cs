@@ -31,7 +31,7 @@ namespace ecoEats.Models
 
 
         [Column("valor_produto")]
-        public float valor_produto { get; set; }
+        public float? valor_produto { get; set; }
 
 
         [Column("descricao")]
