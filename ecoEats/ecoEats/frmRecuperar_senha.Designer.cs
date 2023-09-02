@@ -1,6 +1,6 @@
 ﻿namespace ecoEats
 {
-    partial class frmAlterarInfo
+    partial class frmAlterarSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -227,7 +227,7 @@
             this.btnVoltar.Visible = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // frmAlterarInfo
+            // frmAlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +236,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.DarkGreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAlterarInfo";
+            this.Name = "frmAlterarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Alterar Senha";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
