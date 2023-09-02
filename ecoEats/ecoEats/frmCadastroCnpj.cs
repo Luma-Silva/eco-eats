@@ -244,7 +244,6 @@ namespace ecoEats
 
         private void pbCSenha_Click(object sender, EventArgs e)
         {
-
             if (txtCSenha.PasswordChar == '*')
             {
                 txtCSenha.PasswordChar = '\0';
@@ -256,8 +255,7 @@ namespace ecoEats
                 txtCSenha.PasswordChar = '*';
                 pbCSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
-            }
-            
+            }          
         }
 
         private void pbCSenha2_Click(object sender, EventArgs e)

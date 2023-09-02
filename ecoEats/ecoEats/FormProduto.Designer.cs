@@ -589,6 +589,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProduto";
             this.Text = "FormProduto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picSelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScore)).EndInit();
