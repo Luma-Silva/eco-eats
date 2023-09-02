@@ -16,7 +16,7 @@ namespace ecoEats
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormProduto(22));
+            Application.Run(new frmPrincipal());
         }
     }
 }

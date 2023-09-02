@@ -30,7 +30,7 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
                 string query;
-                query = "SELECT p.codigo_barras, p.nome, COALESCE(p.data_validade, 'N/A'),COALESCE(p.fabricacao, 'N/A'),COALESCE(p.valor_produto, 'N/A'),COALESCE(p.descricao, 'N/A'),COALESCE(p.lote, 'N/A'),COALESCE(p.categoria_produto, 'N/A') FROM produtos AS p WHERE p.id =" + this.prodId + ";";
+                query = "SELECT p.codigo_barras, p.nome, p.data_validade,p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto FROM produtos AS p WHERE p.id =" + this.prodId + ";";
                 List<Produto> produto = db.Database.SqlQuery<Produto>(query).ToList();
                 foreach (Produto p in produto)
                 {
@@ -274,6 +274,11 @@ namespace ecoEats
             }
         }
 
+        private void btnComprarSelo_Click(object sender, EventArgs e)
+        {
+            frmPagamento frm = new frmPagamento();
+            frm.Show();
+        }
     }  
 }
 

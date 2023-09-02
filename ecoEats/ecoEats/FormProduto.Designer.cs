@@ -78,20 +78,23 @@ namespace ecoEats
             this.nome_produto = new System.Windows.Forms.Label();
             this.lInterpretacao = new System.Windows.Forms.Label();
             this.lScore = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnComprarSelo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picSelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picScore)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // picSelo
             // 
             this.picSelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picSelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picSelo.Location = new System.Drawing.Point(815, 12);
+            this.picSelo.Location = new System.Drawing.Point(888, 12);
             this.picSelo.Name = "picSelo";
-            this.picSelo.Size = new System.Drawing.Size(419, 353);
+            this.picSelo.Size = new System.Drawing.Size(375, 219);
             this.picSelo.TabIndex = 4;
             this.picSelo.TabStop = false;
             // 
@@ -139,6 +142,7 @@ namespace ecoEats
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::ecoEats.Properties.Resources.card21;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.lAgua);
             this.panel1.Controls.Add(this.lImpacto);
@@ -155,7 +159,7 @@ namespace ecoEats
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(451, 383);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 339);
+            this.panel1.Size = new System.Drawing.Size(345, 339);
             this.panel1.TabIndex = 14;
             // 
             // lAgua
@@ -286,6 +290,7 @@ namespace ecoEats
             // 
             // panel2
             // 
+            this.panel2.BackgroundImage = global::ecoEats.Properties.Resources.card3;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel2.Controls.Add(this.lFab);
             this.panel2.Controls.Add(this.lValidade);
@@ -304,7 +309,7 @@ namespace ecoEats
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(859, 383);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 339);
+            this.panel2.Size = new System.Drawing.Size(360, 339);
             this.panel2.TabIndex = 15;
             // 
             // lFab
@@ -451,6 +456,7 @@ namespace ecoEats
             // 
             // panel3
             // 
+            this.panel3.BackgroundImage = global::ecoEats.Properties.Resources.card1;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Controls.Add(this.lCarbo);
             this.panel3.Controls.Add(this.lProt);
@@ -465,7 +471,7 @@ namespace ecoEats
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(61, 383);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(332, 339);
+            this.panel3.Size = new System.Drawing.Size(341, 339);
             this.panel3.TabIndex = 15;
             // 
             // lCarbo
@@ -577,12 +583,15 @@ namespace ecoEats
             // 
             // nome_produto
             // 
+            this.nome_produto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nome_produto.AutoSize = true;
-            this.nome_produto.Font = new System.Drawing.Font("Source Code Pro", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome_produto.Font = new System.Drawing.Font("Source Code Pro", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nome_produto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(179)))), ((int)(((byte)(89)))));
-            this.nome_produto.Location = new System.Drawing.Point(540, 12);
+            this.nome_produto.Location = new System.Drawing.Point(3, 28);
             this.nome_produto.Name = "nome_produto";
-            this.nome_produto.Size = new System.Drawing.Size(127, 34);
+            this.nome_produto.Size = new System.Drawing.Size(103, 27);
             this.nome_produto.TabIndex = 16;
             this.nome_produto.Text = "Produto";
             this.nome_produto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -590,11 +599,11 @@ namespace ecoEats
             // lInterpretacao
             // 
             this.lInterpretacao.AutoSize = true;
-            this.lInterpretacao.Font = new System.Drawing.Font("Source Code Pro Light", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lInterpretacao.Font = new System.Drawing.Font("Source Code Pro Light", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lInterpretacao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lInterpretacao.Location = new System.Drawing.Point(12, 338);
+            this.lInterpretacao.Location = new System.Drawing.Point(39, 337);
             this.lInterpretacao.Name = "lInterpretacao";
-            this.lInterpretacao.Size = new System.Drawing.Size(110, 27);
+            this.lInterpretacao.Size = new System.Drawing.Size(87, 23);
             this.lInterpretacao.TabIndex = 17;
             this.lInterpretacao.Text = "Produto";
             this.lInterpretacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -611,15 +620,43 @@ namespace ecoEats
             this.lScore.Text = "80.67";
             this.lScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.Controls.Add(this.nome_produto);
+            this.panel4.Location = new System.Drawing.Point(402, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(553, 78);
+            this.panel4.TabIndex = 19;
+            // 
+            // btnComprarSelo
+            // 
+            this.btnComprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
+            this.btnComprarSelo.FlatAppearance.BorderSize = 0;
+            this.btnComprarSelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprarSelo.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprarSelo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnComprarSelo.Image = global::ecoEats.Properties.Resources.bolsa_de_compras;
+            this.btnComprarSelo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnComprarSelo.Location = new System.Drawing.Point(984, 276);
+            this.btnComprarSelo.Name = "btnComprarSelo";
+            this.btnComprarSelo.Size = new System.Drawing.Size(139, 42);
+            this.btnComprarSelo.TabIndex = 20;
+            this.btnComprarSelo.Text = "Comprar Selo";
+            this.btnComprarSelo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnComprarSelo.UseVisualStyleBackColor = false;
+            this.btnComprarSelo.Click += new System.EventHandler(this.btnComprarSelo_Click);
+            // 
             // FormProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1275, 734);
+            this.Controls.Add(this.btnComprarSelo);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lScore);
             this.Controls.Add(this.lInterpretacao);
-            this.Controls.Add(this.nome_produto);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -638,6 +675,8 @@ namespace ecoEats
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,5 +776,7 @@ namespace ecoEats
         private System.Windows.Forms.Label nome_produto;
         private System.Windows.Forms.Label lInterpretacao;
         private System.Windows.Forms.Label lScore;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnComprarSelo;
     }
 }
