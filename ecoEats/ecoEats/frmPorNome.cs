@@ -212,7 +212,9 @@ namespace ecoEats
 
 
 
+                produto.usuarios.Add(usuario);
 
+                db.SaveChanges();
 
 
             }
@@ -242,7 +244,9 @@ namespace ecoEats
             DTPFabricacao.Value = DateTime.Now;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

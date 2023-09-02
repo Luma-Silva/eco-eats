@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.dgvlista = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlista)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(204)))), ((int)(((byte)(123)))));
             this.button1.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(211, 533);
+            this.button1.Location = new System.Drawing.Point(968, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 52);
             this.button1.TabIndex = 0;
@@ -45,13 +45,14 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // dgvlista
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(297, 70);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 793);
-            this.panel1.TabIndex = 1;
+            this.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlista.Location = new System.Drawing.Point(70, 12);
+            this.dgvlista.Name = "dgvlista";
+            this.dgvlista.Size = new System.Drawing.Size(675, 732);
+            this.dgvlista.TabIndex = 1;
+            this.dgvlista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlista_CellContentClick);
             // 
             // ConsultaProdutos
             // 
@@ -59,12 +60,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.ClientSize = new System.Drawing.Size(1510, 933);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dgvlista);
+            this.Controls.Add(this.button1);
             this.Name = "ConsultaProdutos";
             this.Text = "Consulta Produtos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ConsultaProdutos_Load);
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,6 +74,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvlista;
     }
 }

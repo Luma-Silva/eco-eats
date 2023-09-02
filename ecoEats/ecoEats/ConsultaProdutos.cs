@@ -1,4 +1,6 @@
-﻿using MySqlX.XDevAPI;
+﻿using ecoEats.Models;
+using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,15 +10,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ecoEats
 {
     public partial class ConsultaProdutos : Form
     {
-        public ConsultaProdutos()
+        int userid;
+        public ConsultaProdutos(int userid)
         {
             InitializeComponent();
+            this.userid = userid;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,14 +39,14 @@ namespace ecoEats
          
 
             // Calcula a posição para centralizar o formulário na tela
-            int x = (Screen.PrimaryScreen.WorkingArea.Width - panel1.Width) / 2;
-            int y = (Screen.PrimaryScreen.WorkingArea.Height - panel1.Height) / 2;
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - dgvlista.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - dgvlista.Height) / 2;
 
             // Ajusta a posição do formulário
-            panel1.Location = new Point(x, y);
+            dgvlista.Location = new Point(x, y);
 
 
-            panel1.BackColor = this.BackColor;
+            dgvlista.BackColor = this.BackColor;
 
 
 
@@ -54,16 +59,32 @@ namespace ecoEats
 
             {
 
-                string query = "SELECT * FROM clienteP;";
+                string query = @"SELECT p.id, p.codigo_barras, p.nome, p.data_validade, p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto, p.score
+                                FROM produtos AS p  JOIN cliente_produto AS cp ON p.id = cp.fk_cp_prod JOIN usuarios AS u  ON cp.fk_cp_user = u.id  WHERE p.id = @id;";
 
-              //  List<ClienteP> clienteP = db.Database.SqlQuery<ClienteP>(query).ToList();
+                var parameters = new[]
+                {
 
-              //  panel1 = clienteP;
+                    new MySqlParameter("@id", this.userid),
+
+                   
+
+                };
+
+                List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
+                dgvlista.DataSource = produtos;
+
 
             }
 
 
 
+        }
+
+        private void dgvlista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            
         }
     }
 }

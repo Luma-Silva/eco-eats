@@ -22,8 +22,8 @@ namespace ecoEats
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>()
-                .HasMany(e => e.Usario)
-                .WithMany(t => t.Produto)
+                .HasMany(e => e.usuarios)
+                .WithMany(t => t.produtos)
                 .Map(et =>
                 {
                     et.MapLeftKey("fk_cp_prod");
