@@ -28,6 +28,24 @@ namespace ecoEats
                 MessageBox.Show("Digite algum código de barras");
                 return;
             }
+            else
+            {
+                using (MyDbContext db = new MyDbContext())
+
+                {
+
+
+                    string query = "SELECT id FROM produtos WHERE codigo_barras = '" + cod + "';";
+                    MessageBox.Show(query);
+
+                    Produto produto = db.Database.SqlQuery<Produto>(query).SingleOrDefault();
+                    
+
+                   
+
+
+                }
+            }
 
            
               /// Form formProduto = new FormProduto (cod);
