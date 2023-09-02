@@ -35,9 +35,9 @@
             // dataGProduto
             // 
             this.dataGProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGProduto.Location = new System.Drawing.Point(85, 87);
+            this.dataGProduto.Location = new System.Drawing.Point(26, 52);
             this.dataGProduto.Name = "dataGProduto";
-            this.dataGProduto.Size = new System.Drawing.Size(240, 150);
+            this.dataGProduto.Size = new System.Drawing.Size(579, 357);
             this.dataGProduto.TabIndex = 0;
             this.dataGProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -49,6 +49,7 @@
             this.Controls.Add(this.dataGProduto);
             this.Name = "FormProduto";
             this.Text = "FormProduto";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGProduto)).EndInit();
             this.ResumeLayout(false);
