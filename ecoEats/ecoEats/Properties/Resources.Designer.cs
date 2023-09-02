@@ -73,6 +73,16 @@ namespace ecoEats.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolsa_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("bolsa-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CapiIcon {
             get {
                 object obj = ResourceManager.GetObject("CapiIcon", resourceCulture);
@@ -283,6 +293,26 @@ namespace ecoEats.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap selo01 {
+            get {
+                object obj = ResourceManager.GetObject("selo01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap selo02 {
+            get {
+                object obj = ResourceManager.GetObject("selo02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap selo100 {
             get {
                 object obj = ResourceManager.GetObject("selo100", resourceCulture);
@@ -293,9 +323,39 @@ namespace ecoEats.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap selo1001 {
+            get {
+                object obj = ResourceManager.GetObject("selo1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap selo50 {
             get {
                 object obj = ResourceManager.GetObject("selo50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap selo501 {
+            get {
+                object obj = ResourceManager.GetObject("selo501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap selo502 {
+            get {
+                object obj = ResourceManager.GetObject("selo502", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

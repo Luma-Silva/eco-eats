@@ -217,19 +217,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -279,12 +279,14 @@
     <None Include="Resources\change-management.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\selo01.png" />
+    <None Include="Resources\selo501.png" />
+    <None Include="Resources\selo100.png" />
+    <None Include="Resources\selo50.png" />
+    <None Include="Resources\selo0.png" />
     <None Include="Resources\score100.png" />
     <None Include="Resources\score50.png" />
     <None Include="Resources\score0.png" />
-    <None Include="Resources\selo0.png" />
-    <None Include="Resources\selo50.png" />
-    <None Include="Resources\selo100.png" />
     <None Include="Resources\selos %281%29 %282%29.png" />
     <None Include="Resources\score %281%29.png" />
     <None Include="Resources\score.png" />
@@ -293,6 +295,7 @@
     <None Include="Resources\card2.png" />
     <None Include="Resources\card21.png" />
     <None Include="Resources\card3.png" />
+    <None Include="Resources\bolsa-de-compras.png" />
     <Content Include="Resources\iconEco.ico" />
     <None Include="Resources\selos %282%29.png" />
   </ItemGroup>

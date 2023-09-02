@@ -25,7 +25,7 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
                 string query;
-                query = "SELECT p.codigo_barras, p.nome, COALESCE(p.data_validade, 'N/A'),COALESCE(p.fabricacao, 'N/A'),COALESCE(p.valor_produto, 'N/A'),COALESCE(p.descricao, 'N/A'),COALESCE(p.lote, 'N/A'),COALESCE(p.categoria_produto, 'N/A') FROM produtos AS p WHERE p.id =" + this.prodId + ";";
+                query = "SELECT p.codigo_barras, p.nome, p.data_validade,p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto FROM produtos AS p WHERE p.id =" + this.prodId + ";";
                 List<Produto> produto = db.Database.SqlQuery<Produto>(query).ToList();
                 foreach (Produto p in produto)
                 {
@@ -63,6 +63,7 @@ namespace ecoEats
                         lLote.Text = p.lote;
                         lPreco.Text = p.valor_produto.ToString();
                         lValidade.Text = p.data_validade.ToString();
+                        nome_produto.Text = p.nome.ToString();
                     }
                     else
                     {
@@ -73,6 +74,7 @@ namespace ecoEats
                         lLote.Text = p.lote;
                         lPreco.Text = p.valor_produto.ToString();
                         lValidade.Text = p.data_validade.ToString();
+                        nome_produto.Text = p.nome.ToString();
 
 
             }
@@ -124,6 +126,7 @@ namespace ecoEats
                         lCultivo.Text = i.cultivo.ToString();
                         lEmbalagem.Text = i.embalagem.ToString();
                         lPerdas.Text = i.perdas.ToString();
+                        
                     }
                 }
 
@@ -165,14 +168,42 @@ namespace ecoEats
                     lProt.Text=n.proteinas.ToString();
                     lAcucar.Text=n.acucares.ToString();
                     lCarbo.Text=n.carboidrato.ToString();
+                    
                 }
+                double carbono = Convert.ToDouble(lCarbono.Text);
+                double cultivo = Convert.ToDouble(lCultivo.Text.Split('%')[0]) / 100;
+                double perdas = Convert.ToDouble(lPerdas.Text.Split('%')[0]) / 100;
+                double embalagem = Convert.ToDouble(lEmbalagem.Text.Split('%')[0]) / 100;
+                double agua = Convert.ToDouble(lAgua.Text.Split(' ')[0]);
 
-                // CALCULANDO O SCORE
-               
+                double mediaAmbiental = calculaAmbiental(carbono, agua, cultivo, embalagem, perdas);
+                //
+                double energia = Convert.ToDouble(lEnergetico.Text);
+                double gordura = Convert.ToDouble(lGordura.Text);
+                double proteina = Convert.ToDouble(lProt.Text);
+                double acucar = Convert.ToDouble(lAcucar.Text);
+                double carboidrato = Convert.ToDouble(lCarbo.Text);
+                double mediaNutricional = calculaNutricional(energia, proteina, gordura, carboidrato, acucar);
+                double scoreFinal = score(mediaAmbiental, mediaNutricional);
+                 
+                string queryScore = "UPDATE produtos SET score = '" + scoreFinal.ToString() + "' WHERE id = " + this.prodId + ";";
+                int nRowAfetted = db.Database.ExecuteSqlCommand(queryScore);
+                lInterpretacao.Text = InterpretarScore(scoreFinal);
+                lScore.Text = scoreFinal.ToString("0.0");
+                this.Text = nome_produto.Text;
+
+
+
 
 
             }
         }
+
+        public void btn_click(object sender, EventArgs e)
+        {
+
+        }
+
         private double calculaAmbiental(double carbono, double agua, double cultivo, double embalagem, double perdas)
         {
             double res;
@@ -201,6 +232,7 @@ namespace ecoEats
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com alto impacto ambiental e baixo valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo0;
+                    picScore.BackgroundImage = Resources.score0;
                     return "Produto com alto impacto ambiental e baixo valor nutricional.";
                 }
                 else if (score <= 40)
@@ -208,6 +240,7 @@ namespace ecoEats
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com médio impacto ambiental e valor nutricional moderado.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo50;
+                    picScore.BackgroundImage = Resources.score50;
                     return "Produto com médio impacto ambiental e valor nutricional moderado.";
                 }
                 else if (score <= 60)
@@ -215,6 +248,7 @@ namespace ecoEats
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com impacto ambiental razoável e valor nutricional razoável.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo50;
+                    picScore.BackgroundImage = Resources.score50;
                     return "Produto com impacto ambiental razoável e valor nutricional razoável.";
                 }
                 else if (score <= 80)
@@ -222,6 +256,7 @@ namespace ecoEats
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com baixo impacto ambiental e bom valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo100;
+                    picScore.BackgroundImage = Resources.score100;
                     return "Produto com baixo impacto ambiental e bom valor nutricional.";
                 }
                 else
@@ -229,9 +264,16 @@ namespace ecoEats
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com muito baixo impacto ambiental e excelente valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo100;
+                    picScore.BackgroundImage = Resources.score100;
                     return "Produto com muito baixo impacto ambiental e excelente valor nutricional.";
                 }
             }
+        }
+
+        private void btnComprarSelo_Click(object sender, EventArgs e)
+        {
+            frmPagamento frm = new frmPagamento();
+            frm.Show();
         }
     }  
 }
