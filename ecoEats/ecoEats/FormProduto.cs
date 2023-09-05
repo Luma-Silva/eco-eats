@@ -30,7 +30,7 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
                 string query;
-                query = "SELECT p.codigo_barras, p.nome, p.data_validade,p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto FROM produtos AS p WHERE p.id =" + this.prodId + ";";
+                query = "SELECT p.id,p.codigo_barras, p.nome,p.score, p.data_validade,p.fabricacao, p.valor_produto, p.descricao, p.lote, p.categoria_produto FROM produtos AS p WHERE p.id =" + this.prodId + ";";
                 List<Produto> produto = db.Database.SqlQuery<Produto>(query).ToList();
                 foreach (Produto p in produto)
                 {
