@@ -180,16 +180,19 @@ namespace ecoEats
 
                 string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMIT 1;";
 
-                var parameters1 = new[]
 
-                {
 
                     new MySqlParameter("@id",this.userid),
 
-                    
+                Usuario usuario = db.Database.SqlQuery<Usuario>(quey1).SingleOrDefault();
 
-                };
+                if (usuario == null)
+                {
+                    MessageBox.Show("Não encontrou");
+                    return;
+                }
 
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
 
                 Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
@@ -205,7 +208,6 @@ namespace ecoEats
                 string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
                 var parameters2 = new[]
-
                 {
 
                     new MySqlParameter("@id",idProduto )

@@ -29,7 +29,6 @@ namespace ecoEats.Models
         public string Senha { get; set; }
 
 
-        public virtual ICollection<Produto> produtos
-        { get; set; }
+        public virtual ICollection<Produto> produtos { get; set; }
     } 
 }
