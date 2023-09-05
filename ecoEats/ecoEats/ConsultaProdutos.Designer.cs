@@ -62,6 +62,7 @@
             this.ClientSize = new System.Drawing.Size(1510, 933);
             this.Controls.Add(this.dgvlista);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaProdutos";
             this.Text = "Consulta Produtos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
