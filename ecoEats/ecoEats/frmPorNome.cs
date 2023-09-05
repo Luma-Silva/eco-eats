@@ -12,7 +12,7 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using MySql.Data.MySqlClient;
+
 using MySqlX.XDevAPI.Common;
 using ecoEats.Models;
 
@@ -21,10 +21,13 @@ namespace ecoEats
     public partial class frmPorNome : Form
     {
         int userid;
-        public frmPorNome(int userid)
+        frmHome pai;
+
+        public frmPorNome(int userid, frmHome pai)
         {
             InitializeComponent();
             this.userid = userid;
+            this.pai = pai; 
         }
 
         private void frmProduto_Load(object sender, EventArgs e)
@@ -165,7 +168,7 @@ namespace ecoEats
 
 
                 //cadastra o produto e pegar o ultimo id 
-                int idProduto = db.Database.ExecuteSqlCommand(query, parameters);
+                int idProduto = db.Database.SqlQuery<int>(query, parameters).SingleOrDefault();
 
                 //inserir na tabela cliente produto 
 
@@ -175,31 +178,39 @@ namespace ecoEats
 
 
 
-                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMITS 1;";
+                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMIT 1;";
 
-                var parameters1 = new[]
 
+
+                    new MySqlParameter("@id",this.userid),
+
+                Usuario usuario = db.Database.SqlQuery<Usuario>(quey1).SingleOrDefault();
+
+                if (usuario == null)
                 {
+                    MessageBox.Show("Não encontrou");
+                    return;
+                }
 
-                    new MySqlParameter("i@d",this.userid),
-
-                    
-
-                };
-
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
 
-                Usuario usuario = db.Database.SqlQuery<Usuario>(query, parameters).Single();
+                Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
+
+                if (usuario == null)
+                {
+                    MessageBox.Show("Usuario não encontrado");
+                    return;
+                }
 
 
 
-                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMITS 1;";
+                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
                 var parameters2 = new[]
-
                 {
 
-                    new MySqlParameter("@id",idProduto ),
+                    new MySqlParameter("@id",idProduto )
 
  
 
@@ -207,14 +218,35 @@ namespace ecoEats
 
 
 
-                Produto produto = db.Database.SqlQuery<Produto>(query, parameters).Single();
+                Produto produto = db.Database.SqlQuery<Produto>(query2, parameters2).SingleOrDefault();
+
+                if(produto == null)
+                {
+                    MessageBox.Show("Produto não encontrado");
+                    return;
+                }
 
 
 
 
-                produto.usuarios.Add(usuario);
+                query = @"INSERT INTO cliente_produto(fk_cp_prod, fk_cp_user) 
+                              VALUES (@id_prod, @id_user);";
 
-                db.SaveChanges();
+                parameters = new[]
+                {
+
+                    new MySqlParameter("@id_prod",produto.Id),
+                    new MySqlParameter("@id_user",usuario.Id)
+
+
+
+                };
+
+                db.Database.ExecuteSqlCommand(query, parameters);
+
+                MessageBox.Show("Salvo com sucesso!");
+
+                this.pai.mostraFormExterno();
 
 
             }
