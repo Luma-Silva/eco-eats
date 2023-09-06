@@ -181,10 +181,11 @@ namespace ecoEats
                 string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMIT 1;";
 
 
+                var parameters1 = new[] {
+                new MySqlParameter("@id", this.userid)
+                };
 
-                    new MySqlParameter("@id",this.userid),
-
-                Usuario usuario = db.Database.SqlQuery<Usuario>(quey1).SingleOrDefault();
+                Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
 
                 if (usuario == null)
                 {
@@ -192,10 +193,9 @@ namespace ecoEats
                     return;
                 }
 
-                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
 
 
-                Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
+              
 
                 if (usuario == null)
                 {
@@ -246,7 +246,7 @@ namespace ecoEats
 
                 MessageBox.Show("Salvo com sucesso!");
 
-                this.pai.mostraFormExterno();
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid));
 
 
             }
@@ -277,6 +277,11 @@ namespace ecoEats
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPorNome_Load(object sender, EventArgs e)
         {
 
         }

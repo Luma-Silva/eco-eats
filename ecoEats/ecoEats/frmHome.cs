@@ -51,7 +51,7 @@ namespace ecoEats
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
         {
-            MostraForm (new frmCodigoBarras());
+            MostraForm (new frmCodigoBarras(this));
 
 
 
@@ -95,9 +95,9 @@ namespace ecoEats
         }
 
 
-        public void mostraFormExterno()
+        public void mostraFormExterno(Form frm)
         {
-            MostraForm(new ConsultaProdutos(this.userid));
+            MostraForm(frm);
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)

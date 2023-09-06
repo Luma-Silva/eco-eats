@@ -622,6 +622,8 @@ namespace ecoEats
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.AutoSize = true;
             this.panel4.Controls.Add(this.nome_produto);
             this.panel4.Location = new System.Drawing.Point(402, 12);
@@ -631,6 +633,7 @@ namespace ecoEats
             // 
             // btnComprarSelo
             // 
+            this.btnComprarSelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnComprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
             this.btnComprarSelo.FlatAppearance.BorderSize = 0;
             this.btnComprarSelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -17,7 +17,7 @@ namespace ecoEats.Models
         public string Nome { get; set; }
 
         [Column("idade")]
-        public int Idade { get; set; }
+        public int? Idade { get; set; }
 
         [Column("email")]
         public string Email { get; set; }

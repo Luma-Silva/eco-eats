@@ -15,9 +15,11 @@ namespace ecoEats
 {
     public partial class frmCodigoBarras : Form
     {
-        public frmCodigoBarras()
+        frmHome pai;
+        public frmCodigoBarras(frmHome pai)
         {
             InitializeComponent();
+            this.pai = pai;
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {         
@@ -36,15 +38,16 @@ namespace ecoEats
 
 
                     string query = "SELECT id FROM produtos WHERE codigo_barras = '" + cod + "' LIMIT 1;";
-                    MessageBox.Show(query);
+           
 
                     int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
 
-                    FormProduto frm = new FormProduto(idProduto);
-                    frm.ShowDialog();
-                    
+                    FormProduto frm = new FormProduto(idProduto,this.pai);
+                    this.pai.mostraFormExterno(frm);
 
-                   
+
+
+
 
 
                 }

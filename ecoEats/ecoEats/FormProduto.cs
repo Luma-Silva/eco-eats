@@ -19,10 +19,12 @@ namespace ecoEats
     public partial class FormProduto : Form
     {
         int prodId;
-        public FormProduto(int prodId)
+        frmHome pai;
+        public FormProduto(int prodId, frmHome pai)
         {
             InitializeComponent();
             this.prodId = prodId;
+            this.pai = pai;
         }
 
         private void FormProduto_Load(object sender, EventArgs e)
@@ -277,7 +279,8 @@ namespace ecoEats
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
             frmPagamento frm = new frmPagamento(this.prodId);
-            frm.Show();
+            this.pai.mostraFormExterno(frm);
+            
         }
     }  
 }

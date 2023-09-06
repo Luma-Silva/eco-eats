@@ -90,8 +90,8 @@ namespace ecoEats
                     query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "';";
 
                     int IdUser = db.Database.SqlQuery<int>(query).Single();
-                    MessageBox.Show("login realizado com suscesso!");
-                    MessageBox.Show(IdUser.ToString());
+                    MessageBox.Show("Login realizado com suscesso!");
+                  
 
                     frmHome frm = new frmHome(IdUser);
                     this.Hide();
@@ -130,6 +130,10 @@ namespace ecoEats
             
             
         }
-       
+
+        private void frmLogin_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
