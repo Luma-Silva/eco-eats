@@ -107,7 +107,25 @@ namespace ecoEats
             {
                 if (ckbDebito.Checked == true || ckbCredito.Checked == true)
                 {
-                    MessageBox.Show("CPF:" + CPF + "\n" +
+                    using (MyDbContext db = new MyDbContext())
+                    {
+                        string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj) " +
+                            "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk);";
+
+                        var parameters = new[]
+                        {
+                            new MySqlParameter("@forma_pagamento", Tipodopagamento ),
+                            new MySqlParameter("@cpf",CPF),
+                            new MySqlParameter("@cvv",codigo),
+                            new MySqlParameter("@nome_cartao",NomeNoCartão),
+                            new MySqlParameter("@numero_cartao",NumeroDoCartão),
+                            new MySqlParameter("@fk", this.userId)
+                        };
+
+                        int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+                    }
+
+                    MessageBox.Show("Dados Salvos: CPF:" + CPF + "\n" +
               "Nome No Cartão:" + NomeNoCartão + "\n" +
               "Número Do Cartão:" + NumeroDoCartão + "\n" +
               "Código:" + codigo + "\n" +
@@ -119,23 +137,7 @@ namespace ecoEats
             }
 
 
-            using (MyDbContext db = new MyDbContext())
-            {
-                string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj) " +
-                    "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk);";
-
-                var parameters = new[]
-                {
-                    new MySqlParameter("@forma_pagamento", Tipodopagamento ),
-                    new MySqlParameter("@cpf",CPF),
-                    new MySqlParameter("@cvv",codigo),
-                    new MySqlParameter("@nome_cartao",NomeNoCartão),
-                    new MySqlParameter("@numero_cartao",NumeroDoCartão),
-                    new MySqlParameter("@fk", this.userId)
-                };
-
-                int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
-            }
+            
 
         }
 
@@ -170,6 +172,11 @@ namespace ecoEats
             {
                 AplicarFonteControles(filho, fonte);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
   
