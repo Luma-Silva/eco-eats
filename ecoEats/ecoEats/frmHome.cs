@@ -78,11 +78,12 @@ namespace ecoEats
         {
             using (MyDbContext db = new MyDbContext())
             {
-
+                MessageBox.Show(this.userid.ToString());
                 string query;
-                query = "SELECT u.nome FROM usuarios AS u WHERE u.id =" + this.userid + ";";
-                string username = db.Database.SqlQuery<string>(query).Single();
-                menuUser.Text="Olá!,"+username;
+                query = "SELECT nome FROM usuarios AS u WHERE u.id =" + this.userid + " LIMIT 1;";
+
+                string username = db.Database.SqlQuery<string>(query).SingleOrDefault();
+                menuUser.Text="Olá!, "+username;
 
 
 

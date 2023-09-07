@@ -72,12 +72,12 @@ namespace ecoEats
             {
                
                 string query;
-                if (documento.Length==11 || documento.Length == 14) {
-                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf ='"+documento+"'  AND u.senha ='"+senha+"';";
+                if (documento.Length==11) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf ='"+documento+"'  AND u.senha ='"+senha+"' LIMIT 1; ";
       
-                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
                     MessageBox.Show("login realizado com suscesso!");
-                    MessageBox.Show(IdUser.ToString());
+                  
 
                     frmHome frm = new frmHome(IdUser);
                     this.Hide();
@@ -86,10 +86,10 @@ namespace ecoEats
 
 
                 }
-                else if (documento.Length == 18 || documento.Length == 14) {
-                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "';";
+                else if (documento.Length == 14) {
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "' LIMIT 1;";
 
-                    int IdUser = db.Database.SqlQuery<int>(query).Single();
+                    int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
                     MessageBox.Show("Login realizado com suscesso!");
                   
 
