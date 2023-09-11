@@ -5,11 +5,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.MySqlClient;
+using System.Runtime.CompilerServices;
+using ecoEats.Properties;
 
 namespace ecoEats
 {
@@ -41,8 +44,9 @@ namespace ecoEats
            
 
                     int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
+                    MessageBox.Show(idProduto.ToString());
 
-                    FormProduto frm = new FormProduto(idProduto,this.pai);
+                    frmProduto frm = new frmProduto(idProduto,this.pai);
                     this.pai.mostraFormExterno(frm);
 
 
@@ -54,10 +58,7 @@ namespace ecoEats
             }
 
            
-              /// Form formProduto = new FormProduto (cod);
-             ///  formProduto.Show();
-
-            ///MessageBox.Show("Código:" + cod);
+             
 
 
             
