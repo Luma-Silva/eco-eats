@@ -135,5 +135,10 @@ namespace ecoEats
         {
 
         }
+
+        private void txtCPF_CNPJ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

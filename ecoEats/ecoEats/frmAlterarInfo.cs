@@ -47,7 +47,7 @@ namespace ecoEats
 
             // Ajusta a posição do formulário
             groupBox1.Location = new Point(x, y);
-            label5.Font = new Font("Source Code Pro", 20, FontStyle.Regular);
+            label5.Font = new Font("Source Code Pro", 35, FontStyle.Bold);
 
         }
         private void AplicarFonteControles(Control control, Font fonte)
@@ -193,6 +193,11 @@ namespace ecoEats
             frmLogin frm = new frmLogin();
             this.Hide();
             frm.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

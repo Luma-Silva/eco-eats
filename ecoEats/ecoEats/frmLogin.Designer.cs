@@ -101,6 +101,7 @@
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(267, 29);
             this.txtCPF_CNPJ.TabIndex = 4;
+            this.txtCPF_CNPJ.TextChanged += new System.EventHandler(this.txtCPF_CNPJ_TextChanged);
             // 
             // txtSenha
             // 

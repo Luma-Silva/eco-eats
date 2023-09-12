@@ -47,39 +47,39 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(200, 91);
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(198, 131);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(293, 24);
+            this.txtEmail.Size = new System.Drawing.Size(293, 26);
             this.txtEmail.TabIndex = 7;
             // 
             // txtRsenha
             // 
-            this.txtRsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
-            this.txtRsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRsenha.Location = new System.Drawing.Point(200, 177);
+            this.txtRsenha.BackColor = System.Drawing.Color.White;
+            this.txtRsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRsenha.Location = new System.Drawing.Point(198, 224);
             this.txtRsenha.Name = "txtRsenha";
-            this.txtRsenha.Size = new System.Drawing.Size(293, 24);
+            this.txtRsenha.Size = new System.Drawing.Size(293, 26);
             this.txtRsenha.TabIndex = 8;
             this.txtRsenha.UseSystemPasswordChar = true;
             // 
             // txtNsenha
             // 
-            this.txtNsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(244)))), ((int)(((byte)(226)))));
-            this.txtNsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNsenha.Location = new System.Drawing.Point(200, 135);
+            this.txtNsenha.BackColor = System.Drawing.Color.White;
+            this.txtNsenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNsenha.Location = new System.Drawing.Point(198, 179);
             this.txtNsenha.Name = "txtNsenha";
-            this.txtNsenha.Size = new System.Drawing.Size(293, 24);
+            this.txtNsenha.Size = new System.Drawing.Size(293, 26);
             this.txtNsenha.TabIndex = 9;
             this.txtNsenha.UseSystemPasswordChar = true;
             // 
             // lblEmail
             // 
-            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblEmail.Font = new System.Drawing.Font("Source Code Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.lblEmail.Font = new System.Drawing.Font("Source Code Pro", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblEmail.Location = new System.Drawing.Point(8, 90);
+            this.lblEmail.Location = new System.Drawing.Point(6, 134);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblEmail.Size = new System.Drawing.Size(186, 24);
@@ -88,10 +88,10 @@
             // 
             // lblNSenha
             // 
-            this.lblNSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblNSenha.Font = new System.Drawing.Font("Source Code Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.lblNSenha.Font = new System.Drawing.Font("Source Code Pro", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblNSenha.Location = new System.Drawing.Point(8, 134);
+            this.lblNSenha.Location = new System.Drawing.Point(10, 182);
             this.lblNSenha.Name = "lblNSenha";
             this.lblNSenha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblNSenha.Size = new System.Drawing.Size(182, 24);
@@ -101,22 +101,22 @@
             // rbtnCelular
             // 
             this.rbtnCelular.AutoSize = true;
-            this.rbtnCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.rbtnCelular.Font = new System.Drawing.Font("Source Code Pro", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnCelular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.rbtnCelular.Font = new System.Drawing.Font("Source Code Pro", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.rbtnCelular.Location = new System.Drawing.Point(351, 225);
+            this.rbtnCelular.Location = new System.Drawing.Point(400, 279);
             this.rbtnCelular.Name = "rbtnCelular";
-            this.rbtnCelular.Size = new System.Drawing.Size(82, 21);
+            this.rbtnCelular.Size = new System.Drawing.Size(74, 19);
             this.rbtnCelular.TabIndex = 6;
             this.rbtnCelular.Text = "celular";
             this.rbtnCelular.UseVisualStyleBackColor = false;
             // 
             // lblRsenha
             // 
-            this.lblRsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblRsenha.Font = new System.Drawing.Font("Source Code Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRsenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.lblRsenha.Font = new System.Drawing.Font("Source Code Pro", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRsenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblRsenha.Location = new System.Drawing.Point(8, 176);
+            this.lblRsenha.Location = new System.Drawing.Point(6, 227);
             this.lblRsenha.Name = "lblRsenha";
             this.lblRsenha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblRsenha.Size = new System.Drawing.Size(186, 24);
@@ -126,23 +126,24 @@
             // rbtnEmail
             // 
             this.rbtnEmail.AutoSize = true;
+            this.rbtnEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
             this.rbtnEmail.Checked = true;
-            this.rbtnEmail.Font = new System.Drawing.Font("Source Code Pro", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnEmail.Font = new System.Drawing.Font("Source Code Pro", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.rbtnEmail.Location = new System.Drawing.Point(200, 223);
+            this.rbtnEmail.Location = new System.Drawing.Point(233, 279);
             this.rbtnEmail.Name = "rbtnEmail";
-            this.rbtnEmail.Size = new System.Drawing.Size(74, 21);
+            this.rbtnEmail.Size = new System.Drawing.Size(67, 19);
             this.rbtnEmail.TabIndex = 5;
             this.rbtnEmail.TabStop = true;
             this.rbtnEmail.Text = "e-mail";
-            this.rbtnEmail.UseVisualStyleBackColor = true;
+            this.rbtnEmail.UseVisualStyleBackColor = false;
             // 
             // lblConfirm
             // 
-            this.lblConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.lblConfirm.Font = new System.Drawing.Font("Source Code Pro", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.lblConfirm.Font = new System.Drawing.Font("Source Code Pro", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.lblConfirm.Location = new System.Drawing.Point(8, 223);
+            this.lblConfirm.Location = new System.Drawing.Point(29, 276);
             this.lblConfirm.Name = "lblConfirm";
             this.lblConfirm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblConfirm.Size = new System.Drawing.Size(182, 22);
@@ -152,27 +153,28 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.label5.Font = new System.Drawing.Font("Source Code Pro", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
+            this.label5.Font = new System.Drawing.Font("Source Code Pro", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.label5.Location = new System.Drawing.Point(241, 40);
+            this.label5.Location = new System.Drawing.Point(169, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(238, 31);
+            this.label5.Size = new System.Drawing.Size(355, 44);
             this.label5.TabIndex = 4;
             this.label5.Text = "Recuperar Senha:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnMostrar
             // 
-            this.btnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
+            this.btnMostrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
             this.btnMostrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMostrar.FlatAppearance.BorderSize = 0;
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrar.Font = new System.Drawing.Font("Source Code Pro", 8.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(111)))), ((int)(((byte)(9)))));
-            this.btnMostrar.Location = new System.Drawing.Point(499, 153);
+            this.btnMostrar.Location = new System.Drawing.Point(497, 205);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(118, 29);
+            this.btnMostrar.Size = new System.Drawing.Size(107, 22);
             this.btnMostrar.TabIndex = 11;
             this.btnMostrar.Text = "mostrar senha";
             this.btnMostrar.UseVisualStyleBackColor = false;
@@ -183,7 +185,8 @@
             this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Source Code Pro", 8.25F);
-            this.btnConfirmar.Location = new System.Drawing.Point(259, 267);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirmar.Location = new System.Drawing.Point(306, 322);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(88, 25);
             this.btnConfirmar.TabIndex = 10;
@@ -193,6 +196,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
             this.groupBox1.Controls.Add(this.btnVoltar);
             this.groupBox1.Controls.Add(this.txtNsenha);
             this.groupBox1.Controls.Add(this.btnMostrar);
@@ -208,7 +212,7 @@
             this.groupBox1.Controls.Add(this.rbtnEmail);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(641, 344);
+            this.groupBox1.Size = new System.Drawing.Size(687, 382);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -217,8 +221,8 @@
             this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Source Code Pro", 8.25F);
-            this.btnVoltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnVoltar.Location = new System.Drawing.Point(391, 267);
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
+            this.btnVoltar.Location = new System.Drawing.Point(593, 351);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 25);
             this.btnVoltar.TabIndex = 12;
@@ -231,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(215)))), ((int)(((byte)(152)))));
             this.ClientSize = new System.Drawing.Size(748, 450);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.DarkGreen;
