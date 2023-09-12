@@ -23,11 +23,13 @@ namespace ecoEats
     {
         int prodId;
         frmHome pai;
-        public frmProduto(int prodId, frmHome pai)
+        bool cnpj;
+        public frmProduto(int prodId, frmHome pai, bool cnpj)
         {
             InitializeComponent();
             this.prodId = prodId;
             this.pai = pai;
+            this.cnpj = cnpj;
         }
 
 
@@ -215,7 +217,10 @@ namespace ecoEats
                 lScore.Text = scoreFinal.ToString("0.0");
                 this.Text = nome_produto.Text;
 
-
+                if (cnpj == false)
+                {
+                    btnComprarSelo.Enabled = false;
+                }
 
 
 

@@ -195,9 +195,9 @@ namespace ecoEats
 
                         db.Database.ExecuteSqlCommand(query);
                         MessageBox.Show("Cadastro concluído");
-                        frmHome frm = new frmHome(newUserId);
-                        this.Hide();
-                        frm.Show();
+                       // frmHome frm = new frmHome(newUserId);
+                       // this.Hide();
+                       // frm.Show();
                   }
                   
                 }                          

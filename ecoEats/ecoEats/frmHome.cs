@@ -15,9 +15,11 @@ namespace ecoEats
     public partial class frmHome : Form
     {
         int userid;
-        public frmHome(int userid)
+        bool cnpj;
+        public frmHome(int userid,bool cnpj)
         {
             this.userid= userid;
+            this.cnpj= cnpj;                                    
             InitializeComponent();
         }
         private Form frmAtivo;
@@ -76,6 +78,10 @@ namespace ecoEats
 
         private void frmHome_Load(object sender, EventArgs e)
         {
+            if (cnpj == false)
+            {
+                comprarSelo.Enabled= false;
+            }
             using (MyDbContext db = new MyDbContext())
             {
                 MessageBox.Show(this.userid.ToString());

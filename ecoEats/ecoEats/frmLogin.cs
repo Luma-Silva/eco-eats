@@ -15,6 +15,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 using MySql.Data.MySqlClient;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace ecoEats
 {
@@ -68,43 +69,45 @@ namespace ecoEats
             
 
 
-            using (MyDbContext db = new MyDbContext())
-            {
-               
-                string query;
-                if (documento.Length==11) {
-                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_fisicas AS pf ON pf.fk_pf_user=u.id WHERE pf.cpf ='"+documento+"'  AND u.senha ='"+senha+"' LIMIT 1; ";
-      
-                    int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    MessageBox.Show("login realizado com suscesso!");
-                  
 
-                    frmHome frm = new frmHome(IdUser);
-                    this.Hide();
-                    frm.Show();
-
-
-
-                }
-                else if (documento.Length == 14) {
-                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user=u.id WHERE pj.cnpj ='" + documento + "'  AND u.senha ='" + senha + "' LIMIT 1;";
-
-                    int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    MessageBox.Show("Login realizado com suscesso!");
-                  
-
-                    frmHome frm = new frmHome(IdUser);
-                    this.Hide();
-                    frm.Show();
-                }
-                else
+                using (MyDbContext db = new MyDbContext())
                 {
-                    MessageBox.Show("Informações inválidas!");
+
+                    string query;
+
+                    query = "SELECT u.id FROM usuarios AS u WHERE u.email ='" + documento + "'  AND u.senha ='" + senha + "' LIMIT 1; ";
+
+                    int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
+                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user="+IdUser+" LIMIT 1;";
+
+                    int existe = db.Database.SqlQuery<int>(query).SingleOrDefault();
+                    if(existe == 0)
+                    {
+                        MessageBox.Show("Login realizado com suscesso!");
+                        frmHome frm = new frmHome(IdUser, false);
+                        this.Hide();
+                        frm.Show();
+                    }
+
+                    else if(existe!=0){
+                         MessageBox.Show("Login realizado com suscesso!");
+                        frmHome frm = new frmHome(IdUser, true);
+                        this.Hide();
+                        frm.Show();
+                    }
+
+
+
+
+                else { 
+                    
+                        MessageBox.Show("Informações inválidas!");
+                    }
                 }
 
             }
 
-        }
+        
 
         private void picMostrarEsconder_Click(object sender, EventArgs e)
         {
@@ -134,6 +137,17 @@ namespace ecoEats
         private void frmLogin_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCPF_CNPJ_TextChanged(object sender, EventArgs e)
+        {
+            string email =txtCPF_CNPJ.Text;
+            Regex regex = new Regex(@"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$");
+            if (!regex.IsMatch(email))
+            {
+                MessageBox.Show("Email inválido!");
+               txtCPF_CNPJ.BackColor = Color.PaleVioletRed;
+            }
         }
     }
 }

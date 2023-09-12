@@ -46,8 +46,8 @@ namespace ecoEats
                     int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
                     MessageBox.Show(idProduto.ToString());
 
-                    frmProduto frm = new frmProduto(idProduto,this.pai);
-                    this.pai.mostraFormExterno(frm);
+                    //frmProduto frm = new frmProduto(idProduto,this.pai);
+                    //this.pai.mostraFormExterno(frm);
 
 
 
