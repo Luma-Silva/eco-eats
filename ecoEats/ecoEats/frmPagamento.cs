@@ -144,7 +144,7 @@ namespace ecoEats
         private void frmPagamento_Load(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Arial", 14, FontStyle.Regular);
+            Font fontePadrao = new Font("Sitka Heading", 12, FontStyle.Italic);
 
 
 
