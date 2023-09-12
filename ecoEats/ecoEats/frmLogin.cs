@@ -78,18 +78,18 @@ namespace ecoEats
                     query = "SELECT u.id FROM usuarios AS u WHERE u.email ='" + documento + "'  AND u.senha ='" + senha + "' LIMIT 1; ";
 
                     int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    query = "SELECT u.id FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user="+IdUser+" LIMIT 1;";
+
+                    query = "SELECT 1 FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user="+IdUser+" LIMIT 1;";
 
                     int existe = db.Database.SqlQuery<int>(query).SingleOrDefault();
                     if(existe == 0)
                     {
+                        
                         MessageBox.Show("Login realizado com suscesso!");
                         frmHome frm = new frmHome(IdUser, false);
                         this.Hide();
                         frm.Show();
-                    }
-
-                    else if(existe!=0){
+                    } else if(existe == 1) {
                          MessageBox.Show("Login realizado com suscesso!");
                         frmHome frm = new frmHome(IdUser, true);
                         this.Hide();
@@ -99,10 +99,7 @@ namespace ecoEats
 
 
 
-                else { 
-                    
-                        MessageBox.Show("Informações inválidas!");
-                    }
+                
                 }
 
             }

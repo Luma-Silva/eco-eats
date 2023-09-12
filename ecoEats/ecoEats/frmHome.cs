@@ -21,9 +21,14 @@ namespace ecoEats
             this.userid= userid;
             this.cnpj= cnpj;                                    
             InitializeComponent();
+            if (this.cnpj == false)
+            {
+                comprarSelo.Enabled = false;
+            }
         }
         private Form frmAtivo;
       
+
        
         private void FechaForm()
         {
@@ -53,7 +58,7 @@ namespace ecoEats
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
         {
-            MostraForm (new frmCodigoBarras(this));
+            MostraForm (new frmCodigoBarras(this,this.cnpj));
 
 
 
@@ -78,10 +83,8 @@ namespace ecoEats
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            if (cnpj == false)
-            {
-                comprarSelo.Enabled= false;
-            }
+
+           
             using (MyDbContext db = new MyDbContext())
             {
                 MessageBox.Show(this.userid.ToString());

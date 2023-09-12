@@ -19,10 +19,12 @@ namespace ecoEats
     public partial class frmCodigoBarras : Form
     {
         frmHome pai;
-        public frmCodigoBarras(frmHome pai)
+        bool cnpj;
+        public frmCodigoBarras(frmHome pai, bool cnpj)
         {
             InitializeComponent();
             this.pai = pai;
+            this.cnpj = cnpj;
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {         
@@ -46,8 +48,8 @@ namespace ecoEats
                     int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
                     MessageBox.Show(idProduto.ToString());
 
-                    //frmProduto frm = new frmProduto(idProduto,this.pai);
-                    //this.pai.mostraFormExterno(frm);
+                    frmProduto frm = new frmProduto(idProduto,this.pai,this.cnpj);
+                    this.pai.mostraFormExterno(frm);
 
 
 

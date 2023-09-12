@@ -80,6 +80,7 @@
             // 
             // comprarSelo
             // 
+            this.comprarSelo.AutoToolTip = true;
             this.comprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.comprarSelo.Image = global::ecoEats.Properties.Resources.cart;
             this.comprarSelo.Name = "comprarSelo";
