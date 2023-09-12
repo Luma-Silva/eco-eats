@@ -47,38 +47,10 @@ namespace ecoEats.Models
 
 
         [Column("score")]
-        public float? score { get; set; }
+        public string score { get; set; }
 
 
 
         public virtual ICollection<Usuario> usuarios { get; set; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

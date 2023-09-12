@@ -340,6 +340,7 @@
             this.Name = "frmPorNome";
             this.Text = "Cadastro do Produto";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPorNome_Load);
             this.Resize += new System.EventHandler(this.frmProduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

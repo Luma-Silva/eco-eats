@@ -44,14 +44,14 @@ namespace ecoEats
 
         private void CadastroNome_Click(object sender, EventArgs e)
         {
-            MostraForm(new frmPorNome(this.userid)); 
+            MostraForm(new frmPorNome(this.userid, this)); 
 
 
         }
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
         {
-            MostraForm (new frmCodigoBarras());
+            MostraForm (new frmCodigoBarras(this));
 
 
 
@@ -78,11 +78,12 @@ namespace ecoEats
         {
             using (MyDbContext db = new MyDbContext())
             {
-
+                MessageBox.Show(this.userid.ToString());
                 string query;
-                query = "SELECT u.nome FROM usuarios AS u WHERE u.id =" + this.userid + ";";
-                string username = db.Database.SqlQuery<string>(query).Single();
-                menuUser.Text="Olá!,"+username;
+                query = "SELECT nome FROM usuarios AS u WHERE u.id =" + this.userid + " LIMIT 1;";
+
+                string username = db.Database.SqlQuery<string>(query).SingleOrDefault();
+                menuUser.Text="Olá!, "+username;
 
 
 
@@ -92,6 +93,17 @@ namespace ecoEats
         private void produtos_Click(object sender, EventArgs e)
         {
             MostraForm(new ConsultaProdutos(this.userid));
+        }
+
+
+        public void mostraFormExterno(Form frm)
+        {
+            MostraForm(frm);
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

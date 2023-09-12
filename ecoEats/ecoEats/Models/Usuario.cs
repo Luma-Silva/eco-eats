@@ -14,10 +14,10 @@ namespace ecoEats.Models
         public int Id { get; set; }
 
         [Column("nome")]
-        public string Name { get; set; }
+        public string Nome { get; set; }
 
         [Column("idade")]
-        public int Idade { get; set; }
+        public int? Idade { get; set; }
 
         [Column("email")]
         public string Email { get; set; }
@@ -29,7 +29,6 @@ namespace ecoEats.Models
         public string Senha { get; set; }
 
 
-        public virtual ICollection<Produto> produtos
-        { get; set; }
+        public virtual ICollection<Produto> produtos { get; set; }
     } 
 }

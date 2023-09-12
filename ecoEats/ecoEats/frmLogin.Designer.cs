@@ -190,6 +190,7 @@
             this.Name = "frmLogin";
             this.Text = "Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmLogin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarEsconder)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

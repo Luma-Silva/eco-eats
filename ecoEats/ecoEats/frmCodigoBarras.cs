@@ -5,19 +5,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using MySql.Data.MySqlClient;
+using System.Runtime.CompilerServices;
+using ecoEats.Properties;
 
 namespace ecoEats
 {
     public partial class frmCodigoBarras : Form
     {
-        public frmCodigoBarras()
+        frmHome pai;
+        public frmCodigoBarras(frmHome pai)
         {
             InitializeComponent();
+            this.pai = pai;
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {         
@@ -36,15 +41,31 @@ namespace ecoEats
 
 
                     string query = "SELECT id FROM produtos WHERE codigo_barras = '" + cod + "' LIMIT 1;";
-                    MessageBox.Show(query);
+           
 
-                    Produto produto = db.Database.SqlQuery<Produto>(query).SingleOrDefault();
+                    int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
+                    MessageBox.Show(idProduto.ToString());
 
-                    FormProduto frm = new FormProduto(produto.Id);
-                    frm.Show();
+                    frmProduto frm = new frmProduto(idProduto,this.pai);
+                    this.pai.mostraFormExterno(frm);
+
+
+
+
+
 
                 }
-            }    
+            }
+
+           
+             
+
+
+            
+
+            
+        
+             
         }
 
 

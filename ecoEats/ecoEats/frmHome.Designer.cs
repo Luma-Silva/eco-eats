@@ -94,16 +94,17 @@
             this.CadastroCodigo});
             this.toolStripMenuItem4.Image = global::ecoEats.Properties.Resources.grocery_bag;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(139, 28);
-            this.toolStripMenuItem4.Text = "Cadastrar Produto";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(86, 28);
+            this.toolStripMenuItem4.Text = "Produto";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // CadastroNome
             // 
             this.CadastroNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroNome.Image = global::ecoEats.Properties.Resources.signature;
             this.CadastroNome.Name = "CadastroNome";
-            this.CadastroNome.Size = new System.Drawing.Size(183, 22);
-            this.CadastroNome.Text = "Por nome";
+            this.CadastroNome.Size = new System.Drawing.Size(188, 30);
+            this.CadastroNome.Text = "Cadastrar Produto";
             this.CadastroNome.Click += new System.EventHandler(this.CadastroNome_Click);
             // 
             // CadastroCodigo
@@ -111,8 +112,8 @@
             this.CadastroCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroCodigo.Image = global::ecoEats.Properties.Resources.barcode;
             this.CadastroCodigo.Name = "CadastroCodigo";
-            this.CadastroCodigo.Size = new System.Drawing.Size(183, 22);
-            this.CadastroCodigo.Text = "Por código de barras";
+            this.CadastroCodigo.Size = new System.Drawing.Size(188, 30);
+            this.CadastroCodigo.Text = "Consultar Produto";
             this.CadastroCodigo.Click += new System.EventHandler(this.CadastroCodigo_Click);
             // 
             // toolStripMenuItem5
@@ -129,7 +130,7 @@
             this.alterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.alterarSenha.Image = global::ecoEats.Properties.Resources.change_management;
             this.alterarSenha.Name = "alterarSenha";
-            this.alterarSenha.Size = new System.Drawing.Size(144, 22);
+            this.alterarSenha.Size = new System.Drawing.Size(188, 30);
             this.alterarSenha.Text = "Alterar Senha";
             this.alterarSenha.Click += new System.EventHandler(this.alterarSenha_Click);
             // 
@@ -153,7 +154,6 @@
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(617, 328);
             this.panelPrincipal.TabIndex = 2;
-        
             // 
             // frmHome
             // 
