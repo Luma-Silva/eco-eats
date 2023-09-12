@@ -109,9 +109,9 @@
             this.lblNome.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.Location = new System.Drawing.Point(199, 267);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(49, 17);
+            this.lblNome.Size = new System.Drawing.Size(104, 17);
             this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "Nome:";
+            this.lblNome.Text = "Nome Fantasia:";
             // 
             // lbLTelefone
             // 
@@ -167,7 +167,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(203, 478);
+            this.lblSenha.Location = new System.Drawing.Point(199, 478);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(49, 17);
             this.lblSenha.TabIndex = 9;
@@ -192,9 +192,9 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(259, 267);
+            this.txtName.Location = new System.Drawing.Point(309, 267);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(582, 20);
+            this.txtName.Size = new System.Drawing.Size(532, 20);
             this.txtName.TabIndex = 3;
             // 
             // txtEndereco
@@ -228,7 +228,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(263, 478);
+            this.txtSenha.Location = new System.Drawing.Point(254, 478);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(169, 20);
@@ -328,7 +328,7 @@
             // 
             this.pbCSenha2.Image = global::ecoEats.Properties.Resources.hide;
             this.pbCSenha2.InitialImage = null;
-            this.pbCSenha2.Location = new System.Drawing.Point(438, 478);
+            this.pbCSenha2.Location = new System.Drawing.Point(430, 478);
             this.pbCSenha2.Name = "pbCSenha2";
             this.pbCSenha2.Size = new System.Drawing.Size(29, 20);
             this.pbCSenha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -403,7 +403,6 @@
             this.gBPrincipal.Size = new System.Drawing.Size(1115, 790);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
-            this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
             // 
             // txtCidade
             // 
