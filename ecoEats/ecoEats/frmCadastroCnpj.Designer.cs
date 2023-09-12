@@ -109,9 +109,9 @@
             this.lblNome.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.Location = new System.Drawing.Point(199, 267);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(49, 17);
+            this.lblNome.Size = new System.Drawing.Size(104, 17);
             this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "Nome:";
+            this.lblNome.Text = "Nome Fantasia:";
             // 
             // lbLTelefone
             // 
@@ -192,9 +192,9 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(259, 267);
+            this.txtName.Location = new System.Drawing.Point(309, 264);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(582, 20);
+            this.txtName.Size = new System.Drawing.Size(532, 20);
             this.txtName.TabIndex = 3;
             // 
             // txtEndereco
@@ -403,7 +403,6 @@
             this.gBPrincipal.Size = new System.Drawing.Size(1115, 790);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
-            this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
             // 
             // txtCidade
             // 
