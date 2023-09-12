@@ -45,7 +45,7 @@ namespace ecoEats
 
             
             if
-                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || cidade == "" || rdBtnConfirmar.Checked==false)
+                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdBtnConfirmar.Checked==false)
             {
                 if (cpf == "")
                 {
@@ -86,47 +86,7 @@ namespace ecoEats
                 else
                 {
                     txtUf.BackColor = Color.White;
-                }
-                if (naturalidade == "")
-                {
-                    txtNaturalidade.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtNaturalidade.BackColor = Color.White;
-                }
-                if (endereco == "")
-                {
-                    txtEndereco.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtEndereco.BackColor = Color.White;
-                }
-                if (numero == "")
-                {
-                    txtNumero.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtNumero.BackColor = Color.White;
-                }
-                if (bairro == "")
-                {
-                    txtBairro.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtBairro.BackColor = Color.White;
-                }
-                if (cep == "")
-                {
-                    mskCep.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    mskCep.BackColor = Color.White;
-                }
+                }              
                 if (telefone == "")
                 {
                     mskTelefone.BackColor = Color.PaleVioletRed;
@@ -158,15 +118,7 @@ namespace ecoEats
                 else
                 {
                     txtCSenha.BackColor = Color.White;
-                }
-                if (cidade == "")
-                {
-                    txtCidade.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtCidade.BackColor = Color.White;
-                }
+                }           
                 if (rdBtnConfirmar.Checked != true)
                 {
                     MessageBox.Show("Confirme a veracidade dos dados");
