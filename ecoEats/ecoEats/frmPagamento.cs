@@ -144,12 +144,12 @@ namespace ecoEats
         private void frmPagamento_Load(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Sitka Heading", 12, FontStyle.Italic);
+            //Font fontePadrao = new Font("Sitka Heading", 15, FontStyle.Regular);
 
 
 
             // Percorre todos os controles do formulário e aplica a fonte padrão
-            AplicarFonteControles(this, fontePadrao);
+            //AplicarFonteControles(this, fontePadrao);
             // Verifica se o formulário está maximizado
 
             // Calcula a posição para centralizar o formulário na tela
