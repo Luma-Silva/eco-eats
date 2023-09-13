@@ -31,12 +31,12 @@ namespace ecoEats
         private void frmAlterarInfo_Load(object sender, EventArgs e)
         {
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Source Code Pro", 15, FontStyle.Regular);
+            //Font fontePadrao = new Font("Source Code Pro Black", 18, FontStyle.Regular);
 
 
 
             // Percorre todos os controles do formulário e aplica a fonte padrão
-            AplicarFonteControles(this, fontePadrao);
+            //AplicarFonteControles(this, fontePadrao);
             // Verifica se o formulário está maximizado
 
             // Calcula a posição para centralizar o formulário na tela
@@ -47,7 +47,7 @@ namespace ecoEats
 
             // Ajusta a posição do formulário
             groupBox1.Location = new Point(x, y);
-            label5.Font = new Font("Source Code Pro", 35, FontStyle.Bold);
+            //label5.Font = new Font("Source Code Pro Black", 20, FontStyle.Regular);
 
         }
         private void AplicarFonteControles(Control control, Font fonte)
@@ -101,10 +101,52 @@ namespace ecoEats
                     txtEmail.BackColor = Color.White;
                 }
                 MessageBox.Show("Preencha todos os campos!");
+                return;
             }
             else {
                 if (senhasConferem)
                 {
+                    using (MyDbContext db = new MyDbContext())
+                    {
+
+                        string query = "SELECT * FROM usuarios WHERE email=@email LIMIT 1;";
+                        var parameters = new[]
+                       {
+                     new MySqlParameter("@email", email),
+                 };
+
+                        Usuario user = db.Database.SqlQuery<Usuario>(query, parameters).SingleOrDefault();
+
+                        if (user == null)
+                        {
+                            MessageBox.Show("email ou usuario não encontrado");
+                            return;
+                        }
+                        else
+                        {
+
+
+                            // string queryUpdate = "UPDATE usuarios SET senha= '' WHERE =  '' ;";
+
+
+                            string queryUp = "UPDATE usuarios SET senha= @senha WHERE id=@pid; ";
+
+                            parameters = new[]
+                            {
+                                 new MySqlParameter("@pid", user.Id),
+                                 new MySqlParameter("@senha", senha2),
+                             };
+
+                        }
+
+                        int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
+
+                        MessageBox.Show("Senha alterada com sucesso!!!");
+
+                        frmLogin frm = new frmLogin();
+                        this.Hide();
+                        frm.Show();
+                    }
                     string confirmação = "";
 
                     if (rbtnEmail.Checked)
@@ -117,6 +159,8 @@ namespace ecoEats
                         confirmação = "celular";
                         MessageBox.Show("Número de verificação enviado por SMS");
                     }
+                   
+                    
                     MessageBox.Show("Senha Redefinida :)");
                 }
                 else
@@ -125,39 +169,7 @@ namespace ecoEats
                 }
               
             }
-            using (MyDbContext db = new MyDbContext())
-            {
-
-                string query = "SELECT * FROM usuarios WHERE email=@email LIMIT 1;";
-                var parameters = new[]
-               {
-                     new MySqlParameter("@email", email),
-                 };
-
-                Usuario user = db.Database.SqlQuery<Usuario>(query,parameters).Single();
-
-
-
-                // string queryUpdate = "UPDATE usuarios SET senha= '' WHERE =  '' ;";
-
-
-                 string queryUp = "UPDATE usuarios SET senha= @senha WHERE id=@pid; ";
-
-                parameters = new[]
-                {
-                     new MySqlParameter("@pid", user.Id),
-                     new MySqlParameter("@senha", senha2),
-                 };
-
-
-                int rowsAffected = db.Database.ExecuteSqlCommand(queryUp, parameters);
-
-                MessageBox.Show("Senha alterada com sucesso!!!");
-
-                frmLogin frm = new frmLogin();
-                this.Hide();
-                frm.Show();
-            }
+           
            
 
         }
@@ -196,6 +208,16 @@ namespace ecoEats
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRsenha_Click(object sender, EventArgs e)
         {
 
         }
