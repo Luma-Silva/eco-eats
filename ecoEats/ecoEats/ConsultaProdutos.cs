@@ -55,9 +55,9 @@ namespace ecoEats
 
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
             Font fontePadrao = new Font("Source Code Pro Semibold", 10, FontStyle.Regular);
-         
-             
-         
+
+
+
 
             // Calcula a posição para centralizar o formulário na tela
             int x = (Screen.PrimaryScreen.WorkingArea.Width - dgvlista.Width) / 2;
@@ -76,16 +76,67 @@ namespace ecoEats
 
 
 
-           
+
 
 
 
         }
 
         private void dgvlista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        { }
+             public class Product
         {
-           
-            
+            public string Name { get; set; }
+            public decimal Codigo { get; set; }
         }
+
+        private List<Product> productList;
+
+        private void InitializeProductList()
+        {
+            // Aqui, você deve inicializar sua lista de produtos.
+            // Por exemplo:
+            productList = new List<Product>
+        {
+            new Product { Name = "Produto 1", Codigo = 10.99M },
+            new Product { Name = "Produto 2", Codigo = 20.49M },
+            new Product { Name = "Produto 3",  Codigo= 5.99M }
+            // Adicione mais produtos conforme necessário.
+        };
+        }
+
+        private void CreateProductCards()
+        {
+            // Limpe qualquer controle anterior no formulário.
+            Controls.Clear();
+
+            // Loop através da lista de produtos e crie um GroupBox para cada um.
+            for (int i = 0; i < productList.Count; i++)
+            {
+                GroupBox groupBox = new GroupBox();
+                groupBox.Text = productList[i].Name;
+                groupBox.Location = new System.Drawing.Point(10, 10 + i * 80); // Posicione os GroupBoxes verticalmente.
+
+                Label nameLabel = new Label();
+                nameLabel.Text = "Nome: " + productList[i].Name;
+                nameLabel.Location = new System.Drawing.Point(10, 20);
+
+                Label codigoLabel = new Label();
+                codigoLabel.Text = "Codigo de Barras: " + productList[i].Codigo.ToString("");
+                codigoLabel.Location = new System.Drawing.Point(10, 40);
+
+                // Adicione outros rótulos conforme necessário.
+
+                // Adicione os rótulos ao GroupBox.
+                groupBox.Controls.Add(nameLabel);
+                groupBox.Controls.Add(codigoLabel);
+
+                // Adicione o GroupBox ao formulário.
+                Controls.Add(groupBox);
+            }
+        }
+
+
     }
+
 }

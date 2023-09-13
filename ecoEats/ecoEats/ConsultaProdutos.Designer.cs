@@ -28,10 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvlista = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlista)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvlista
+            // 
+            this.dgvlista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
+            this.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlista.Location = new System.Drawing.Point(70, 12);
+            this.dgvlista.Name = "dgvlista";
+            this.dgvlista.Size = new System.Drawing.Size(675, 732);
+            this.dgvlista.TabIndex = 1;
+            this.dgvlista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlista_CellContentClick);
             // 
             // button1
             // 
@@ -45,14 +56,14 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgvlista
+            // groupBox1
             // 
-            this.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlista.Location = new System.Drawing.Point(70, 12);
-            this.dgvlista.Name = "dgvlista";
-            this.dgvlista.Size = new System.Drawing.Size(675, 732);
-            this.dgvlista.TabIndex = 1;
-            this.dgvlista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlista_CellContentClick);
+            this.groupBox1.Location = new System.Drawing.Point(138, 66);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(521, 100);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // ConsultaProdutos
             // 
@@ -60,6 +71,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
             this.ClientSize = new System.Drawing.Size(1510, 933);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvlista);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,7 +86,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvlista;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
