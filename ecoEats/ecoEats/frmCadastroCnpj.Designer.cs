@@ -76,9 +76,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDados.AutoEllipsis = true;
             this.lblDados.AutoSize = true;
-            this.lblDados.BackColor = System.Drawing.Color.DarkOrange;
+            this.lblDados.BackColor = System.Drawing.Color.Transparent;
             this.lblDados.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDados.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblDados.Location = new System.Drawing.Point(277, 168);
             this.lblDados.Name = "lblDados";
             this.lblDados.Size = new System.Drawing.Size(261, 34);
@@ -113,7 +113,6 @@
             this.lblRazao.Size = new System.Drawing.Size(88, 17);
             this.lblRazao.TabIndex = 0;
             this.lblRazao.Text = "Razão Social:";
-            this.lblRazao.Click += new System.EventHandler(this.lblRazao_Click);
             // 
             // lblNome
             // 
@@ -231,7 +230,6 @@
             this.txtRazao.Name = "txtRazao";
             this.txtRazao.Size = new System.Drawing.Size(453, 20);
             this.txtRazao.TabIndex = 2;
-            this.txtRazao.TextChanged += new System.EventHandler(this.txtRazao_TextChanged);
             // 
             // txtName
             // 
@@ -406,7 +404,7 @@
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnCadastrar.Location = new System.Drawing.Point(713, 593);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(124, 29);
+            this.btnCadastrar.Size = new System.Drawing.Size(124, 38);
             this.btnCadastrar.TabIndex = 27;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -421,7 +419,7 @@
             this.pbCSenha2.InitialImage = null;
             this.pbCSenha2.Location = new System.Drawing.Point(557, 469);
             this.pbCSenha2.Name = "pbCSenha2";
-            this.pbCSenha2.Size = new System.Drawing.Size(29, 20);
+            this.pbCSenha2.Size = new System.Drawing.Size(29, 14);
             this.pbCSenha2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCSenha2.TabIndex = 28;
             this.pbCSenha2.TabStop = false;
@@ -436,7 +434,7 @@
             this.pbCSenha.InitialImage = global::ecoEats.Properties.Resources.hide;
             this.pbCSenha.Location = new System.Drawing.Point(557, 501);
             this.pbCSenha.Name = "pbCSenha";
-            this.pbCSenha.Size = new System.Drawing.Size(29, 20);
+            this.pbCSenha.Size = new System.Drawing.Size(29, 14);
             this.pbCSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCSenha.TabIndex = 29;
             this.pbCSenha.TabStop = false;
@@ -455,7 +453,7 @@
             this.btnVoltar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(384, 593);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(124, 29);
+            this.btnVoltar.Size = new System.Drawing.Size(124, 38);
             this.btnVoltar.TabIndex = 30;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -497,7 +495,7 @@
             this.gBPrincipal.Controls.Add(this.txtBairro);
             this.gBPrincipal.Location = new System.Drawing.Point(3, 1);
             this.gBPrincipal.Name = "gBPrincipal";
-            this.gBPrincipal.Size = new System.Drawing.Size(1115, 790);
+            this.gBPrincipal.Size = new System.Drawing.Size(1115, 784);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
             this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
@@ -530,7 +528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(165)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1120, 749);
+            this.ClientSize = new System.Drawing.Size(1120, 786);
             this.Controls.Add(this.gBPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastroCnpj";

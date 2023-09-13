@@ -282,15 +282,5 @@ namespace ecoEats
         {
 
         }
-
-        private void txtRazao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblRazao_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
