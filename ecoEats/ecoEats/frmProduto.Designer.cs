@@ -95,6 +95,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.picSelo = new System.Windows.Forms.PictureBox();
             this.picScore = new System.Windows.Forms.PictureBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblPreco = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -164,7 +166,7 @@
             this.btnComprarSelo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnComprarSelo.Image = global::ecoEats.Properties.Resources.bolsa_de_compras;
             this.btnComprarSelo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprarSelo.Location = new System.Drawing.Point(1563, 276);
+            this.btnComprarSelo.Location = new System.Drawing.Point(1569, 300);
             this.btnComprarSelo.Name = "btnComprarSelo";
             this.btnComprarSelo.Size = new System.Drawing.Size(139, 42);
             this.btnComprarSelo.TabIndex = 20;
@@ -666,12 +668,36 @@
             this.picScore.TabIndex = 3;
             this.picScore.TabStop = false;
             // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Source Code Pro Black", 12F, System.Drawing.FontStyle.Bold);
+            this.label21.Location = new System.Drawing.Point(1565, 262);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(69, 20);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "Valor:";
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.Font = new System.Drawing.Font("Source Code Pro Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.Location = new System.Drawing.Point(1639, 262);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(69, 20);
+            this.lblPreco.TabIndex = 22;
+            this.lblPreco.Text = "Valor:";
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1815, 1037);
+            this.Controls.Add(this.lblPreco);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.btnComprarSelo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lScore);
@@ -886,5 +912,7 @@
         private System.Windows.Forms.Label lScore;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnComprarSelo;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblPreco;
     }
 }
