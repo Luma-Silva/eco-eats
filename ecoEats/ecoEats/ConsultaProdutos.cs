@@ -21,8 +21,13 @@ namespace ecoEats
         public ConsultaProdutos(int userid)
         {
             InitializeComponent();
+           
+            CreateProductCards(); // Chame a função para criar os cards de produto.
             this.userid = userid;
             using (MyDbContext db = new MyDbContext())
+
+
+
 
             {
 
@@ -43,14 +48,77 @@ namespace ecoEats
 
 
             }
+
+
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        // Defina uma classe de exemplo para representar um produto.
+        public class Product
         {
-
+            public string Name { get; set; }
+            public string Codigo { get; set; }
         }
 
-        private void ConsultaProdutos_Load(object sender, EventArgs e)
+
+        private List<Product> productList;
+
+
+
+        private void InitializeProductList()
+        {
+            // Aqui, você deve inicializar sua lista de produtos.
+            // Por exemplo:
+            productList = new List<Product>
+        {
+            new Product { Name = "Produto 1", Codigo = "657658" },
+            new Product { Name = "Produto 2", Codigo = "20r747" },
+            new Product { Name = "Produto 3", Codigo = "466467" }
+            // Adicione mais produtos conforme necessário.
+        };
+
+        }
+        private void CreateProductCards()
+        {
+            InitializeProductList(); // Chame a função para inicializar sua lista de produtos (você deve implementar isso).
+            // Limpe qualquer controle anterior no formulário.
+            Controls.Clear();
+
+            // Loop através da lista de produtos e crie um GroupBox para cada um.
+            for (int i = 0; i < productList.Count; i++)
+            {
+                System.Windows.Forms.GroupBox groupBox = new System.Windows.Forms.GroupBox();
+
+                groupBox.Text = productList[i].Name;
+                groupBox.Location = new System.Drawing.Point(10, 10 + i * 80); // Posicione os GroupBoxes verticalmente.
+
+
+                Label nameLabel = new Label();
+                nameLabel.Text = "Nome: " + productList[i].Name;
+                nameLabel.Location = new System.Drawing.Point(10, 20);
+
+                Label priceLabel = new Label();
+                priceLabel.Text = "Código: " + productList[i].Codigo;
+                priceLabel.Location = new System.Drawing.Point(10, 40);
+
+                // Adicione outros rótulos conforme necessário.
+
+                // Adicione os rótulos ao GroupBox.
+                groupBox.Controls.Add(nameLabel);
+                groupBox.Controls.Add(priceLabel);
+
+                // Adicione o GroupBox ao formulário.
+                Controls.Add(groupBox);
+            }
+        }
+
+
+
+
+
+            private void ConsultaProdutos_Load(object sender, EventArgs e)
         {
 
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
@@ -82,10 +150,5 @@ namespace ecoEats
 
         }
 
-        private void dgvlista_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-            
-        }
     }
 }

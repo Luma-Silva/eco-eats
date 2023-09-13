@@ -265,8 +265,8 @@ namespace ecoEats
 
             txtCodigo.Text = string.Empty;
             
-            txtNome.BackColor = Color.White;
-            txtCodigo.BackColor = Color.White;
+            txtNome.BackColor = Color.FromArgb(196, 240, 143);
+            txtCodigo.BackColor = Color.FromArgb(196, 240, 143);
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
             CBCategoria.Text = string.Empty;
@@ -282,6 +282,11 @@ namespace ecoEats
         }
 
         private void frmPorNome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }
