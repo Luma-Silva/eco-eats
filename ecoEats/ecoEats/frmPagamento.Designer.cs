@@ -151,11 +151,11 @@
             // btnConfirmarPagamento
             // 
             this.btnConfirmarPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(162)))), ((int)(((byte)(63)))));
-            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Sitka Heading", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarPagamento.Location = new System.Drawing.Point(603, 456);
+            this.btnConfirmarPagamento.Font = new System.Drawing.Font("Sitka Heading", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarPagamento.Location = new System.Drawing.Point(635, 454);
             this.btnConfirmarPagamento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmarPagamento.Name = "btnConfirmarPagamento";
-            this.btnConfirmarPagamento.Size = new System.Drawing.Size(139, 56);
+            this.btnConfirmarPagamento.Size = new System.Drawing.Size(178, 67);
             this.btnConfirmarPagamento.TabIndex = 10;
             this.btnConfirmarPagamento.Text = "Confirmar pagamento";
             this.btnConfirmarPagamento.UseVisualStyleBackColor = false;
@@ -227,7 +227,7 @@
             this.groupBox1.Controls.Add(this.lblNomeNoCartao);
             this.groupBox1.Controls.Add(this.lblDataDeValidade);
             this.groupBox1.Controls.Add(this.lblNumeroDoCartao);
-            this.groupBox1.Location = new System.Drawing.Point(27, 12);
+            this.groupBox1.Location = new System.Drawing.Point(35, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1194, 575);
             this.groupBox1.TabIndex = 16;
