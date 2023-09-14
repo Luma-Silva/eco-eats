@@ -88,15 +88,7 @@ namespace ecoEats
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(CBCategoria.Text))
-            {
-
-                return;
-                // o return sai do erro e segue o programa 
-
-
-
-            }
+          
 
 
 
@@ -109,7 +101,7 @@ namespace ecoEats
             string Lote = txtLote.Text;
             string Nome = txtNome.Text;
             string Valor = txtValor.Text;
-            string categoria = CBCategoria.SelectedItem.ToString();
+            string categoria = CBCategoria.Text.ToString();
             string descricao = txtDescricao.Text;
 
 
@@ -132,23 +124,33 @@ namespace ecoEats
             // Exibe o MessageBox com a variável 'mensagem' definida acima
             DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
-            
-                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-                              VALUES ("+codigo+", "+Nome+", "+Validade+","+Fabricacao+"," +Valor+"," +descricao+"," +Lote+ "," +categoria+ ");SELECT LAST_INSERT_ID();";
-            if (result == DialogResult.OK)
+
+
+            string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";
+
+            // Defina os parâmetros, tratando valores em branco ou nulos
+            MySqlParameter[] parameters = new MySqlParameter[]
             {
-
-                
-
+                  new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
+                  new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
+                  new MySqlParameter("@data_validade", DTPValidade.Value),
+                  new MySqlParameter("@fabricacao", DTPFabricacao.Value),
+                  new MySqlParameter("@valor_produto", string.IsNullOrWhiteSpace(txtValor.Text) ? DBNull.Value : (object)txtValor.Text),
+                  new MySqlParameter("@descricao", string.IsNullOrWhiteSpace(txtDescricao.Text) ? DBNull.Value : (object)txtDescricao.Text),
+                  new MySqlParameter("@lote", string.IsNullOrWhiteSpace(txtLote.Text) ? DBNull.Value : (object)txtLote.Text),
+                 new MySqlParameter("@categoria_produto", CBCategoria.SelectedItem == null ? DBNull.Value : (object)CBCategoria.SelectedItem.ToString())
                
-            }
-            else if (result == DialogResult.Cancel)
+            };
+
+
+            // Execute a consulta SQL com os parâmetros
+            using (MyDbContext db = new MyDbContext())
             {
-                // Código para lidar com o cancelamento
-                return;
+                db.Database.ExecuteSqlCommand(query, parameters.ToArray());
             }
 
-
+            MessageBox.Show("Salvo com sucesso!");
 
 
 
@@ -162,21 +164,6 @@ namespace ecoEats
 
             {
 
-                var parameters = new[]
-                {
-
-                    new MySqlParameter("@codigo_barras",codigo),
-                    new MySqlParameter("@nome",Nome),
-                    new MySqlParameter("@data_validade",Validade),
-                    new MySqlParameter("@fabricacao" ,Fabricacao),
-                    new MySqlParameter("@valor_produto",Valor),
-                    new MySqlParameter("@descricao", descricao),
-                    new MySqlParameter("@lote",Lote),
-                    new MySqlParameter("@categoria_produto",categoria),
-
-
-
-                };
 
 
                 //cadastra o produto e pegar o ultimo id 
@@ -281,7 +268,7 @@ namespace ecoEats
             txtCodigo.BackColor = Color.FromArgb(196, 240, 143);
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
-            CBCategoria.SelectedItem = string.Empty;
+            CBCategoria.SelectedIndex = -1; ;
             txtDescricao.Text = string.Empty;
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
