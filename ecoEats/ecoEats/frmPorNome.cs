@@ -22,7 +22,7 @@ namespace ecoEats
     {
         int userid;
         frmHome pai;
-
+       
         public frmPorNome(int userid, frmHome pai)
         {
             InitializeComponent();
@@ -123,14 +123,18 @@ namespace ecoEats
 
             // Exibe o MessageBox com a variável 'mensagem' definida acima
             DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+           
 
 
 
-            string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
                 VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";
 
-            // Defina os parâmetros, tratando valores em branco ou nulos
-            MySqlParameter[] parameters = new MySqlParameter[]
+
+          
+
+                // Defina os parâmetros, tratando valores em branco ou nulos
+                MySqlParameter[] parameters = new MySqlParameter[]
             {
                   new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
                   new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
@@ -144,11 +148,14 @@ namespace ecoEats
             };
 
 
+
+
             // Execute a consulta SQL com os parâmetros
             using (MyDbContext db = new MyDbContext())
             {
                 db.Database.ExecuteSqlCommand(query, parameters.ToArray());
             }
+
 
             MessageBox.Show("Salvo com sucesso!");
 
@@ -290,4 +297,12 @@ namespace ecoEats
 
         }
     }
+
+
+
+
+
+
+
+
 }

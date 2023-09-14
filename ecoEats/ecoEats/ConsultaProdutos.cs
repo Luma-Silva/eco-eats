@@ -18,18 +18,21 @@ namespace ecoEats
     public partial class ConsultaProdutos : Form
     {
         int userid;
+
+
+
         private List<Produto> productList;
 
         public ConsultaProdutos(int userid)
         {
             InitializeComponent();
-           
+
             CreateProductCards(); // Chame a função para criar os cards de produto.
             this.userid = userid;
         }
 
 
-        
+
 
 
 
@@ -51,12 +54,12 @@ namespace ecoEats
                     };
 
                 List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
-                
+
                 this.productList = produtos;
 
-            } 
+            }
 
-    
+
         }
 
 
@@ -69,20 +72,30 @@ namespace ecoEats
             // Loop através da lista de produtos e crie um GroupBox para cada um.
             for (int i = 0; i < this.productList.Count; i++)
             {
-                MessageBox.Show("teste");
+
                 System.Windows.Forms.GroupBox groupBox = new System.Windows.Forms.GroupBox();
 
-                groupBox.Text = this.productList[i].nome;
+
+
+
+                groupBox.Text = "Seus Produtos";
                 groupBox.Location = new System.Drawing.Point(10, 10 + i * 80); // Posicione os GroupBoxes verticalmente.
+
+
+                // Adicione um manipulador de evento de clique a cada GroupBox
+                groupBox.Click += GroupBox_Click;
+
+
+
 
 
                 Label nomeLabel = new Label();
                 nomeLabel.Text = "Nome: " + this.productList[i].nome;
-                nomeLabel.Location = new System.Drawing.Point(10, 20);
+                nomeLabel.Location = new System.Drawing.Point(10, 30);
 
                 Label codigoLabel = new Label();
-                codigoLabel.Text = "Codigo: " + this.productList[i].codigo_barras;
-                codigoLabel.Location = new System.Drawing.Point(10, 40);
+                codigoLabel.Text = "Codigo de Barras: " + this.productList[i].codigo_barras;
+                codigoLabel.Location = new System.Drawing.Point(10, 60);
 
                 // Adicione outros rótulos conforme necessário.
 
@@ -96,11 +109,15 @@ namespace ecoEats
         }
 
 
-
+        private System.Windows.Forms.GroupBox selectedGroupBox = null;
 
 
         private void ConsultaProdutos_Load(object sender, EventArgs e)
         {
+            CreateProductCards();
+            CreateProductCards();
+            this.userid = userid;
+
 
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
             Font fontePadrao = new Font("Source Code Pro Semibold", 10, FontStyle.Regular);
@@ -109,7 +126,7 @@ namespace ecoEats
 
 
             // Calcula a posição para centralizar o formulário na tela
-           int x = (Screen.PrimaryScreen.WorkingArea.Width - gb.Width) / 2;
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - gb.Width) / 2;
             int y = (Screen.PrimaryScreen.WorkingArea.Height - gb.Height) / 2;
 
             // Ajusta a posição do formulário
@@ -117,8 +134,57 @@ namespace ecoEats
 
 
             gb.BackColor = this.BackColor;
-           
+
+        }
+        private void GroupBox_Click(object sender, EventArgs e)
+        {
+            if (sender is System.Windows.Forms.GroupBox clickedGroupBox)
+            {
+                // Desmarque o GroupBox anteriormente selecionado (se houver)
+                if (selectedGroupBox != null)
+                {
+                    // Redefina a aparência do GroupBox desmarcado aqui
+                    selectedGroupBox.BackColor = SystemColors.Control;
+                }
+
+                // Marque o GroupBox clicado
+                clickedGroupBox.BackColor = Color.LightBlue;
+
+                // Atualize a variável de controle
+                selectedGroupBox = clickedGroupBox;
+            }
         }
 
+        private void gb_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
     }
 }
+
