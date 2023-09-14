@@ -79,6 +79,7 @@ namespace ecoEats
 
 
             }
+
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
 
@@ -87,12 +88,22 @@ namespace ecoEats
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(CBCategoria.Text))
+            {
+
+                return;
+                // o return sai do erro e segue o programa 
 
 
 
-           
-                        //estou declarando as variaveis para elas ficarem salvas no Botão salvar
-                string Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
+            }
+
+
+
+
+
+            //estou declarando as variaveis para elas ficarem salvas no Botão salvar
+            string Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
             string Fabricacao = DTPFabricacao.Value.ToString("yyyy-MM-dd");
             string codigo = txtCodigo.Text;
             string Lote = txtLote.Text;
@@ -121,6 +132,9 @@ namespace ecoEats
             // Exibe o MessageBox com a variável 'mensagem' definida acima
             DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
+            
+                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                              VALUES ("+codigo+", "+Nome+", "+Validade+","+Fabricacao+"," +Valor+"," +descricao+"," +Lote+ "," +categoria+ ");SELECT LAST_INSERT_ID();";
             if (result == DialogResult.OK)
             {
 
@@ -148,8 +162,6 @@ namespace ecoEats
 
             {
 
-                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-                              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID();";
                 var parameters = new[]
                 {
 
@@ -265,11 +277,11 @@ namespace ecoEats
 
             txtCodigo.Text = string.Empty;
             
-            txtNome.BackColor = Color.White;
-            txtCodigo.BackColor = Color.White;
+            txtNome.BackColor = Color.FromArgb(196, 240, 143);
+            txtCodigo.BackColor = Color.FromArgb(196, 240, 143);
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
-            CBCategoria.Text = string.Empty;
+            CBCategoria.SelectedItem = string.Empty;
             txtDescricao.Text = string.Empty;
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
@@ -282,6 +294,11 @@ namespace ecoEats
         }
 
         private void frmPorNome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }

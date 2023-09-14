@@ -28,66 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvlista = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlista)).BeginInit();
+            this.gb = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
-            // dgvlista
+            // gb
             // 
-            this.dgvlista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.dgvlista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlista.Location = new System.Drawing.Point(70, 12);
-            this.dgvlista.Name = "dgvlista";
-            this.dgvlista.Size = new System.Drawing.Size(675, 732);
-            this.dgvlista.TabIndex = 1;
-            this.dgvlista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlista_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(204)))), ((int)(((byte)(123)))));
-            this.button1.Font = new System.Drawing.Font("Source Code Pro Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(968, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 52);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Excluir Produto";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(138, 66);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(521, 100);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gb.Location = new System.Drawing.Point(220, 54);
+            this.gb.Name = "gb";
+            this.gb.Size = new System.Drawing.Size(200, 100);
+            this.gb.TabIndex = 2;
+            this.gb.TabStop = false;
+            this.gb.Text = "groupBox1";
             // 
             // ConsultaProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(238)))), ((int)(((byte)(211)))));
-            this.ClientSize = new System.Drawing.Size(1510, 933);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvlista);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1510, 920);
+            this.Controls.Add(this.gb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaProdutos";
             this.Text = "Consulta Produtos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ConsultaProdutos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlista)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvlista;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb;
     }
 }

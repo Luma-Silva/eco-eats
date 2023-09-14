@@ -20,7 +20,7 @@ namespace ecoEats
     {
         int prodId;
         frmHome pai;
-        public FormProduto(int prodId, frmHome pai)
+        public  FormProduto(int prodId, frmHome pai)
         {
             InitializeComponent();
             this.prodId = prodId;
