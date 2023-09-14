@@ -63,10 +63,10 @@
             this.pbConfirmarSenha = new System.Windows.Forms.PictureBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.dpNascimento = new System.Windows.Forms.DateTimePicker();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbConfirmarSenha)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -536,6 +536,19 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             // 
+            // label18
+            // 
+            this.label18.AutoEllipsis = true;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label18.Location = new System.Drawing.Point(297, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(238, 37);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "Cadastre com o CPF";
+            this.label18.UseCompatibleTextRendering = true;
+            // 
             // dpNascimento
             // 
             this.dpNascimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -570,19 +583,6 @@
             this.label16.Size = new System.Drawing.Size(53, 16);
             this.label16.TabIndex = 41;
             this.label16.Text = "Cidade:";
-            // 
-            // label18
-            // 
-            this.label18.AutoEllipsis = true;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label18.Location = new System.Drawing.Point(223, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(268, 41);
-            this.label18.TabIndex = 43;
-            this.label18.Text = "Cadastre com o CPF";
-            this.label18.UseCompatibleTextRendering = true;
             // 
             // frmCadastroCPF
             // 
