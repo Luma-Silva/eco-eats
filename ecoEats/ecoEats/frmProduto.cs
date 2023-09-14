@@ -19,6 +19,7 @@ using System.Data.Entity;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Security.Policy;
+using Newtonsoft.Json;
 
 namespace ecoEats
 {
@@ -129,13 +130,13 @@ namespace ecoEats
                 lEmbalagem.Text = i.embalagem.ToString();
                 lPerdas.Text = i.perdas.ToString();
 
-                string queryNutricional = "SELECT n.valor_energetico, n.proteinas, n.gorduras_totais, n.carboidrato, n.acucares FROM nutricional AS n WHERE n.fk_nutri_prod=" + this.prodId + " LIMIT 1;";
+                string queryNutricional = "SELECT calories, protein_g, fat_total_g, carbohydrates_total_g, sugar_g FROM nutricional WHERE fk_nutri_prod=" + this.prodId + " LIMIT 1;";
                 ValoresNutricionais n = db.Database.SqlQuery<ValoresNutricionais>(queryNutricional).SingleOrDefault();
 
                 if(n == null)
                 {
                     string apiKey = "b8v773NKkAPR8mfiYhOVOw==S8saUikuTvMsL5Iy";
-                    string url = $"https://api.api-ninjas.com/v1/nutrition?query={p.nome}";
+                    string url = $"https://api.api-ninjas.com/v1/nutrition?query={nome_produto.Text}";
                     //consulta a API para trazer o dado nutricional e salvar no banco de dados
                     using (HttpClient client = new HttpClient())
                     {
@@ -149,14 +150,16 @@ namespace ecoEats
                             {
                                 string json = await response.Content.ReadAsStringAsync();
 
-                                // Aqui você pode decidir como deseja salvar os dados na sua base de dados.
-
                                 var nutritionalData = JsonConvert.DeserializeObject<ValoresNutricionais>(json);
 
-                                if (nutritionalData.Length > 0)
+                                if (nutritionalData != null)
                                 {
                                     n = nutritionalData;
                                 }
+                                // Aqui você pode decidir como deseja salvar os dados na sua base de dados.
+                                string queryNutri = "INSERT INTO nutricional( fk_nutri_prod,calories, protein_g, fat_total_g, carbohydrates_total_g, sugar_g,serving_size_g,fat_saturated_g,sodium_mg,potassium_mg,cholesterol_mg,fiber)" +
+                                     " VALUES (" + this.prodId + ","+n.calories+","+n.protein_g+","+n.fat_total_g+","+n.carbohydrates_total_g+","+n.sugar_g+","+n.fat_saturated_g+","+n.sodium_mg+","+n.potassium_mg+","+n.cholesterol_mg+","+n.fiber+");" ; 
+                                int nRowAfe = db.Database.ExecuteSqlCommand(queryNutri);
 
                                 MessageBox.Show("Dados Nutricionais: " + json);
 
@@ -174,36 +177,36 @@ namespace ecoEats
 
                 }
 
-                if (n.valor_energetico == null || n.proteinas == null || n.gorduras_totais == null || n.carboidrato == null || n.acucares == null)
+                if (n.calories == null || n.protein_g == null || n.fat_total_g == null || n.carbohydrates_total_g == null || n.sugar_g == null)
                 {
-                    if (n.valor_energetico == null)
+                    if (n.calories == null)
                     {
-                        n.valor_energetico = "N/A";
+                        n.calories = "N/A";
                     }
-                    if (n.proteinas == null)
+                    if (n.protein_g == null)
                     {
-                        n.proteinas = "N/A";
+                        n.protein_g = "N/A";
                     }
-                    if (n.gorduras_totais == null)
+                    if (n.fat_total_g == null)
                     {
-                        n.gorduras_totais = "N/A";
+                        n.fat_total_g = "N/A";
                     }
-                    if (n.carboidrato == null)
+                    if (n.carbohydrates_total_g == null)
                     {
-                        n.carboidrato = "N/A";
+                        n.carbohydrates_total_g = "N/A";
                     }
-                    if (n.acucares == null)
+                    if (n.sugar_g == null)
                     {
-                        n.acucares = "N/A";
+                        n.sugar_g = "N/A";
                     }
 
                 }
 
-                lEnergetico.Text = n.valor_energetico.ToString();
-                lGordura.Text = n.gorduras_totais.ToString();
-                lProt.Text = n.proteinas.ToString();
-                lAcucar.Text = n.acucares.ToString();
-                lCarbo.Text = n.carboidrato.ToString();
+                lEnergetico.Text = n.calories.ToString();
+                lGordura.Text = n.fat_total_g.ToString();
+                lProt.Text = n.protein_g.ToString();
+                lAcucar.Text = n.sugar_g.ToString();
+                lCarbo.Text = n.carbohydrates_total_g.ToString();
                 
                         
 

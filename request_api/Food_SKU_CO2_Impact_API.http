@@ -1,0 +1,8 @@
+### rota tras o valor nutricional 
+GET https://api.api-ninjas.com/v1/nutrition?query=Coffee HTTP/1.1
+content-type: application/json
+X-Api-Key: b8v773NKkAPR8mfiYhOVOw==S8saUikuTvMsL5Iy
+
+### rota tras os dados de carbono
+GET https://world.openfoodfacts.org/api/v2/product/737628064502 HTTP/1.1
+content-type: application/json
