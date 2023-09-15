@@ -40,7 +40,7 @@ namespace ecoEats.Models
 
 
         [Column("fat_saturated_g")]
-        public int fat_saturated_g { get; set; }
+        public string fat_saturated_g { get; set; }
 
         [Column("sodium_mg")]
         public string sodium_mg { get; set; }
@@ -51,8 +51,8 @@ namespace ecoEats.Models
         [Column("cholesterol_mg")]
         public string cholesterol_mg { get; set; }
 
-        [Column("fiber")]
-        public string fiber { get; set; }
+        [Column("fiber_g")]
+        public string fiber_g { get; set; }
 
         [Column("fk_nutri_prod")]
         public int fk_nutri_prod { get; set; }

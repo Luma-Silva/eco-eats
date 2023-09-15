@@ -20,6 +20,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Security.Policy;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ecoEats
 {
@@ -135,6 +136,7 @@ namespace ecoEats
 
                 if(n == null)
                 {
+                     n = new ValoresNutricionais();
                     string apiKey = "b8v773NKkAPR8mfiYhOVOw==S8saUikuTvMsL5Iy";
                     string url = $"https://api.api-ninjas.com/v1/nutrition?query={nome_produto.Text}";
                     //consulta a API para trazer o dado nutricional e salvar no banco de dados
@@ -142,37 +144,52 @@ namespace ecoEats
                     {
                         client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
 
-                        try
-                        {
                             HttpResponseMessage response = await client.GetAsync(url);
 
                             if (response.IsSuccessStatusCode)
                             {
-                                string json = await response.Content.ReadAsStringAsync();
+                                string responseBody = await response.Content.ReadAsStringAsync();
+                                MessageBox.Show("responsebody: " + responseBody);
 
-                                var nutritionalData = JsonConvert.DeserializeObject<ValoresNutricionais>(json);
 
-                                if (nutritionalData != null)
-                                {
-                                    n = nutritionalData;
-                                }
-                                // Aqui você pode decidir como deseja salvar os dados na sua base de dados.
-                                string queryNutri = "INSERT INTO nutricional( fk_nutri_prod,calories, protein_g, fat_total_g, carbohydrates_total_g, sugar_g,serving_size_g,fat_saturated_g,sodium_mg,potassium_mg,cholesterol_mg,fiber)" +
-                                     " VALUES (" + this.prodId + ","+n.calories+","+n.protein_g+","+n.fat_total_g+","+n.carbohydrates_total_g+","+n.sugar_g+","+n.fat_saturated_g+","+n.sodium_mg+","+n.potassium_mg+","+n.cholesterol_mg+","+n.fiber+");" ; 
+
+                            //>> Extrair dados relevantes do JSON
+                                JArray jsonArray = JArray.Parse(responseBody);
+
+                            //MessageBox.Show("p: "+jsonArray[0]);
+
+                            //JObject nutri = jsonArray[0].ToObject<JObject>();
+                           
+                           
+
+                                n.calories = Convert.ToString(jsonArray[0]["calories"]);
+                                n.cholesterol_mg = Convert.ToString(jsonArray[0]["cholesterol_mg"]);
+                                n.carbohydrates_total_g = Convert.ToString(jsonArray[0]["carbohydrates_total_g"]);
+                                n.sugar_g = Convert.ToString(jsonArray[0]["sugar_g"]);
+                                n.fat_saturated_g = Convert.ToString(jsonArray[0]["fat_saturated_g"]);
+                                n.potassium_mg = Convert.ToString(jsonArray[0]["potassium_mg"]);
+                                n.protein_g = Convert.ToString(jsonArray[0]["protein_g"]);
+                                n.serving_size_g = Convert.ToString(jsonArray[0]["serving_size_g"]);
+                                n.fat_total_g = Convert.ToString(jsonArray[0]["fat_total_g"]);
+                                n.fiber_g = Convert.ToString(jsonArray[0]["fiber_g"]);
+                                n.sodium_mg = Convert.ToString(jsonArray[0]["sodium_mg"]);
+
+
+
+
+
+                            // Aqui você pode decidir como deseja salvar os dados na sua base de dados.
+                            string queryNutri = "INSERT INTO nutricional( fk_nutri_prod,calories, protein_g, fat_total_g, carbohydrates_total_g, sugar_g,serving_size_g,fat_saturated_g,sodium_mg,potassium_mg,cholesterol_mg,fiber_g)" +
+                                     " VALUES (" + this.prodId + ",'"+n.calories+"','"+n.protein_g+"','"+n.fat_total_g+"','"+n.carbohydrates_total_g+"','"+n.sugar_g+"','"+n.serving_size_g+"','"+n.fat_saturated_g+"','"+n.sodium_mg+"','"+n.potassium_mg+"','"+n.cholesterol_mg+"','"+n.fiber_g+ "');" ; 
                                 int nRowAfe = db.Database.ExecuteSqlCommand(queryNutri);
-
-                                MessageBox.Show("Dados Nutricionais: " + json);
+                            MessageBox.Show("Valores inseridos :)");
 
                             }
                             else
                             {
                                 MessageBox.Show($"Erro na solicitação: {response.StatusCode}");
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Ocorreu um erro ao buscar os dados nutricionais: " + ex.Message);
-                        }
+
                     }
 
                 }
