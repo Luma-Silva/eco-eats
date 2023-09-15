@@ -35,11 +35,11 @@ namespace ecoEats
 
         private void frmProduto_Load(object sender, EventArgs e)
         {
-            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-           Font fontePadrao = new Font("Source Code Pro Semibold", 10 ,FontStyle.Regular); 
-            // Percorre todos os controles do formulário e aplica a fonte padrão
-            AplicarFonteControles(this, fontePadrao);
-            // Verifica se o formulário está maximizado
+           
+          // Font fontePadrao = new Font("Source Code Pro Semibold", 10 ,FontStyle.Regular); 
+            
+          //  AplicarFonteControles(this, fontePadrao);
+            
             
             // Calcula a posição para centralizar o formulário na tela
             int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
@@ -121,22 +121,29 @@ namespace ecoEats
             string query;
             if (this.produtoId >= 0)
             {
-                query = @"UPDATE produtos codigo_barras=@codigo_barras,.. WHERE id = @idProduto;";
-/*, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-                VALUES (, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";*/
+                query = @"UPDATE produtos 
+              SET codigo_barras = @codigo_barras,
+                  nome = @nome,
+                  data_validade = @data_validade,
+                  fabricacao = @fabricacao,
+                  valor_produto = @valor_produto,
+                  descricao = @descricao,
+                  lote = @lote,
+                  categoria_produto = @categoria_produto
+              WHERE id = @idProduto;";
             }
             else
             {
                 query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-                VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";
+              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);";
             }
-                
 
-          
+            this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
 
 
-                // Defina os parâmetros, tratando valores em branco ou nulos
-                MySqlParameter[] parameters = new MySqlParameter[]
+
+            // Defina os parâmetros, tratando valores em branco ou nulos
+            MySqlParameter[] parameters = new MySqlParameter[]
                 {
                     new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
                     new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
@@ -155,7 +162,10 @@ namespace ecoEats
                 // Execute a consulta SQL com os parâmetros
                 using (MyDbContext db = new MyDbContext())
             {
-                db.Database.ExecuteSqlCommand(query, parameters.ToArray());
+              
+                    
+                    
+                    db.Database.ExecuteSqlCommand(query, parameters.ToArray());
             }
 
 
@@ -277,9 +287,8 @@ namespace ecoEats
             //o empty significa vazio e o noww volta para data de hoje
 
             txtCodigo.Text = string.Empty;
-            
-            txtNome.BackColor = Color.FromArgb(196, 240, 143);
-            txtCodigo.BackColor = Color.FromArgb(196, 240, 143);
+            txtNome.BackColor = Color.FromArgb(219, 228, 180);
+            txtCodigo.BackColor = Color.FromArgb(219, 228, 180);
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
             CBCategoria.SelectedIndex = -1; ;
@@ -287,41 +296,6 @@ namespace ecoEats
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
             DTPFabricacao.Value = DateTime.Now;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmPorNome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLote_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtValor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 

@@ -69,12 +69,12 @@ namespace ecoEats
         {
             InitializeProductList(); // Chame a função para inicializar sua lista de produtos (você deve implementar isso).
             // Limpe qualquer controle anterior no formulário.
-            Controls.Clear();
+            
 
 
 
 
-            int groupBoxWidth = 300; // Largura de cada GroupBox
+            int groupBoxWidth = 250; // Largura de cada GroupBox
             int groupBoxHeight = 100; // Altura de cada GroupBox
             int groupBoxSpacing = 10; // Espaçamento entre os GroupBoxes
 
@@ -88,7 +88,7 @@ namespace ecoEats
 
                 System.Windows.Forms.GroupBox groupBox = new System.Windows.Forms.GroupBox();
 
-                groupBox.Text = "Seus Produtos";
+                groupBox.Text = "Produto";
                 groupBox.Width = groupBoxWidth;
                 groupBox.Height = groupBoxHeight;
                 groupBox.Location = new System.Drawing.Point(
@@ -96,7 +96,7 @@ namespace ecoEats
                     10 + currentRow * (groupBoxHeight + groupBoxSpacing) // Posição vertical
                 );
 
-                // Adicione um manipulador de evento de clique a cada GroupBox
+                
                 groupBox.Click += GroupBox_Click;
 
 
@@ -106,13 +106,14 @@ namespace ecoEats
                 Label nomeLabel = new Label();
                 nomeLabel.Text = "Nome: " + this.productList[i].nome;
                 nomeLabel.Location = new System.Drawing.Point(10, 30);
-               
+
                 Label codigoLabel = new Label();
                 string cod = this.productList[i].codigo_barras.ToString();
                 codigoLabel.Text = "Codigo de Barras: " + cod;
                 codigoLabel.Location = new System.Drawing.Point(10, 60);
 
-                // Adicione outros rótulos conforme necessário.
+
+
 
                 // Adicione os rótulos ao GroupBox.
                 groupBox.Controls.Add(nomeLabel);
@@ -143,7 +144,7 @@ namespace ecoEats
 
 
             // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            Font fontePadrao = new Font("Source Code Pro Semibold", 10, FontStyle.Regular);
+           // Font fontePadrao = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
 
 
 
@@ -161,6 +162,8 @@ namespace ecoEats
         }
         private void GroupBox_Click(object sender, EventArgs e)
         {
+            Font fontePadrao = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+
             if (sender is System.Windows.Forms.GroupBox clickedGroupBox)
             {
                 // Desmarque o GroupBox anteriormente selecionado (se houver)
@@ -176,11 +179,6 @@ namespace ecoEats
                 // Atualize a variável de controle
                 selectedGroupBox = clickedGroupBox;
             }
-        }
-
-        private void gb_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
