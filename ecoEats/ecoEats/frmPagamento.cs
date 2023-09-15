@@ -18,16 +18,19 @@ using System.Data.SqlClient;
 using System.Xml.Linq;
 using System.Security.Cryptography;
 using System.Windows.Markup;
+using ecoEats.Models;
 
 namespace ecoEats
 {
     public partial class frmPagamento : Form
     {
+        int valor;
         int userId;
-        public frmPagamento(int userId)
+        public frmPagamento(int userId, int valor)
         {
-            this.userId = userId;
             InitializeComponent();
+            this.valor = valor;
+            this.userId = userId;
         }
         private void btnConfirmarPagamento_Click(object sender, EventArgs e)
 
@@ -41,11 +44,11 @@ namespace ecoEats
             {
                 Tipodopagamento = "Débito";
             }
-            string CPF = txtCpf.Text;
+            string CPF = mtbCpf.Text;
 
             string NomeNoCartão = txtNomeNoCartao.Text;
 
-            string NumeroDoCartão = txtNumeroDoCartao.Text;
+            string NumeroDoCartão = mtbCartao.Text;
 
             string codigo = txtCodigo.Text;
 
@@ -55,11 +58,11 @@ namespace ecoEats
 
                 if (CPF == "")
                 {
-                    txtCpf.BackColor = Color.Red;
+                    mtbCpf.BackColor = Color.Red;
                 }
                 else
                 {
-                    txtCpf.BackColor = Color.White;
+                    mtbCpf.BackColor = Color.White;
                 }
 
                 if (NomeNoCartão == "")
@@ -81,11 +84,11 @@ namespace ecoEats
 
                 if (NumeroDoCartão == "")
                 {
-                    txtNumeroDoCartao.BackColor = Color.Red;
+                    mtbCartao.BackColor = Color.Red;
                 }
                 else
                 {
-                    txtNumeroDoCartao.BackColor = Color.White;
+                    mtbCartao.BackColor = Color.White;
                 }
 
 
@@ -109,8 +112,8 @@ namespace ecoEats
                 {
                     using (MyDbContext db = new MyDbContext())
                     {
-                        string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj) " +
-                            "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk);";
+                        string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj, valor) " +
+                            "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk, @valor);";
 
                         var parameters = new[]
                         {
@@ -119,44 +122,20 @@ namespace ecoEats
                             new MySqlParameter("@cvv",codigo),
                             new MySqlParameter("@nome_cartao",NomeNoCartão),
                             new MySqlParameter("@numero_cartao",NumeroDoCartão),
-                            new MySqlParameter("@fk", this.userId)
+                            new MySqlParameter("@fk", this.userId),
+                            new MySqlParameter("@valor", this.valor)
                         };
-
                         int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
                     }
-
-                    MessageBox.Show("Dados Salvos: CPF:" + CPF + "\n" +
-              "Nome No Cartão:" + NomeNoCartão + "\n" +
-              "Número Do Cartão:" + NumeroDoCartão + "\n" +
-              "Código:" + codigo + "\n" +
-              "Data De Validade:" + dataDeValidade + "\n" +
-              "Forma de pagamento:" + Tipodopagamento);
-
+                    MessageBox.Show("Pagamento concluído!");
                 }
-
             }
-
-
-            
-
         }
-
         private void frmPagamento_Load(object sender, EventArgs e)
         {
-            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-            //Font fontePadrao = new Font("Sitka Heading", 15, FontStyle.Regular);
-
-
-
-            // Percorre todos os controles do formulário e aplica a fonte padrão
-            //AplicarFonteControles(this, fontePadrao);
-            // Verifica se o formulário está maximizado
-
-            // Calcula a posição para centralizar o formulário na tela
+           // Calcula a posição para centralizar o formulário na tela
             int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
             int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
-
-
 
             // Ajusta a posição do formulário
             groupBox1.Location = new Point(x, y);
@@ -165,20 +144,16 @@ namespace ecoEats
         private void AplicarFonteControles(Control control, Font fonte)
         {
             control.Font = fonte;
-
-
-
             foreach (Control filho in control.Controls)
             {
                 AplicarFonteControles(filho, fonte);
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void lblValorSelo_Click(object sender, EventArgs e)
         {
-
+            lblValorSelo.Text = "0,00"; 
         }
-    }
-  
-    }
+    }  
+}
 

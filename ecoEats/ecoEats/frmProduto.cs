@@ -21,13 +21,15 @@ namespace ecoEats
 {
     public partial class frmProduto : Form
     {
+        int valor;
         int prodId;
         frmHome pai;
-        public frmProduto(int prodId, frmHome pai)
+        public frmProduto(int prodId, frmHome pai, int valor)
         {
             InitializeComponent();
             this.prodId = prodId;
             this.pai = pai;
+            this.valor = valor;
         }
 
 
@@ -260,7 +262,7 @@ namespace ecoEats
                 string query;
                 if (score <= 20)
                 {
-                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com alto impacto ambiental e baixo valor nutricional.')";
+                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ",'Produto com alto impacto ambiental e baixo valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo0;
                     picScore.BackgroundImage = Resources.score0;
@@ -305,7 +307,7 @@ namespace ecoEats
 
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
-            frmPagamento frm = new frmPagamento(this.prodId);
+            frmPagamento frm = new frmPagamento(this.prodId, this.valor);
             this.pai.mostraFormExterno(frm);
 
         }
