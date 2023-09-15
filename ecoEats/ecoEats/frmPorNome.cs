@@ -22,12 +22,15 @@ namespace ecoEats
     {
         int userid;
         frmHome pai;
-       
-        public frmPorNome(int userid, frmHome pai)
+        int produtoId;
+
+
+        public frmPorNome(int userid, frmHome pai, int produtoId = -1)
         {
             InitializeComponent();
             this.userid = userid;
             this.pai = pai; 
+            this.produtoId = produtoId;
         }
 
         private void frmProduto_Load(object sender, EventArgs e)
@@ -60,7 +63,6 @@ namespace ecoEats
                 AplicarFonteControles(filho, fonte);
             }
         }
-      
 
 
 
@@ -75,9 +77,6 @@ namespace ecoEats
                 txtNome.BackColor = Color.Red;
                 return;
                 // o return sai do erro e segue o programa 
-
-
-
             }
 
             if (string.IsNullOrWhiteSpace(txtCodigo.Text))
@@ -87,12 +86,6 @@ namespace ecoEats
                 txtCodigo.BackColor = Color.Red;
                 return;
             }
-
-          
-
-
-
-
 
             //estou declarando as variaveis para elas ficarem salvas no Botão salvar
             string Validade = DTPValidade.Value.ToString("yyyy-MM-dd");
@@ -123,35 +116,44 @@ namespace ecoEats
 
             // Exibe o MessageBox com a variável 'mensagem' definida acima
             DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-           
 
 
-
-                string query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+            string query;
+            if (this.produtoId >= 0)
+            {
+                query = @"UPDATE produtos codigo_barras=@codigo_barras,.. WHERE id = @idProduto;";
+/*, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                VALUES (, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";*/
+            }
+            else
+            {
+                query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
                 VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);SELECT LAST_INSERT_ID(); ";
-
+            }
+                
 
           
 
+
                 // Defina os parâmetros, tratando valores em branco ou nulos
                 MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
+                    new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
+                    new MySqlParameter("@data_validade", DTPValidade.Value),
+                    new MySqlParameter("@fabricacao", DTPFabricacao.Value),
+                    new MySqlParameter("@valor_produto", string.IsNullOrWhiteSpace(txtValor.Text) ? DBNull.Value : (object)txtValor.Text),
+                    new MySqlParameter("@descricao", string.IsNullOrWhiteSpace(txtDescricao.Text) ? DBNull.Value : (object)txtDescricao.Text),
+                    new MySqlParameter("@lote", string.IsNullOrWhiteSpace(txtLote.Text) ? DBNull.Value : (object)txtLote.Text),
+                    new MySqlParameter("@categoria_produto", CBCategoria.SelectedItem == null ? DBNull.Value : (object)CBCategoria.SelectedItem.ToString())
+                };
+
+            if (result == DialogResult.OK)
             {
-                  new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
-                  new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
-                  new MySqlParameter("@data_validade", DTPValidade.Value),
-                  new MySqlParameter("@fabricacao", DTPFabricacao.Value),
-                  new MySqlParameter("@valor_produto", string.IsNullOrWhiteSpace(txtValor.Text) ? DBNull.Value : (object)txtValor.Text),
-                  new MySqlParameter("@descricao", string.IsNullOrWhiteSpace(txtDescricao.Text) ? DBNull.Value : (object)txtDescricao.Text),
-                  new MySqlParameter("@lote", string.IsNullOrWhiteSpace(txtLote.Text) ? DBNull.Value : (object)txtLote.Text),
-                 new MySqlParameter("@categoria_produto", CBCategoria.SelectedItem == null ? DBNull.Value : (object)CBCategoria.SelectedItem.ToString())
-               
-            };
 
 
-
-
-            // Execute a consulta SQL com os parâmetros
-            using (MyDbContext db = new MyDbContext())
+                // Execute a consulta SQL com os parâmetros
+                using (MyDbContext db = new MyDbContext())
             {
                 db.Database.ExecuteSqlCommand(query, parameters.ToArray());
             }
@@ -162,7 +164,12 @@ namespace ecoEats
 
 
 
-
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                // Código para lidar com o cancelamento
+                return;
+            }
 
 
 
@@ -252,7 +259,7 @@ namespace ecoEats
 
                 MessageBox.Show("Salvo com sucesso!");
 
-                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid));
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
 
 
             }
