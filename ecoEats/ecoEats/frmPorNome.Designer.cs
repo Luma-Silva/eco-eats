@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPorNome));
             this.label8 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -67,7 +66,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
+            this.txtCodigo.BackColor = System.Drawing.Color.White;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtCodigo.Location = new System.Drawing.Point(262, 103);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
@@ -77,7 +76,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
+            this.txtValor.BackColor = System.Drawing.Color.White;
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtValor.Location = new System.Drawing.Point(548, 137);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
@@ -87,7 +86,7 @@
             // 
             // txtLote
             // 
-            this.txtLote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
+            this.txtLote.BackColor = System.Drawing.Color.White;
             this.txtLote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtLote.Location = new System.Drawing.Point(262, 137);
             this.txtLote.Margin = new System.Windows.Forms.Padding(4);
@@ -97,7 +96,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
+            this.txtDescricao.BackColor = System.Drawing.Color.White;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtDescricao.Location = new System.Drawing.Point(262, 234);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
@@ -108,9 +107,9 @@
             // 
             // DTPValidade
             // 
-            this.DTPValidade.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
-            this.DTPValidade.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
-            this.DTPValidade.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
+            this.DTPValidade.CalendarMonthBackground = System.Drawing.Color.White;
+            this.DTPValidade.CalendarTitleBackColor = System.Drawing.Color.White;
+            this.DTPValidade.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.DTPValidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.DTPValidade.Location = new System.Drawing.Point(262, 398);
             this.DTPValidade.Margin = new System.Windows.Forms.Padding(4);
@@ -132,7 +131,6 @@
             // 
             // txtNome
             // 
-            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.txtNome.Location = new System.Drawing.Point(262, 57);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
@@ -142,7 +140,7 @@
             // 
             // CBCategoria
             // 
-            this.CBCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(240)))), ((int)(((byte)(143)))));
+            this.CBCategoria.BackColor = System.Drawing.Color.White;
             this.CBCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.CBCategoria.FormattingEnabled = true;
@@ -163,9 +161,9 @@
             // 
             // DTPFabricacao
             // 
-            this.DTPFabricacao.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
-            this.DTPFabricacao.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
-            this.DTPFabricacao.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
+            this.DTPFabricacao.CalendarMonthBackground = System.Drawing.Color.White;
+            this.DTPFabricacao.CalendarTitleBackColor = System.Drawing.Color.White;
+            this.DTPFabricacao.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.DTPFabricacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.DTPFabricacao.Location = new System.Drawing.Point(262, 357);
             this.DTPFabricacao.Margin = new System.Windows.Forms.Padding(4);
@@ -177,12 +175,14 @@
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(136)))), ((int)(((byte)(40)))));
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(155)))), ((int)(((byte)(78)))));
+            this.btnLimpar.FlatAppearance.BorderSize = 2;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.Location = new System.Drawing.Point(262, 457);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(155, 52);
+            this.btnLimpar.Size = new System.Drawing.Size(169, 52);
             this.btnLimpar.TabIndex = 9;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -191,6 +191,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(160)))), ((int)(((byte)(84)))));
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(176)))), ((int)(((byte)(69)))));
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.Location = new System.Drawing.Point(516, 457);
@@ -204,7 +205,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(228)))), ((int)(((byte)(180)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(215)))), ((int)(((byte)(158)))));
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.btnLimpar);
@@ -333,8 +334,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(230)))), ((int)(((byte)(185)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(215)))), ((int)(((byte)(158)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1207, 642);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);

@@ -17,28 +17,26 @@ namespace ecoEats
 {
     public partial class ConsultaProdutos : Form
     {
+
+        
+
         int userid;
         frmHome pai;
-
-
-
+        string edit_prod;
         private List<Produto> productList;
+        string nome;
 
         public ConsultaProdutos(int userid, frmHome pai)
         {
             InitializeComponent();
 
-            CreateProductCards(); // Chame a função para criar os cards de produto.
             this.userid = userid;
             this.pai = pai;
+            CreateProductCards();
         }
 
-
-
-
-
-
         private void InitializeProductList()
+            
         {
             using (MyDbContext db = new MyDbContext())
             {
@@ -50,29 +48,19 @@ namespace ecoEats
                 {
 
                         new MySqlParameter("@id", this.userid),
-
-
-
-                    };
+                };
 
                 List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
 
                 this.productList = produtos;
-
             }
-
-
         }
-
+        
 
         private void CreateProductCards()
         {
             InitializeProductList(); // Chame a função para inicializar sua lista de produtos (você deve implementar isso).
             // Limpe qualquer controle anterior no formulário.
-            
-
-
-
 
             int groupBoxWidth = 250; // Largura de cada GroupBox
             int groupBoxHeight = 100; // Altura de cada GroupBox
@@ -88,7 +76,7 @@ namespace ecoEats
 
                 System.Windows.Forms.GroupBox groupBox = new System.Windows.Forms.GroupBox();
 
-                groupBox.Text = "Produto";
+               // groupBox.Text = "Produto";
                 groupBox.Width = groupBoxWidth;
                 groupBox.Height = groupBoxHeight;
                 groupBox.Location = new System.Drawing.Point(
@@ -96,24 +84,22 @@ namespace ecoEats
                     10 + currentRow * (groupBoxHeight + groupBoxSpacing) // Posição vertical
                 );
 
-                
                 groupBox.Click += GroupBox_Click;
-
-
-
-               
 
                 Label nomeLabel = new Label();
                 nomeLabel.Text = "Nome: " + this.productList[i].nome;
                 nomeLabel.Location = new System.Drawing.Point(10, 30);
+                
 
                 Label codigoLabel = new Label();
                 string cod = this.productList[i].codigo_barras.ToString();
-                codigoLabel.Text = "Codigo de Barras: " + cod;
+                codigoLabel.AutoSize = true;
+                codigoLabel.Text = "Codigo de barras: " + cod;
                 codigoLabel.Location = new System.Drawing.Point(10, 60);
 
+                groupBox.Tag = this.productList[i].Id;
 
-
+                
 
                 // Adicione os rótulos ao GroupBox.
                 groupBox.Controls.Add(nomeLabel);
@@ -141,29 +127,12 @@ namespace ecoEats
         private void ConsultaProdutos_Load(object sender, EventArgs e)
         {
             CreateProductCards();
-
-
-            // Define o tamanho de fonte padrão para todos os controles (pode ajustar o tamanho conforme necessário)
-           // Font fontePadrao = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
-
-
-
-
-            // Calcula a posição para centralizar o formulário na tela
-            int x = (Screen.PrimaryScreen.WorkingArea.Width - gb.Width) / 2;
-            int y = (Screen.PrimaryScreen.WorkingArea.Height - gb.Height) / 2;
-
-            // Ajusta a posição do formulário
-            gb.Location = new Point(x, y);
-
-
-            gb.BackColor = this.BackColor;
-
         }
         private void GroupBox_Click(object sender, EventArgs e)
         {
             Font fontePadrao = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
 
+            
             if (sender is System.Windows.Forms.GroupBox clickedGroupBox)
             {
                 // Desmarque o GroupBox anteriormente selecionado (se houver)
@@ -178,40 +147,21 @@ namespace ecoEats
 
                 // Atualize a variável de controle
                 selectedGroupBox = clickedGroupBox;
+
+                this.edit_prod = clickedGroupBox.Tag.ToString();
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
-
-
-
             // Suponha que você tenha o ID do produto a ser editado.
-            int idDoProdutoAEditar = 123; // Substitua pelo ID real do produto.
+            int idDoProdutoAEditar = Convert.ToInt32(this.edit_prod); // Substitua pelo ID real do produto.
 
             // Crie uma instância do formulário frmPorNome, passando o ID do produto.
-          frmPorNome formularioEdicao = new frmPorNome(this.userid, this.pai, idDoProdutoAEditar);
+            frmPorNome formularioEdicao = new frmPorNome(this.userid, this.pai, idDoProdutoAEditar);
 
             // Exiba o formulário de edição.
-          formularioEdicao.Show();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            this.pai.mostraFormExterno(formularioEdicao);
         }
     }
 }

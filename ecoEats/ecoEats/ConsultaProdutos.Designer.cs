@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gb = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // gb
-            // 
-            this.gb.Location = new System.Drawing.Point(133, 274);
-            this.gb.Name = "gb";
-            this.gb.Size = new System.Drawing.Size(89, 36);
-            this.gb.TabIndex = 0;
-            this.gb.TabStop = false;
-            this.gb.Text = "groupBox1";
-            this.gb.Visible = false;
             // 
             // btnEditar
             // 
@@ -74,7 +63,6 @@
             this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.gb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaProdutos";
             this.Text = "Consulta Produtos";
@@ -85,8 +73,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gb;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button button2;
     }

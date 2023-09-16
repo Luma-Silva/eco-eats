@@ -27,6 +27,7 @@ namespace ecoEats
 
         public frmPorNome(int userid, frmHome pai, int produtoId = -1)
         {
+            MessageBox.Show("P: " + produtoId);
             InitializeComponent();
             this.userid = userid;
             this.pai = pai; 
@@ -97,14 +98,6 @@ namespace ecoEats
             string categoria = CBCategoria.Text.ToString();
             string descricao = txtDescricao.Text;
 
-
-
-
-
-
-
-
-            
             string mensagem = $"Código de Barras: {codigo}\n" +
                               $"Nome do Produto: {Nome}\n" +
                               $"Valor: {Valor:C}\n" +
@@ -117,33 +110,33 @@ namespace ecoEats
             // Exibe o MessageBox com a variável 'mensagem' definida acima
             DialogResult result = MessageBox.Show(mensagem, "Informações do Produto", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
-
-            string query;
-            if (this.produtoId >= 0)
+            using (MyDbContext db = new MyDbContext())
             {
-                query = @"UPDATE produtos 
-              SET codigo_barras = @codigo_barras,
-                  nome = @nome,
-                  data_validade = @data_validade,
-                  fabricacao = @fabricacao,
-                  valor_produto = @valor_produto,
-                  descricao = @descricao,
-                  lote = @lote,
-                  categoria_produto = @categoria_produto
-              WHERE id = @idProduto;";
-            }
-            else
-            {
-                query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-              VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto);";
-            }
+                string query;
+                if (this.produtoId >= 0)
+                {
+                    query = @"UPDATE produtos 
+                  SET codigo_barras = @codigo_barras,
+                      nome = @nome,
+                      data_validade = @data_validade,
+                      fabricacao = @fabricacao,
+                      valor_produto = @valor_produto,
+                      descricao = @descricao,
+                      lote = @lote,
+                      categoria_produto = @categoria_produto
+                  WHERE id = @idProduto;";
+                }
+                else
+                {
+                    query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
+                  VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto); SELECT LAST_INSERT_ID();";
+                }
 
-            this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
 
 
 
-            // Defina os parâmetros, tratando valores em branco ou nulos
-            MySqlParameter[] parameters = new MySqlParameter[]
+                List<MySqlParameter> parameterList = new List<MySqlParameter>
                 {
                     new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
                     new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
@@ -155,129 +148,68 @@ namespace ecoEats
                     new MySqlParameter("@categoria_produto", CBCategoria.SelectedItem == null ? DBNull.Value : (object)CBCategoria.SelectedItem.ToString())
                 };
 
-            if (result == DialogResult.OK)
-            {
+                if (this.produtoId >= 0)
+                {
+                    parameterList.Add(new MySqlParameter("@idProduto", this.produtoId));
+                }
 
+                MySqlParameter[] parameters = parameterList.ToArray();
 
-                // Execute a consulta SQL com os parâmetros
-                using (MyDbContext db = new MyDbContext())
-            {
-              
+                if (result == DialogResult.OK)
+                {
+                    // Execute a consulta SQL com os parâmetros
+                    if(this.produtoId == -1)
+                    {
+                        this.produtoId = db.Database.SqlQuery<int>(query, parameters).SingleOrDefault();
+
+                        string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMIT 1;";
+                        var parameters1 = new[] {
+                          new MySqlParameter("@id", this.userid)
+                        };
+                        Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
+                        if (usuario == null)
+                        {
+                            MessageBox.Show("Usuario não encontrado");
+                            return;
+                        }
+
+                        string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
+                        var parameters2 = new[]
+                        {
+                            new MySqlParameter("@id",this.produtoId )
+                        };
+                        Produto produto = db.Database.SqlQuery<Produto>(query2, parameters2).SingleOrDefault();
+                        if (produto == null)
+                        {
+                            MessageBox.Show("Produto não encontrado");
+                            return;
+                        }
+
+                        query = @"INSERT INTO cliente_produto(fk_cp_prod, fk_cp_user) 
+                                VALUES (@id_prod, @id_user);";
+                        parameters = new[]
+                        {
+                            new MySqlParameter("@id_prod",produto.Id),
+                            new MySqlParameter("@id_user",usuario.Id)
+                        };
+                        db.Database.ExecuteSqlCommand(query, parameters);
+
+                        MessageBox.Show("Salvo com sucesso!");
+                    }
+                    else
+                    {
+                        db.Database.ExecuteSqlCommand(query, parameters);
+                        MessageBox.Show("Editado com sucesso!");
+                    }
                     
-                    
-                    db.Database.ExecuteSqlCommand(query, parameters.ToArray());
-            }
-
-
-            MessageBox.Show("Salvo com sucesso!");
-
-
-
-
-            }
-            else if (result == DialogResult.Cancel)
-            {
-                // Código para lidar com o cancelamento
-                return;
-            }
-
-
-
-
-            using (MyDbContext db = new MyDbContext())
-
-            {
-
-
-
-                //cadastra o produto e pegar o ultimo id 
-                int idProduto = db.Database.SqlQuery<int>(query, parameters).SingleOrDefault();
-
-                //inserir na tabela cliente produto 
-
-
-
-
-
-
-
-                string query1 = @"SELECT * FROM usuarios WHERE id = @id LIMIT 1;";
-
-
-                var parameters1 = new[] {
-                new MySqlParameter("@id", this.userid)
-                };
-
-                Usuario usuario = db.Database.SqlQuery<Usuario>(query1, parameters1).SingleOrDefault();
-
-                if (usuario == null)
+                    this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
+                }
+                else if (result == DialogResult.Cancel)
                 {
-                    MessageBox.Show("Não encontrou");
+                    // Código para lidar com o cancelamento
                     return;
                 }
-
-
-
-              
-
-                if (usuario == null)
-                {
-                    MessageBox.Show("Usuario não encontrado");
-                    return;
-                }
-
-
-
-                string query2 = @"SELECT * FROM produtos WHERE id = @id LIMIT 1;";
-
-                var parameters2 = new[]
-                {
-
-                    new MySqlParameter("@id",idProduto )
-
- 
-
-                };
-
-
-
-                Produto produto = db.Database.SqlQuery<Produto>(query2, parameters2).SingleOrDefault();
-
-                if(produto == null)
-                {
-                    MessageBox.Show("Produto não encontrado");
-                    return;
-                }
-
-
-
-
-                query = @"INSERT INTO cliente_produto(fk_cp_prod, fk_cp_user) 
-                              VALUES (@id_prod, @id_user);";
-
-                parameters = new[]
-                {
-
-                    new MySqlParameter("@id_prod",produto.Id),
-                    new MySqlParameter("@id_user",usuario.Id)
-
-
-
-                };
-
-                db.Database.ExecuteSqlCommand(query, parameters);
-
-                MessageBox.Show("Salvo com sucesso!");
-
-                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
-
-
             }
-
-
-
-
-
 
         }
 
@@ -287,8 +219,8 @@ namespace ecoEats
             //o empty significa vazio e o noww volta para data de hoje
 
             txtCodigo.Text = string.Empty;
-            txtNome.BackColor = Color.FromArgb(219, 228, 180);
-            txtCodigo.BackColor = Color.FromArgb(219, 228, 180);
+            txtNome.BackColor = Color.White;
+            txtCodigo.BackColor = Color.White;
             txtLote.Text = string.Empty;
             txtNome.Text = string.Empty;
             CBCategoria.SelectedIndex = -1; ;
