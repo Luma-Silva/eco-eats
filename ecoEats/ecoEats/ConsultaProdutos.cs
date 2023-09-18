@@ -52,6 +52,16 @@ namespace ecoEats
 
                 List<Produto> produtos = db.Database.SqlQuery<Produto>(query, parameters).ToList();
 
+                if(produtos.Count < 1)
+                {
+                    MessageBox.Show("Não foi encontrado nenhum produto");
+                    frmPorNome formularioEdicao = new frmPorNome(this.userid, this.pai);
+
+                    // Exiba o formulário de edição.
+                    this.pai.mostraFormExterno(formularioEdicao);
+                    return;
+                }
+
                 this.productList = produtos;
             }
         }
@@ -92,7 +102,7 @@ namespace ecoEats
                 
 
                 Label codigoLabel = new Label();
-                string cod = this.productList[i].codigo_barras.ToString();
+                string cod = this.productList[i].codigo_barras?.ToString();
                 codigoLabel.AutoSize = true;
                 codigoLabel.Text = "Codigo de barras: " + cod;
                 codigoLabel.Location = new System.Drawing.Point(10, 60);
@@ -126,7 +136,6 @@ namespace ecoEats
 
         private void ConsultaProdutos_Load(object sender, EventArgs e)
         {
-            CreateProductCards();
         }
         private void GroupBox_Click(object sender, EventArgs e)
         {
@@ -162,6 +171,30 @@ namespace ecoEats
 
             // Exiba o formulário de edição.
             this.pai.mostraFormExterno(formularioEdicao);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            
+                // Verifique se algum produto foi selecionado.
+                if (!string.IsNullOrEmpty(edit_prod))
+                {
+                    // Converta a ID do produto selecionado para int.
+                    int idDoProdutoSelecionado = Convert.ToInt32(edit_prod);
+
+                    // Crie uma instância do formulário FormProduto, passando a ID do produto.
+                    FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
+
+                    // Exiba o formulário de detalhes do produto.
+                    formularioProduto.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecione um produto antes de clicar em Detalhes.");
+                }
+            
+
         }
     }
 }

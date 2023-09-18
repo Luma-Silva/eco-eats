@@ -27,7 +27,7 @@ namespace ecoEats
 
         public frmPorNome(int userid, frmHome pai, int produtoId = -1)
         {
-            MessageBox.Show("P: " + produtoId);
+            //MessageBox.Show("P: " + produtoId);
             InitializeComponent();
             this.userid = userid;
             this.pai = pai; 
@@ -116,8 +116,8 @@ namespace ecoEats
                 if (this.produtoId >= 0)
                 {
                     query = @"UPDATE produtos 
-                  SET codigo_barras = @codigo_barras,
-                      nome = @nome,
+                  SET codigo_barras = @pcodigo_barras,
+                      nome = @pnome,
                       data_validade = @data_validade,
                       fabricacao = @fabricacao,
                       valor_produto = @valor_produto,
@@ -129,7 +129,7 @@ namespace ecoEats
                 else
                 {
                     query = @"INSERT INTO ecoeats.produtos(codigo_barras, nome, data_validade, fabricacao, valor_produto, descricao, lote, categoria_produto) 
-                  VALUES (@codigo_barras, @nome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto); SELECT LAST_INSERT_ID();";
+                  VALUES (@pcodigo_barras, @pnome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto); SELECT LAST_INSERT_ID();";
                 }
 
                 this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
@@ -138,8 +138,8 @@ namespace ecoEats
 
                 List<MySqlParameter> parameterList = new List<MySqlParameter>
                 {
-                    new MySqlParameter("@codigo_barras", string.IsNullOrWhiteSpace(txtCodigo.Text) ? DBNull.Value : (object)txtCodigo.Text),
-                    new MySqlParameter("@nome", string.IsNullOrWhiteSpace(txtNome.Text) ? DBNull.Value : (object)txtNome.Text),
+                    new MySqlParameter("@pcodigo_barras", codigo),
+                    new MySqlParameter("@pnome", Nome),
                     new MySqlParameter("@data_validade", DTPValidade.Value),
                     new MySqlParameter("@fabricacao", DTPFabricacao.Value),
                     new MySqlParameter("@valor_produto", string.IsNullOrWhiteSpace(txtValor.Text) ? DBNull.Value : (object)txtValor.Text),
