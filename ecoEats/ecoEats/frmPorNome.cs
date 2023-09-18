@@ -244,6 +244,12 @@ namespace ecoEats
 
                 db.Database.ExecuteSqlCommand(query, parameters);
 
+                
+
+
+                // Inserindo impacto ambiental geral
+                query = "INSERT INTO impactos_ambientais(carbono,cultivo,embalagem,perdas,impacto,agua,fk_impact_prod) VALUES ('11.15 Kg','37%','36%','10%','77%','5.000 L',"+produto.Id+");";
+                db.Database.ExecuteSqlCommand(query);
                 MessageBox.Show("Salvo com sucesso!");
 
                 this.pai.mostraFormExterno(new ConsultaProdutos(this.userid));

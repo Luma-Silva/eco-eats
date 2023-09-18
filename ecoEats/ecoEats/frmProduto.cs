@@ -228,7 +228,7 @@ namespace ecoEats
                         
 
                 
-                double carbono = Convert.ToDouble(lCarbono.Text);
+                double carbono = Convert.ToDouble(lCarbono.Text.Split(' ')[0]);
                 double cultivo = Convert.ToDouble(lCultivo.Text.Split('%')[0]) / 100;
                 double perdas = Convert.ToDouble(lPerdas.Text.Split('%')[0]) / 100;
                 double embalagem = Convert.ToDouble(lEmbalagem.Text.Split('%')[0]) / 100;
@@ -278,19 +278,27 @@ namespace ecoEats
         private double calculaAmbiental(double carbono, double agua, double cultivo, double embalagem, double perdas)
         {
             double res;
-            res = (carbono * 2 + agua * 2 + cultivo + embalagem + perdas) / 6;
+            res = (carbono  + agua  + cultivo + embalagem + perdas) / 5;
+            res = (res / 100.0);
             return res;
         }
         private double calculaNutricional(double energia, double proteina, double gordura, double carb, double sugar)
         {
-            double res;
-            res = (energia + proteina + gordura + carb + sugar) / 5;
+
+            double res = (energia * 0.1 + proteina + gordura  + carb + sugar ) / 6;
             return res;
         }
         private double score(double ambiental, double nutricional)
         {
             double res;
-            res = (ambiental * 0.6) + (nutricional * 0.4) / 2;
+            res = (ambiental*0.4) + (nutricional * 0.6);
+            // Defina um valor máximo para o score
+   
+
+            // Use uma escala para ajustar o score para que ele não ultrapasse 80
+            res = (res / 100.0) * 8;
+
+
             return res;
         }
         private string InterpretarScore(double score)
