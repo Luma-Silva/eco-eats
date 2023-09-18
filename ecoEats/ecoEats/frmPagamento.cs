@@ -19,6 +19,7 @@ using System.Xml.Linq;
 using System.Security.Cryptography;
 using System.Windows.Markup;
 using ecoEats.Models;
+using ecoEats.Properties;
 
 namespace ecoEats
 {
@@ -139,8 +140,23 @@ namespace ecoEats
 
             // Ajusta a posição do formulário
             groupBox1.Location = new Point(x, y);
-        }
 
+            if(this.valor == 500)
+            {
+                picSelo.BackgroundImage = Resources.selo0;
+                lblValorSelo.Text = this.valor.ToString();
+            }
+            else if (this.valor == 1000)
+            {
+                picSelo.BackgroundImage = Resources.selo01;
+                lblValorSelo.Text = this.valor.ToString();
+            }
+            else if (this.valor == 1200)
+            {
+                picSelo.BackgroundImage = Resources.selo02;
+                lblValorSelo.Text = this.valor.ToString();
+            }
+        }
         private void AplicarFonteControles(Control control, Font fonte)
         {
             control.Font = fonte;
@@ -148,11 +164,6 @@ namespace ecoEats
             {
                 AplicarFonteControles(filho, fonte);
             }
-        }
-
-        private void lblValorSelo_Click(object sender, EventArgs e)
-        {
-            lblValorSelo.Text = "0,00"; 
         }
     }  
 }

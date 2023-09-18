@@ -40,12 +40,14 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.dtpDataDeValidade = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblpag = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
-            this.mtbCartao = new System.Windows.Forms.MaskedTextBox();
+            this.picSelo = new System.Windows.Forms.PictureBox();
             this.lblValorSelo = new System.Windows.Forms.Label();
+            this.mtbCartao = new System.Windows.Forms.MaskedTextBox();
+            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblpag = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFormadepagamento
@@ -238,6 +240,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(216)))), ((int)(((byte)(158)))));
+            this.groupBox1.Controls.Add(this.picSelo);
             this.groupBox1.Controls.Add(this.lblValorSelo);
             this.groupBox1.Controls.Add(this.mtbCartao);
             this.groupBox1.Controls.Add(this.mtbCpf);
@@ -261,20 +264,51 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
-            // lblpag
+            // picSelo
             // 
-            this.lblpag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.picSelo.BackgroundImage = global::ecoEats.Properties.Resources.selo50;
+            this.picSelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picSelo.Location = new System.Drawing.Point(978, 19);
+            this.picSelo.Name = "picSelo";
+            this.picSelo.Size = new System.Drawing.Size(201, 165);
+            this.picSelo.TabIndex = 21;
+            this.picSelo.TabStop = false;
+            // 
+            // lblValorSelo
+            // 
+            this.lblValorSelo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblpag.AutoSize = true;
-            this.lblpag.BackColor = System.Drawing.Color.Transparent;
-            this.lblpag.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(115)))), ((int)(((byte)(69)))));
-            this.lblpag.Location = new System.Drawing.Point(556, 44);
-            this.lblpag.Name = "lblpag";
-            this.lblpag.Size = new System.Drawing.Size(216, 35);
-            this.lblpag.TabIndex = 16;
-            this.lblpag.Text = "Pagamento de Selo";
+            this.lblValorSelo.AutoSize = true;
+            this.lblValorSelo.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold);
+            this.lblValorSelo.Location = new System.Drawing.Point(558, 419);
+            this.lblValorSelo.Name = "lblValorSelo";
+            this.lblValorSelo.Size = new System.Drawing.Size(0, 23);
+            this.lblValorSelo.TabIndex = 20;
+            // 
+            // mtbCartao
+            // 
+            this.mtbCartao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtbCartao.Location = new System.Drawing.Point(562, 261);
+            this.mtbCartao.Mask = "0000 0000 0000 0000";
+            this.mtbCartao.Name = "mtbCartao";
+            this.mtbCartao.Size = new System.Drawing.Size(131, 20);
+            this.mtbCartao.TabIndex = 19;
+            this.mtbCartao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mtbCpf
+            // 
+            this.mtbCpf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtbCpf.Location = new System.Drawing.Point(562, 158);
+            this.mtbCpf.Mask = "000.000.000-00";
+            this.mtbCpf.Name = "mtbCpf";
+            this.mtbCpf.Size = new System.Drawing.Size(97, 20);
+            this.mtbCpf.TabIndex = 18;
+            this.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label1
             // 
@@ -292,42 +326,20 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Valor do selo:";
             // 
-            // mtbCpf
+            // lblpag
             // 
-            this.mtbCpf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblpag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtbCpf.Location = new System.Drawing.Point(562, 158);
-            this.mtbCpf.Mask = "000.000.000-00";
-            this.mtbCpf.Name = "mtbCpf";
-            this.mtbCpf.Size = new System.Drawing.Size(97, 20);
-            this.mtbCpf.TabIndex = 18;
-            this.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // mtbCartao
-            // 
-            this.mtbCartao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtbCartao.Location = new System.Drawing.Point(562, 261);
-            this.mtbCartao.Mask = "0000 0000 0000 0000";
-            this.mtbCartao.Name = "mtbCartao";
-            this.mtbCartao.Size = new System.Drawing.Size(131, 20);
-            this.mtbCartao.TabIndex = 19;
-            this.mtbCartao.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // lblValorSelo
-            // 
-            this.lblValorSelo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblValorSelo.AutoSize = true;
-            this.lblValorSelo.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Bold);
-            this.lblValorSelo.Location = new System.Drawing.Point(558, 419);
-            this.lblValorSelo.Name = "lblValorSelo";
-            this.lblValorSelo.Size = new System.Drawing.Size(0, 23);
-            this.lblValorSelo.TabIndex = 20;
-            this.lblValorSelo.Click += new System.EventHandler(this.lblValorSelo_Click);
+            this.lblpag.AutoSize = true;
+            this.lblpag.BackColor = System.Drawing.Color.Transparent;
+            this.lblpag.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(115)))), ((int)(((byte)(69)))));
+            this.lblpag.Location = new System.Drawing.Point(556, 44);
+            this.lblpag.Name = "lblpag";
+            this.lblpag.Size = new System.Drawing.Size(216, 35);
+            this.lblpag.TabIndex = 16;
+            this.lblpag.Text = "Pagamento de Selo";
             // 
             // frmPagamento
             // 
@@ -346,6 +358,7 @@
             this.Load += new System.EventHandler(this.frmPagamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSelo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,5 +394,6 @@
         private System.Windows.Forms.MaskedTextBox mtbCartao;
         private System.Windows.Forms.MaskedTextBox mtbCpf;
         private System.Windows.Forms.Label lblValorSelo;
+        private System.Windows.Forms.PictureBox picSelo;
     }
 }

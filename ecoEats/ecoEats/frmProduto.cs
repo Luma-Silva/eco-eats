@@ -21,19 +21,19 @@ namespace ecoEats
 {
     public partial class frmProduto : Form
     {
-        int valor;
+     
         int prodId;
         frmHome pai;
-        public frmProduto(int prodId, frmHome pai, int valor)
+        public frmProduto(int prodId, frmHome pai)
         {
             InitializeComponent();
             this.prodId = prodId;
             this.pai = pai;
-            this.valor = valor;
+          
         }
 
 
-
+        int valor;
         private void FormProduto_Load(object sender, EventArgs e)
         {
             using (MyDbContext db = new MyDbContext())
@@ -266,6 +266,7 @@ namespace ecoEats
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo0;
                     picScore.BackgroundImage = Resources.score0;
+                    valor = 500;
                     return "Produto com alto impacto ambiental e baixo valor nutricional.";
                 }
                 else if (score <= 40)
@@ -274,6 +275,7 @@ namespace ecoEats
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo50;
                     picScore.BackgroundImage = Resources.score50;
+                    valor = 1000;
                     return "Produto com médio impacto ambiental e valor nutricional moderado.";
                 }
                 else if (score <= 60)
@@ -282,6 +284,8 @@ namespace ecoEats
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo50;
                     picScore.BackgroundImage = Resources.score50;
+                    valor = 1000;
+
                     return "Produto com impacto ambiental razoável e valor nutricional razoável.";
                 }
                 else if (score <= 80)
@@ -290,6 +294,7 @@ namespace ecoEats
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo100;
                     picScore.BackgroundImage = Resources.score100;
+                    valor = 1200;
                     return "Produto com baixo impacto ambiental e bom valor nutricional.";
                 }
                 else
@@ -298,6 +303,7 @@ namespace ecoEats
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo100;
                     picScore.BackgroundImage = Resources.score100;
+                    valor = 1200;
                     return "Produto com muito baixo impacto ambiental e excelente valor nutricional.";
                 }
             }
@@ -307,7 +313,7 @@ namespace ecoEats
 
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
-            frmPagamento frm = new frmPagamento(this.prodId, this.valor);
+            frmPagamento frm = new frmPagamento(this.prodId,valor);
             this.pai.mostraFormExterno(frm);
 
         }
