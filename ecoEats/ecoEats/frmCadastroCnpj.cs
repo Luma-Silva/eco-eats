@@ -1,21 +1,10 @@
 ﻿using ecoEats.Properties;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using ecoEats.Models;
-using Org.BouncyCastle.Utilities.Collections;
-using System.Data.Entity.Migrations.Model;
-using System.Data.Entity;
 
 namespace ecoEats
 {
@@ -40,9 +29,9 @@ namespace ecoEats
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
             string cidade = txtCidade.Text;
-            
 
-            if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == ""|| estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked==false)
+
+            if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdbConfirmar.Checked == false)
             {
                 if (cnpj == "")
                 {
@@ -91,7 +80,7 @@ namespace ecoEats
                 else
                 {
                     txtBairro.BackColor = Color.White;
-                }                
+                }
                 if (cep == "")
                 {
                     mdkTCep.BackColor = Color.PaleVioletRed;
@@ -152,16 +141,16 @@ namespace ecoEats
 
                 }
                 if (cnpj == "" || razao == "" || nome == "" || rua == "" || numero == "" || bairro == "" || cep == "" || cidade == "" || estado == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "")
-                    {
+                {
                     MessageBox.Show("Preencha todos os campos!");
-                    }
+                }
                 if (rdbConfirmar.Checked == false)
                 {
                     MessageBox.Show("Confirme a veracidade dos dados!");
                 }
             }
             else
-            {    
+            {
                 if (txtCSenha.Text != txtSenha.Text)
                 {
                     MessageBox.Show("Senhas diferentes!");
@@ -170,13 +159,13 @@ namespace ecoEats
                 }
                 else
                 {
-                  using (MyDbContext db = new MyDbContext())
+                    using (MyDbContext db = new MyDbContext())
 
-                  {
-                  string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha); SELECT LAST_INSERT_ID();";
-                  var parameters = new[]
+                    {
+                        string query = @"INSERT INTO usuarios (nome, email, telefone, senha) VALUES (@pnome, @pemail, @ptelefone, @psenha); SELECT LAST_INSERT_ID();";
+                        var parameters = new[]
 
-                  {
+                        {
                     new MySqlParameter("@pnome", nome),
 
                     new MySqlParameter("@pemail", email),
@@ -185,7 +174,7 @@ namespace ecoEats
 
                     new MySqlParameter("@psenha", senha)
                   };
-                  int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
+                        int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
 
                         query = "INSERT INTO pessoas_juridicas (cnpj, razao_social, fk_pj_user) VALUES ('" + cnpj + "', '" + razao + "', " + newUserId + ");";
 
@@ -195,13 +184,13 @@ namespace ecoEats
 
                         db.Database.ExecuteSqlCommand(query);
                         MessageBox.Show("Cadastro concluído");
-                       // frmHome frm = new frmHome(newUserId);
-                       // this.Hide();
-                       // frm.Show();
-                  }
-                  
-                }                          
-            }            
+                        frmHome frm = new frmHome(newUserId);
+                        this.Hide();
+                        frm.Show();
+                    }
+
+                }
+            }
         }
 
         private void txtEmail_Validated(object sender, EventArgs e)
@@ -218,7 +207,7 @@ namespace ecoEats
             }
         }
         private void button1_Click(object sender, EventArgs e)
-        {         
+        {
             Form principal = new frmPrincipal();
             principal.Show();
             this.Hide();
@@ -226,12 +215,12 @@ namespace ecoEats
 
         private void frmCadastroCnpj_Load(object sender, EventArgs e)
         {
-           Font fontePadrao = new Font("Nirmala Ui", 12 , FontStyle.Bold);
-           AplicarFonteControles(this, fontePadrao);
-           int x = (Screen.PrimaryScreen.WorkingArea.Width - gBPrincipal.Width) / 2;
-           int y = (Screen.PrimaryScreen.WorkingArea.Height - gBPrincipal.Height) / 2;
-           gBPrincipal.Location = new Point(x, y);
-           lblDados.Font = new Font("Nirmala Ui", 16, FontStyle.Bold);
+            Font fontePadrao = new Font("Nirmala Ui", 10, FontStyle.Bold);
+            AplicarFonteControles(this, fontePadrao);
+            int x = (Screen.PrimaryScreen.WorkingArea.Width - gBPrincipal.Width) / 2;
+            int y = (Screen.PrimaryScreen.WorkingArea.Height - gBPrincipal.Height) / 2;
+            gBPrincipal.Location = new Point(x, y);
+            lblDados.Font = new Font("Nirmala Ui", 14, FontStyle.Bold);
         }
         private void AplicarFonteControles(Control control, Font fonte)
         {
@@ -255,7 +244,7 @@ namespace ecoEats
                 txtCSenha.PasswordChar = '*';
                 pbCSenha.Image = Resources.hide;
                 txtCSenha.UseSystemPasswordChar = false;
-            }          
+            }
         }
 
         private void pbCSenha2_Click(object sender, EventArgs e)
@@ -272,6 +261,21 @@ namespace ecoEats
                 pbCSenha2.Image = Resources.hide;
                 txtSenha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void lblNumero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbLTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNome_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void gBPrincipal_Enter(object sender, EventArgs e)
