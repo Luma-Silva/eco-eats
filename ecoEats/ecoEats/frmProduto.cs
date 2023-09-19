@@ -307,7 +307,7 @@ namespace ecoEats
             using (MyDbContext db = new MyDbContext())
             {
                 string query;
-                if (score <= 20)
+                if (score > 1.5)
                 {
                     preco=500;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com alto impacto ambiental e baixo valor nutricional.')";
@@ -315,9 +315,9 @@ namespace ecoEats
                     picSelo.BackgroundImage = Resources.selo0;
                     picScore.BackgroundImage = Resources.score0;
                     lblPreco.Text = preco.ToString();
-                    return "Produto com alto impacto ambiental e baixo valor nutricional.";
+                    return "Produto com baixo valor nutricional. ";
                 }
-                else if (score <= 40)
+                else if ((score >1) && (score<1.5))
                 {
                     preco = 1000;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com médio impacto ambiental e valor nutricional moderado.')";
@@ -325,19 +325,10 @@ namespace ecoEats
                     picSelo.BackgroundImage = Resources.selo50;
                     picScore.BackgroundImage = Resources.score50;
                     lblPreco.Text = preco.ToString();
-                    return "Produto com médio impacto ambiental e valor nutricional moderado.";
+                    return "Produto valor nutricional moderado.";
                 }
-                else if (score <= 60)
-                {
-                    preco = 1000;
-                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com impacto ambiental razoável e valor nutricional razoável.')";
-                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
-                    picSelo.BackgroundImage = Resources.selo50;
-                    picScore.BackgroundImage = Resources.score50;
-                    lblPreco.Text = preco.ToString();
-                    return "Produto com impacto ambiental razoável e valor nutricional razoável.";
-                }
-                else if (score <= 80)
+               
+                else if (score <= 1)
                 {
                     preco = 1200;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com baixo impacto ambiental e bom valor nutricional.')";
@@ -345,19 +336,13 @@ namespace ecoEats
                     picSelo.BackgroundImage = Resources.selo100;
                     picScore.BackgroundImage = Resources.score100;
                     lblPreco.Text = preco.ToString();
-                    return "Produto com baixo impacto ambiental e bom valor nutricional.";
+                    return "Produto com bom valor nutricional.";
                 }
-                else
-                {
-                    preco = 1200;
-                    query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com muito baixo impacto ambiental e excelente valor nutricional.')";
-                    int nRowAfetted = db.Database.ExecuteSqlCommand(query);
-                    picSelo.BackgroundImage = Resources.selo100;
-                    picScore.BackgroundImage = Resources.score100;
-                    lblPreco.Text = preco.ToString();
-                    return "Produto com muito baixo impacto ambiental e excelente valor nutricional.";
-                }
+                
+
+               
             }
+            return "Não foi possível calcular o score";
         }
 
 
