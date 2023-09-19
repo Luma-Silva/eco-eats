@@ -49,7 +49,6 @@
             this.nome_produto = new System.Windows.Forms.Label();
             this.lInterpretacao = new System.Windows.Forms.Label();
             this.lScore = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnComprarSelo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lFab = new System.Windows.Forms.Label();
@@ -97,7 +96,6 @@
             this.picScore = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,11 +109,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nome_produto.AutoSize = true;
-            this.nome_produto.Font = new System.Drawing.Font("Source Code Pro", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nome_produto.Font = new System.Drawing.Font("Source Code Pro", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nome_produto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(179)))), ((int)(((byte)(89)))));
-            this.nome_produto.Location = new System.Drawing.Point(402, 24);
+            this.nome_produto.Location = new System.Drawing.Point(809, 138);
             this.nome_produto.Name = "nome_produto";
-            this.nome_produto.Size = new System.Drawing.Size(103, 27);
+            this.nome_produto.Size = new System.Drawing.Size(300, 80);
             this.nome_produto.TabIndex = 16;
             this.nome_produto.Text = "Produto";
             this.nome_produto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,18 +141,6 @@
             this.lScore.TabIndex = 18;
             this.lScore.Text = "80.67";
             this.lScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.AutoSize = true;
-            this.panel4.Controls.Add(this.nome_produto);
-            this.panel4.Location = new System.Drawing.Point(320, 1);
-            this.panel4.Name = "panel4";
-            this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel4.Size = new System.Drawing.Size(1093, 87);
-            this.panel4.TabIndex = 19;
             // 
             // btnComprarSelo
             // 
@@ -696,10 +682,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1815, 1037);
+            this.Controls.Add(this.nome_produto);
             this.Controls.Add(this.lblPreco);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.btnComprarSelo);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lScore);
             this.Controls.Add(this.lInterpretacao);
             this.Controls.Add(this.panel2);
@@ -711,8 +697,6 @@
             this.Name = "frmProduto";
             this.Text = "FormProduto";
             this.Load += new System.EventHandler(this.FormProduto_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -910,7 +894,6 @@
         private System.Windows.Forms.Label nome_produto;
         private System.Windows.Forms.Label lInterpretacao;
         private System.Windows.Forms.Label lScore;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnComprarSelo;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblPreco;

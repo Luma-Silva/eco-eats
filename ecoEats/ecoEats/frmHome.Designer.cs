@@ -46,7 +46,7 @@
             // menuStrip2
             // 
             this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(204)))), ((int)(((byte)(123)))));
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuUser,
             this.toolStripMenuItem4,
@@ -55,7 +55,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(10, 8, 0, 8);
-            this.menuStrip2.Size = new System.Drawing.Size(617, 44);
+            this.menuStrip2.Size = new System.Drawing.Size(617, 70);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -66,7 +66,7 @@
             this.comprarSelo});
             this.menuUser.Image = global::ecoEats.Properties.Resources.CapiIcon;
             this.menuUser.Name = "menuUser";
-            this.menuUser.Size = new System.Drawing.Size(106, 28);
+            this.menuUser.Size = new System.Drawing.Size(132, 54);
             this.menuUser.Text = "Olá, [nome]";
             // 
             // produtos
@@ -74,7 +74,7 @@
             this.produtos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.produtos.Image = global::ecoEats.Properties.Resources.new_features;
             this.produtos.Name = "produtos";
-            this.produtos.Size = new System.Drawing.Size(188, 30);
+            this.produtos.Size = new System.Drawing.Size(214, 56);
             this.produtos.Text = "Seus Produtos";
             this.produtos.Click += new System.EventHandler(this.produtos_Click);
             // 
@@ -84,7 +84,7 @@
             this.comprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.comprarSelo.Image = global::ecoEats.Properties.Resources.cart;
             this.comprarSelo.Name = "comprarSelo";
-            this.comprarSelo.Size = new System.Drawing.Size(188, 30);
+            this.comprarSelo.Size = new System.Drawing.Size(214, 56);
             this.comprarSelo.Text = "Comprar Selos";
             this.comprarSelo.Click += new System.EventHandler(this.comprarSelo_Click);
             // 
@@ -95,7 +95,7 @@
             this.CadastroCodigo});
             this.toolStripMenuItem4.Image = global::ecoEats.Properties.Resources.grocery_bag;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(86, 28);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(112, 54);
             this.toolStripMenuItem4.Text = "Produto";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -123,7 +123,7 @@
             this.alterarSenha});
             this.toolStripMenuItem5.Image = global::ecoEats.Properties.Resources.gear;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(120, 28);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(146, 54);
             this.toolStripMenuItem5.Text = "Configurações";
             // 
             // alterarSenha
@@ -139,7 +139,7 @@
             // 
             this.Sair.Image = global::ecoEats.Properties.Resources.power_on;
             this.Sair.Name = "Sair";
-            this.Sair.Size = new System.Drawing.Size(62, 28);
+            this.Sair.Size = new System.Drawing.Size(88, 54);
             this.Sair.Text = "Sair";
             this.Sair.Click += new System.EventHandler(this.Sair_Click);
             // 
@@ -150,10 +150,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPrincipal.AutoSize = true;
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
-            this.panelPrincipal.Location = new System.Drawing.Point(0, 36);
+            this.panelPrincipal.Location = new System.Drawing.Point(0, 65);
             this.panelPrincipal.Margin = new System.Windows.Forms.Padding(2);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(617, 328);
+            this.panelPrincipal.Size = new System.Drawing.Size(617, 302);
             this.panelPrincipal.TabIndex = 2;
             // 
             // frmHome
