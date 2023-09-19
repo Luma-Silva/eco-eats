@@ -152,7 +152,9 @@
             "Grupo 5- Carnes e Ovos\t",
             "Grupo 6- Leguminosas\t\t",
             "Grupo 7- Óleos e gorduras\t",
-            "Grupo 8- Açucares, balas, chocolates, salgadinho"});
+            "Grupo 8- Açucares, balas, chocolates, salgadinho",
+            "                                                                                 " +
+                "     "});
             this.CBCategoria.Location = new System.Drawing.Point(262, 180);
             this.CBCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.CBCategoria.Name = "CBCategoria";

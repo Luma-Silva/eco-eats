@@ -24,7 +24,7 @@ namespace ecoEats
         frmHome pai;
         string edit_prod;
         private List<Produto> productList;
-        string nome;
+        
 
         public ConsultaProdutos(int userid, frmHome pai)
         {
@@ -98,6 +98,7 @@ namespace ecoEats
 
                 Label nomeLabel = new Label();
                 nomeLabel.Text = "Nome: " + this.productList[i].nome;
+                nomeLabel.AutoSize = true;
                 nomeLabel.Location = new System.Drawing.Point(10, 30);
                 
 
@@ -136,6 +137,8 @@ namespace ecoEats
 
         private void ConsultaProdutos_Load(object sender, EventArgs e)
         {
+         
+
         }
         private void GroupBox_Click(object sender, EventArgs e)
         {
@@ -171,6 +174,11 @@ namespace ecoEats
 
             // Exiba o formulário de edição.
             this.pai.mostraFormExterno(formularioEdicao);
+
+
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -182,6 +190,7 @@ namespace ecoEats
                 {
                     // Converta a ID do produto selecionado para int.
                     int idDoProdutoSelecionado = Convert.ToInt32(edit_prod);
+
 
                     // Crie uma instância do formulário FormProduto, passando a ID do produto.
                     FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);

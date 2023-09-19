@@ -18,6 +18,11 @@ using ecoEats.Models;
 
 namespace ecoEats
 {
+
+
+
+  
+
     public partial class frmPorNome : Form
     {
         int userid;
@@ -32,8 +37,10 @@ namespace ecoEats
             this.userid = userid;
             this.pai = pai; 
             this.produtoId = produtoId;
+                            
         }
 
+       
         private void frmProduto_Load(object sender, EventArgs e)
         {
            
@@ -133,6 +140,7 @@ namespace ecoEats
                 }
 
                 this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
+
 
 
 

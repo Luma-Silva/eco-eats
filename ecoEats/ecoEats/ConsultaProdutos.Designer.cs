@@ -36,7 +36,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(185)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(164, 458);
+            this.btnEditar.Location = new System.Drawing.Point(635, 664);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(154, 57);
             this.btnEditar.TabIndex = 1;
@@ -48,7 +48,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(136)))), ((int)(((byte)(40)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(365, 458);
+            this.button2.Location = new System.Drawing.Point(907, 664);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 57);
             this.button2.TabIndex = 3;
