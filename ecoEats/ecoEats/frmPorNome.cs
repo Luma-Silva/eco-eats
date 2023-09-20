@@ -28,15 +28,17 @@ namespace ecoEats
         int userid;
         frmHome pai;
         int produtoId;
+        bool cnpj;
 
 
-        public frmPorNome(int userid, frmHome pai, int produtoId = -1)
+        public frmPorNome(int userid, bool cnpj, frmHome pai, int produtoId = -1)
         {
             //MessageBox.Show("P: " + produtoId);
             InitializeComponent();
             this.userid = userid;
             this.pai = pai; 
             this.produtoId = produtoId;
+            this.cnpj = cnpj;
                             
         }
 
@@ -139,7 +141,7 @@ namespace ecoEats
                   VALUES (@pcodigo_barras, @pnome, @data_validade, @fabricacao, @valor_produto, @descricao, @lote, @categoria_produto); SELECT LAST_INSERT_ID();";
                 }
 
-                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai,this.cnpj));
 
 
 
@@ -210,7 +212,7 @@ namespace ecoEats
                         MessageBox.Show("Editado com sucesso!");
                     }
                     
-                    this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai));
+                    this.pai.mostraFormExterno(new ConsultaProdutos(this.userid, this.pai, this.cnpj));
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -225,7 +227,7 @@ namespace ecoEats
                 db.Database.ExecuteSqlCommand(query);
                 MessageBox.Show("Salvo com sucesso!");
 
-                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid,this.pai));
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid,this.pai,this.cnpj));
 
 
             }

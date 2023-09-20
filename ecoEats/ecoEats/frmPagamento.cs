@@ -113,7 +113,10 @@ namespace ecoEats
                 {
                     using (MyDbContext db = new MyDbContext())
                     {
-                        string query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj, valor) " +
+                        string query = "SELECT id FROM pessoas_juridicas WHERE fk_pj_user =" + this.userId + " LIMIT 1;";
+                        int cnpjId = db.Database.SqlQuery<int>(query).SingleOrDefault();
+                        
+                        query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj, valor) " +
                             "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk, @valor);";
 
                         var parameters = new[]
@@ -123,7 +126,7 @@ namespace ecoEats
                             new MySqlParameter("@cvv",codigo),
                             new MySqlParameter("@nome_cartao",NomeNoCartão),
                             new MySqlParameter("@numero_cartao",NumeroDoCartão),
-                            new MySqlParameter("@fk", this.userId),
+                            new MySqlParameter("@fk", cnpjId),
                             new MySqlParameter("@valor", this.valor)
                         };
                         int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
@@ -148,12 +151,12 @@ namespace ecoEats
             }
             else if (this.valor == 1000)
             {
-                picSelo.BackgroundImage = Resources.selo01;
+                picSelo.BackgroundImage = Resources.selo50;
                 lblValorSelo.Text = this.valor.ToString();
             }
             else if (this.valor == 1200)
             {
-                picSelo.BackgroundImage = Resources.selo02;
+                picSelo.BackgroundImage = Resources.selo100;
                 lblValorSelo.Text = this.valor.ToString();
             }
         }

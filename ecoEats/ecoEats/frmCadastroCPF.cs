@@ -168,9 +168,9 @@ namespace ecoEats
 
                     db.Database.ExecuteSqlCommand(query);
                     MessageBox.Show("Cadastro concluído!");
-                   // frmHome frm = new frmHome(newUserId);
-                   // this.Hide();
-                   // frm.Show();
+                    frmLogin frm = new frmLogin();
+                    this.Hide();
+                    frm.Show();
                 }
 
             }

@@ -24,15 +24,16 @@ namespace ecoEats
         frmHome pai;
         string edit_prod;
         private List<Produto> productList;
-        
+        bool cnpj;
 
-        public ConsultaProdutos(int userid, frmHome pai)
+        public ConsultaProdutos(int userid, frmHome pai, bool cnpj)
         {
             InitializeComponent();
 
             this.userid = userid;
             this.pai = pai;
             CreateProductCards();
+            this.cnpj = cnpj;
         }
 
         private void InitializeProductList()
@@ -55,11 +56,8 @@ namespace ecoEats
                 if(produtos.Count < 1)
                 {
                     MessageBox.Show("Não foi encontrado nenhum produto");
-                    frmPorNome formularioEdicao = new frmPorNome(this.userid, this.pai);
-
-                    // Exiba o formulário de edição.
-                    this.pai.mostraFormExterno(formularioEdicao);
-                    return;
+                
+                   
                 }
 
                 this.productList = produtos;
@@ -170,7 +168,7 @@ namespace ecoEats
             int idDoProdutoAEditar = Convert.ToInt32(this.edit_prod); // Substitua pelo ID real do produto.
 
             // Crie uma instância do formulário frmPorNome, passando o ID do produto.
-            frmPorNome formularioEdicao = new frmPorNome(this.userid, this.pai, idDoProdutoAEditar);
+            frmPorNome formularioEdicao = new frmPorNome(this.userid,this.cnpj, this.pai, idDoProdutoAEditar);
 
             // Exiba o formulário de edição.
             this.pai.mostraFormExterno(formularioEdicao);
@@ -192,11 +190,12 @@ namespace ecoEats
                     int idDoProdutoSelecionado = Convert.ToInt32(edit_prod);
 
 
-                    // Crie uma instância do formulário FormProduto, passando a ID do produto.
-                    //FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
+                // Crie uma instância do formulário FormProduto, passando a ID do produto.
+                //FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
 
-                    // Exiba o formulário de detalhes do produto.
-                   // formularioProduto.Show();
+                // Exiba o formulário de detalhes do produto.
+                frmProduto frm = new frmProduto(idDoProdutoSelecionado, this.pai, this.cnpj);
+                this.pai.mostraFormExterno(frm);
                 }
                 else
                 {

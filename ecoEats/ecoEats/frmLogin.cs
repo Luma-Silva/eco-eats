@@ -16,6 +16,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using MySql.Data.MySqlClient;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
+using System.Data.Entity.Infrastructure;
 
 namespace ecoEats
 {
@@ -80,9 +81,10 @@ namespace ecoEats
                     int IdUser = db.Database.SqlQuery<int>(query).SingleOrDefault();
 
                     query = "SELECT 1 FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user="+IdUser+" LIMIT 1;";
-
+                   
                     int existe = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    if(existe == 0)
+                    MessageBox.Show(existe.ToString());
+                if (existe == 0)
                     {
                         
                         MessageBox.Show("Login realizado com suscesso!");

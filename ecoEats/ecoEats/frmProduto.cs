@@ -39,7 +39,7 @@ namespace ecoEats
         }
 
 
-
+        int valor;
         private async void FormProduto_Load(object sender, EventArgs e)
         {
             using (MyDbContext db = new MyDbContext())
@@ -310,33 +310,33 @@ namespace ecoEats
                 string query;
                 if (score > 1.5)
                 {
-                    preco=500;
+                    valor=500;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com alto impacto ambiental e baixo valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo0;
                     picScore.BackgroundImage = Resources.score0;
-                    lblPreco.Text = preco.ToString();
+                    lblPreco.Text = valor.ToString();
                     return "Produto com baixo valor nutricional. ";
                 }
                 else if ((score >1) && (score<1.5))
                 {
-                    preco = 1000;
+                    valor = 1000;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com médio impacto ambiental e valor nutricional moderado.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo50;
                     picScore.BackgroundImage = Resources.score50;
-                    lblPreco.Text = preco.ToString();
+                    lblPreco.Text = valor.ToString();
                     return "Produto valor nutricional moderado.";
                 }
                
                 else if (score <= 1)
                 {
-                    preco = 1200;
+                    valor = 1200;
                     query = "INSERT INTO selo(fk_produto_id,categoria) VALUES (" + this.prodId + ", 'Produto com baixo impacto ambiental e bom valor nutricional.')";
                     int nRowAfetted = db.Database.ExecuteSqlCommand(query);
                     picSelo.BackgroundImage = Resources.selo100;
                     picScore.BackgroundImage = Resources.score100;
-                    lblPreco.Text = preco.ToString();
+                    lblPreco.Text = valor.ToString();
                     return "Produto com bom valor nutricional.";
                 }
                 
