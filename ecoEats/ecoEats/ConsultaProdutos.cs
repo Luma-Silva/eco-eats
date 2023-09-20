@@ -194,7 +194,7 @@ namespace ecoEats
                 //FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
 
                 // Exiba o formulário de detalhes do produto.
-                frmProduto frm = new frmProduto(idDoProdutoSelecionado, this.pai, this.cnpj);
+                frmProduto frm = new frmProduto(idDoProdutoSelecionado, this.pai, this.cnpj, this.userid);
                 this.pai.mostraFormExterno(frm);
                 }
                 else

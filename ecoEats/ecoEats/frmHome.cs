@@ -21,10 +21,8 @@ namespace ecoEats
             this.userid= userid;
             this.cnpj= cnpj;                                    
             InitializeComponent();
-            if (this.cnpj == false)
-            {
-                comprarSelo.Enabled = false;
-            }
+           
+
         }
         private Form frmAtivo;
       
@@ -58,7 +56,7 @@ namespace ecoEats
 
         private void CadastroCodigo_Click(object sender, EventArgs e)
         {
-            MostraForm (new frmCodigoBarras(this,this.cnpj));
+            MostraForm (new frmCodigoBarras(this,this.cnpj, this.userid));
 
 
 
@@ -69,11 +67,7 @@ namespace ecoEats
             MostraForm(new frmAlterarInfo(false));
         }
 
-        private void comprarSelo_Click(object sender, EventArgs e)
-        {
-            MostraForm(new frmPagamento(2, 6));
-        }
-
+       
         private void Sair_Click(object sender, EventArgs e)
         { 
            frmPrincipal frm = new frmPrincipal();
@@ -87,7 +81,7 @@ namespace ecoEats
            
             using (MyDbContext db = new MyDbContext())
             {
-                MessageBox.Show(this.userid.ToString());
+         
                 string query;
                 query = "SELECT nome FROM usuarios AS u WHERE u.id =" + this.userid + " LIMIT 1;";
 

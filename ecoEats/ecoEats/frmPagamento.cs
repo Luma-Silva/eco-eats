@@ -27,11 +27,15 @@ namespace ecoEats
     {
         int valor;
         int userId;
-        public frmPagamento(int userId, int valor)
+        bool cnpj;
+        frmHome pai;
+        public frmPagamento(int userId, int valor, bool cnpj, frmHome pai)
         {
             InitializeComponent();
             this.valor = valor;
             this.userId = userId;
+            this.cnpj = cnpj;
+            this.pai = pai;
         }
         private void btnConfirmarPagamento_Click(object sender, EventArgs e)
 
@@ -113,8 +117,11 @@ namespace ecoEats
                 {
                     using (MyDbContext db = new MyDbContext())
                     {
-                        string query = "SELECT id FROM pessoas_juridicas WHERE fk_pj_user =" + this.userId + " LIMIT 1;";
-                        int cnpjId = db.Database.SqlQuery<int>(query).SingleOrDefault();
+               
+                        string query = "SELECT * FROM pessoas_juridicas WHERE fk_pj_user =" + this.userId + " LIMIT 1;";
+                        Juridica cnpj = db.Database.SqlQuery<Juridica>(query).SingleOrDefault();
+
+             
                         
                         query = "INSERT INTO pagamentos (forma_pagamento, cpf_titular, cvv, nome_cartao, numero_cartao, fk_pag_pj, valor) " +
                             "VALUES (@forma_pagamento, @cpf, @cvv, @nome_cartao, @numero_cartao, @fk, @valor);";
@@ -126,12 +133,16 @@ namespace ecoEats
                             new MySqlParameter("@cvv",codigo),
                             new MySqlParameter("@nome_cartao",NomeNoCartão),
                             new MySqlParameter("@numero_cartao",NumeroDoCartão),
-                            new MySqlParameter("@fk", cnpjId),
+                            new MySqlParameter("@fk", cnpj.Id),
                             new MySqlParameter("@valor", this.valor)
                         };
                         int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
                     }
                     MessageBox.Show("Pagamento concluído!");
+                  
+                    ConsultaProdutos frm = new ConsultaProdutos(this.userId,this.pai,this.cnpj);
+                    this.pai.mostraFormExterno(frm);
+                  
                 }
             }
         }
@@ -167,6 +178,11 @@ namespace ecoEats
             {
                 AplicarFonteControles(filho, fonte);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }  
 }

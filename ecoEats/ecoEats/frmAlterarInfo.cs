@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static Org.BouncyCastle.Crypto.Digests.SkeinEngine;
 
 
 namespace ecoEats
@@ -131,17 +132,17 @@ namespace ecoEats
 
                             string queryUp = "UPDATE usuarios SET senha= @senha WHERE id=@pid; ";
 
-                            parameters = new[]
+                            var parameters2 = new[]
                             {
                                  new MySqlParameter("@pid", user.Id),
                                  new MySqlParameter("@senha", senha2),
-                             };
+                            };
+                            int rowsAffected = db.Database.ExecuteSqlCommand(queryUp, parameters2);
 
+                            MessageBox.Show("Senha alterada com sucesso!!!");
                         }
 
-                        int rowsAffected = db.Database.ExecuteSqlCommand(query, parameters);
-
-                        MessageBox.Show("Senha alterada com sucesso!!!");
+                       
 
                         frmLogin frm = new frmLogin();
                         this.Hide();

@@ -83,7 +83,7 @@ namespace ecoEats
                     query = "SELECT 1 FROM usuarios AS u JOIN pessoas_juridicas AS pj ON pj.fk_pj_user="+IdUser+" LIMIT 1;";
                    
                     int existe = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    MessageBox.Show(existe.ToString());
+             
                 if (existe == 0)
                     {
                         

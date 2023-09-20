@@ -21,11 +21,13 @@ namespace ecoEats
       
         frmHome pai;
         bool cnpj;
-        public frmCodigoBarras(frmHome pai, bool cnpj)
+        int userid;
+        public frmCodigoBarras(frmHome pai, bool cnpj, int userid)
         {
             InitializeComponent();
             this.pai = pai;
             this.cnpj = cnpj;
+            this.userid = userid;
         }
         private void btnContinuar_Click(object sender, EventArgs e)
         {         
@@ -47,9 +49,9 @@ namespace ecoEats
            
 
                     int idProduto = db.Database.SqlQuery<int>(query).SingleOrDefault();
-                    MessageBox.Show(idProduto.ToString());
+                
 
-                    frmProduto frm = new frmProduto(idProduto,this.pai,this.cnpj);
+                    frmProduto frm = new frmProduto(idProduto,this.pai,this.cnpj, this.userid);
                     this.pai.mostraFormExterno(frm);
 
 

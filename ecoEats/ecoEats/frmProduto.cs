@@ -30,9 +30,11 @@ namespace ecoEats
         int prodId;
         frmHome pai;
         bool cnpj;
-        public frmProduto(int prodId, frmHome pai, bool cnpj)
+        int userId;
+        public frmProduto(int prodId, frmHome pai, bool cnpj, int userId)
         {
             InitializeComponent();
+            this.userId = userId;
             this.prodId = prodId;
             this.pai = pai;
             this.cnpj = cnpj;
@@ -150,7 +152,7 @@ namespace ecoEats
                             if (response.IsSuccessStatusCode)
                             {
                                 string responseBody = await response.Content.ReadAsStringAsync();
-                                MessageBox.Show("responsebody: " + responseBody);
+                          
 
 
 
@@ -183,7 +185,7 @@ namespace ecoEats
                             string queryNutri = "INSERT INTO nutricional( fk_nutri_prod,calories, protein_g, fat_total_g, carbohydrates_total_g, sugar_g,serving_size_g,fat_saturated_g,sodium_mg,potassium_mg,cholesterol_mg,fiber_g)" +
                                      " VALUES (" + this.prodId + ",'"+n.calories+"','"+n.protein_g+"','"+n.fat_total_g+"','"+n.carbohydrates_total_g+"','"+n.sugar_g+"','"+n.serving_size_g+"','"+n.fat_saturated_g+"','"+n.sodium_mg+"','"+n.potassium_mg+"','"+n.cholesterol_mg+"','"+n.fiber_g+ "');" ; 
                                 int nRowAfe = db.Database.ExecuteSqlCommand(queryNutri);
-                            MessageBox.Show("Valores inseridos :)");
+                           
 
                             }
                             else
@@ -350,7 +352,7 @@ namespace ecoEats
 
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
-            frmPagamento frm = new frmPagamento(this.prodId,valor);
+            frmPagamento frm = new frmPagamento(this.userId,valor,this.cnpj,this.pai);
             this.pai.mostraFormExterno(frm);
 
         }

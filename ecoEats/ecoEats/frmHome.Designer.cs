@@ -32,7 +32,6 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.produtos = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprarSelo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.CadastroNome = new System.Windows.Forms.ToolStripMenuItem();
             this.CadastroCodigo = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +61,7 @@
             // menuUser
             // 
             this.menuUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtos,
-            this.comprarSelo});
+            this.produtos});
             this.menuUser.Image = global::ecoEats.Properties.Resources.CapiIcon;
             this.menuUser.Name = "menuUser";
             this.menuUser.Size = new System.Drawing.Size(132, 54);
@@ -77,16 +75,6 @@
             this.produtos.Size = new System.Drawing.Size(214, 56);
             this.produtos.Text = "Seus Produtos";
             this.produtos.Click += new System.EventHandler(this.produtos_Click);
-            // 
-            // comprarSelo
-            // 
-            this.comprarSelo.AutoToolTip = true;
-            this.comprarSelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
-            this.comprarSelo.Image = global::ecoEats.Properties.Resources.cart;
-            this.comprarSelo.Name = "comprarSelo";
-            this.comprarSelo.Size = new System.Drawing.Size(214, 56);
-            this.comprarSelo.Text = "Comprar Selos";
-            this.comprarSelo.Click += new System.EventHandler(this.comprarSelo_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -104,7 +92,7 @@
             this.CadastroNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroNome.Image = global::ecoEats.Properties.Resources.signature;
             this.CadastroNome.Name = "CadastroNome";
-            this.CadastroNome.Size = new System.Drawing.Size(171, 22);
+            this.CadastroNome.Size = new System.Drawing.Size(214, 56);
             this.CadastroNome.Text = "Cadastrar Produto";
             this.CadastroNome.Click += new System.EventHandler(this.CadastroNome_Click);
             // 
@@ -113,7 +101,7 @@
             this.CadastroCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(209)))), ((int)(((byte)(154)))));
             this.CadastroCodigo.Image = global::ecoEats.Properties.Resources.barcode;
             this.CadastroCodigo.Name = "CadastroCodigo";
-            this.CadastroCodigo.Size = new System.Drawing.Size(171, 22);
+            this.CadastroCodigo.Size = new System.Drawing.Size(214, 56);
             this.CadastroCodigo.Text = "Consultar Produto";
             this.CadastroCodigo.Click += new System.EventHandler(this.CadastroCodigo_Click);
             // 
@@ -181,7 +169,6 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem produtos;
-        private System.Windows.Forms.ToolStripMenuItem comprarSelo;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem CadastroNome;
         private System.Windows.Forms.ToolStripMenuItem CadastroCodigo;
