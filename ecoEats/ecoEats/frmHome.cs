@@ -101,7 +101,7 @@ namespace ecoEats
 
         private void produtos_Click(object sender, EventArgs e)
         {
-            MostraForm(new ConsultaProdutos(this.userid));
+            MostraForm(new ConsultaProdutos(this.userid, this));
         }
 
 
