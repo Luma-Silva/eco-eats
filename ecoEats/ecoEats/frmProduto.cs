@@ -26,6 +26,7 @@ namespace ecoEats
 {
     public partial class frmProduto : Form
     {
+     
         int prodId;
         frmHome pai;
         bool cnpj;
@@ -349,7 +350,7 @@ namespace ecoEats
 
         private void btnComprarSelo_Click(object sender, EventArgs e)
         {
-            frmPagamento frm = new frmPagamento(this.prodId);
+            frmPagamento frm = new frmPagamento(this.prodId,valor);
             this.pai.mostraFormExterno(frm);
 
         }

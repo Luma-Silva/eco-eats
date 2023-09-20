@@ -18,6 +18,7 @@ namespace ecoEats
 {
     public partial class frmCodigoBarras : Form
     {
+      
         frmHome pai;
         bool cnpj;
         public frmCodigoBarras(frmHome pai, bool cnpj)

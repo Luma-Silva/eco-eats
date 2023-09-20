@@ -29,10 +29,9 @@ namespace ecoEats.Models
 
         [Column("fk_pag_pj")]
         public int Fk_pag_pj { get; set; }
+
+        [Column("valor")]
+        public int valor { get; set; }
     }
-
-
-
-
-    }
+}
 
