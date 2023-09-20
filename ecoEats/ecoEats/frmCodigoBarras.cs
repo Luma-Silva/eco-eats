@@ -70,13 +70,7 @@ namespace ecoEats
              
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            
-           
 
-            
-        }
         private void frmCodigoBarras_Load_1(object sender, EventArgs e)
         {
             Font fontePadrao = new Font("Microsoft Sans Serif", 18, FontStyle.Regular);
@@ -95,9 +89,5 @@ namespace ecoEats
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
