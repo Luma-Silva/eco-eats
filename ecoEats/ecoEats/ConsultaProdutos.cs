@@ -193,10 +193,10 @@ namespace ecoEats
 
 
                     // Crie uma instância do formulário FormProduto, passando a ID do produto.
-                    FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
+                    //FormProduto formularioProduto = new FormProduto(idDoProdutoSelecionado, this.pai);
 
                     // Exiba o formulário de detalhes do produto.
-                    formularioProduto.Show();
+                   // formularioProduto.Show();
                 }
                 else
                 {

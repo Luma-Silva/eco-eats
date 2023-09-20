@@ -221,11 +221,11 @@ namespace ecoEats
 
 
                 // Inserindo impacto ambiental geral
-                query = "INSERT INTO impactos_ambientais(carbono,cultivo,embalagem,perdas,impacto,agua,fk_impact_prod) VALUES ('11.15 Kg','37%','36%','10%','77%','5.000 L',"+produto.Id+");";
+                query = "INSERT INTO impactos_ambientais(carbono,cultivo,embalagem,perdas,impacto,agua,fk_impact_prod) VALUES ('11.15 Kg','37%','36%','10%','77%','5.000 L',"+this.produtoId+");";
                 db.Database.ExecuteSqlCommand(query);
                 MessageBox.Show("Salvo com sucesso!");
 
-                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid));
+                this.pai.mostraFormExterno(new ConsultaProdutos(this.userid,this.pai));
 
 
             }
@@ -247,6 +247,11 @@ namespace ecoEats
             txtValor.Text = string.Empty;
             DTPValidade.Value = DateTime.Now;
             DTPFabricacao.Value = DateTime.Now;
+        }
+
+        private void frmPorNome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

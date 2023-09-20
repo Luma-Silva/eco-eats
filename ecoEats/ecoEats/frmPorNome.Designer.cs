@@ -345,6 +345,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPorNome";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPorNome_Load);
             this.Resize += new System.EventHandler(this.frmProduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
