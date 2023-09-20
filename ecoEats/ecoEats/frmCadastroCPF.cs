@@ -21,7 +21,7 @@ namespace ecoEats
         {
             InitializeComponent();
         }
-      
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string cpf = mskCpf.Text;
@@ -39,13 +39,13 @@ namespace ecoEats
             string cep = mskCep.Text;
             string telefone = mskTelefone.Text;
             string email = txtEmail.Text;
-            string cidade = txtCidade.Text;         
+            string cidade = txtCidade.Text;
             string senha = txtSenha.Text;
             string confirmarsenha = txtCSenha.Text;
 
-            
+
             if
-                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || naturalidade == "" || endereco == "" || numero == "" || bairro == "" || cep == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || cidade == "" || rdBtnConfirmar.Checked==false)
+                (cpf == "" || nome == "" || sexo == "" || nascimento == "" || uf == "" || telefone == "" || email == "" || senha == "" || confirmarsenha == "" || rdBtnConfirmar.Checked == false)
             {
                 if (cpf == "")
                 {
@@ -87,46 +87,6 @@ namespace ecoEats
                 {
                     txtUf.BackColor = Color.White;
                 }
-                if (naturalidade == "")
-                {
-                    txtNaturalidade.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtNaturalidade.BackColor = Color.White;
-                }
-                if (endereco == "")
-                {
-                    txtEndereco.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtEndereco.BackColor = Color.White;
-                }
-                if (numero == "")
-                {
-                    txtNumero.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtNumero.BackColor = Color.White;
-                }
-                if (bairro == "")
-                {
-                    txtBairro.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtBairro.BackColor = Color.White;
-                }
-                if (cep == "")
-                {
-                    mskCep.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    mskCep.BackColor = Color.White;
-                }
                 if (telefone == "")
                 {
                     mskTelefone.BackColor = Color.PaleVioletRed;
@@ -159,19 +119,11 @@ namespace ecoEats
                 {
                     txtCSenha.BackColor = Color.White;
                 }
-                if (cidade == "")
-                {
-                    txtCidade.BackColor = Color.PaleVioletRed;
-                }
-                else
-                {
-                    txtCidade.BackColor = Color.White;
-                }
                 if (rdBtnConfirmar.Checked != true)
                 {
                     MessageBox.Show("Confirme a veracidade dos dados");
                 }
-                
+
                 MessageBox.Show("Preencha todos os campos");
 
             }
@@ -182,8 +134,9 @@ namespace ecoEats
                 txtCSenha.BackColor = Color.PaleVioletRed;
                 txtSenha.BackColor = Color.PaleVioletRed;
             }
-            else{                
-                
+            else
+            {
+
                 using (MyDbContext db = new MyDbContext())
 
                 {
@@ -204,15 +157,15 @@ namespace ecoEats
                     };
 
                     int newUserId = db.Database.SqlQuery<int>(query, parameters).Single();
-                
 
-                   query = "INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES ('"+cpf+"', '"+nascimento+"', '"+sexo+"', "+newUserId+");";                                     
-                    
+
+                    query = "INSERT INTO pessoas_fisicas (cpf, data_nascimento, sexo, fk_pf_user) VALUES ('" + cpf + "', '" + nascimento + "', '" + sexo + "', " + newUserId + ");";
+
                     db.Database.ExecuteSqlCommand(query);
 
 
-                  query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES ('"+endereco+"', '"+numero+"', '"+cep+"', '"+cidade+"', '"+bairro+"', '"+naturalidade+"','"+uf+"', "+newUserId+");";                  
-                    
+                    query = @"INSERT INTO enderecos (rua, numero, cep, cidade, bairro, naturalidade, uf, fk_end_user) VALUES ('" + endereco + "', '" + numero + "', '" + cep + "', '" + cidade + "', '" + bairro + "', '" + naturalidade + "','" + uf + "', " + newUserId + ");";
+
                     db.Database.ExecuteSqlCommand(query);
                     MessageBox.Show("Cadastro concluído!");
                    // frmHome frm = new frmHome(newUserId);
@@ -221,13 +174,13 @@ namespace ecoEats
                 }
 
             }
-                        
+
         }
 
         private void cmbBxSexo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sexo = cmbBxSexo.SelectedItem.ToString();
-        }     
+        }
 
         private void txtEmail_Validated(object sender, EventArgs e)
         {
@@ -274,20 +227,20 @@ namespace ecoEats
         }
 
         private void frmCadastroCPF_Load_1(object sender, EventArgs e)
-        {           
+        {
             Font fontePadrao = new Font("Microsoft Tai Le", 14, FontStyle.Bold);
-            
+
             AplicarFonteControles(this, fontePadrao);
-                        
+
             int x = (Screen.PrimaryScreen.WorkingArea.Width - groupBox1.Width) / 2;
             int y = (Screen.PrimaryScreen.WorkingArea.Height - groupBox1.Height) / 2;
-         
+
             groupBox1.Location = new Point(x, y);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            
+
             Form principal = new frmPrincipal();
             principal.Show();
             this.Hide();
@@ -300,6 +253,8 @@ namespace ecoEats
             {
                 AplicarFonteControles(filho, fonte);
             }
-        }      
+        }
+
+        
     }
 }

@@ -498,7 +498,6 @@
             this.gBPrincipal.Size = new System.Drawing.Size(1115, 784);
             this.gBPrincipal.TabIndex = 31;
             this.gBPrincipal.TabStop = false;
-            this.gBPrincipal.Enter += new System.EventHandler(this.gBPrincipal_Enter);
             // 
             // txtCidade
             // 
